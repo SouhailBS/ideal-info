@@ -2,21 +2,29 @@
 <aside class="sidebar_widget">
     <div class="widget_inner">
         <div class="widget_list widget_categories">
-            <h2>Product categories</h2>
+            <h2>{{$category->label}}</h2>
             <ul>
-                <li><a href="#">Cameras & Camcoders</a></li>
-                <li class="widget_sub_categories"><a href="javascript:void(0)">Computer &
-                        Networking</a>
-                    <ul class="widget_dropdown_categories">
-                        <li><a href="#">Computer</a></li>
-                        <li><a href="#">Networking</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Games & Consoles</a></li>
-                <li><a href="#">Headphone & Speaker</a></li>
-                <li><a href="#">Movies & Video Games</a></li>
-                <li><a href="#">Smartphone</a> </li>
-                <li><a href="#">Uncategorized</a></li>
+                @php
+                    $sideCategories = $category;
+                    if($category->subCategories->isEmpty())
+                        $sideCategories = $category->parent;
+                @endphp
+
+                @foreach($sideCategories->subCategories as $subCategory)
+                    @if($subCategory->subCategories->isEmpty())
+                        <li><a href="{{$subCategory->route}}">{{$subCategory->label}}</a></li>
+                    @else
+                        <li class="widget_sub_categories"><a class="active"
+                                                             href="javascript:void(0)">{{$subCategory->label}}</a>
+                            <ul class="widget_dropdown_categories" style="display: none">
+                                @foreach($subCategory->subCategories as $subSubCategory)
+                                    <li><a href="{{$subSubCategory->route}}">{{$subSubCategory->label}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endif
+                @endforeach
+
             </ul>
         </div>
         <div class="widget_list widget_filter">
@@ -24,7 +32,7 @@
             <form action="#">
                 <div id="slider-range"></div>
                 <button type="submit">Filter</button>
-                <input type="text" name="text" id="amount" />
+                <input type="text" name="text" id="amount"/>
 
             </form>
         </div>
@@ -118,16 +126,6 @@
                         </div>
                     </figure>
                 </article>
-            </div>
-        </div>
-        <div class="widget_list tags_widget">
-            <h2>Product tags</h2>
-            <div class="tag_cloud">
-                <a href="#">blouse</a>
-                <a href="#">clothes</a>
-                <a href="#">fashion</a>
-                <a href="#">handbag</a>
-                <a href="#">laptop</a>
             </div>
         </div>
     </div>

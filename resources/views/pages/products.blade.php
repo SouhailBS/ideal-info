@@ -1,9 +1,10 @@
 @extends("layouts.app")
-@section("title", __("Accueil"))
+@section("title", $title)
 
 @section("content")
-    @include("partials.breadcrumbs")
-
+    @isset($category)
+        <x-breadcrumbs :levels="[$category]"/>
+    @endisset
     <!--shop  area start-->
     <div class="shop_area shop_reverse mt-60 mb-60">
         <div class="container">
@@ -22,9 +23,9 @@
                                     <figure>
                                         <div class="product_thumb">
                                             <a class="primary_img" href="product-details.html"><img
-                                                    src="assets/img/product/product1.jpg" alt=""></a>
+                                                    src="/assets/img/product/product1.jpg" alt=""></a>
                                             <a class="secondary_img" href="product-details.html"><img
-                                                    src="assets/img/product/product2.jpg" alt=""></a>
+                                                    src="/assets/img/product/product2.jpg" alt=""></a>
                                             <div class="label_product">
                                                 @if($product->stock>0)
                                                     <span class="label_sale">Dispo</span>
@@ -63,7 +64,9 @@
                                                     <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <h3 class="product_name grid_name"><a href="product-details.html">{{$product->label}}</a></h3>
+                                            <h3 class="product_name grid_name"><a
+                                                    href="{{$product->route}}">{{$product->label}}</a>
+                                            </h3>
                                         </div>
                                         <div class="product_content list_content">
                                             <div class="left_caption">
@@ -71,7 +74,9 @@
                                                     <span class="old_price">$86.00</span>
                                                     <span class="current_price">{{$product->price_ttc}} DT</span>
                                                 </div>
-                                                <h3 class="product_name"><a href="product-details.html">{{$product->label}}</a></h3>
+                                                <h3 class="product_name"><a
+                                                        href="{{$product->route}}">{{$product->label}}</a>
+                                                </h3>
                                                 <div class="product_ratings">
                                                     <ul>
                                                         <li><a href="#"><i class="ion-android-star-outline"></i></a>

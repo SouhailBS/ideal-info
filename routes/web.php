@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name("home");
 Route::get('/products', [ProductController::class, 'listing'])->name("product-listing");
-Route::get('/products/category/{id}', [ProductController::class, 'category'])->name("category-product-listing");
+Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
+Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");

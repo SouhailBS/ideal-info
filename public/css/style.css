@@ -1549,11 +1549,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: none;
   }
 }
+.main_menu nav > ul > li:hover,
+.main_menu nav > ul > li.active {
+    background-color: rgba(0,0,0,.1);
+}
 .main_menu nav > ul > li {
   display: inline-block;
   position: relative;
-  margin-right: 45px;
-  padding: 14px 0;
+  padding: 14px 20px;
 }
 .main_menu nav > ul > li:last-child {
   margin-right: 0;
@@ -1590,7 +1593,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .main_menu nav > ul > li > a::before {
   background: #ffffff;
-  bottom: 0;
+  bottom: -14px;
   content: '';
   display: block;
   height: 2px;

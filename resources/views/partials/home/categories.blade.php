@@ -12,18 +12,21 @@
             <div class="col-lg-10 col-md-9">
                 <div class="top_category_container category_column5 owl-carousel">
                     @foreach($categories as $category)
-                    <div class="col-lg-2">
-                        <article class="single_category">
-                            <figure>
-                                <div class="category_thumb">
-                                    <a href="shop.html"><img src="assets/img/s-product/category1.jpg" alt=""></a>
-                                </div>
-                                <figcaption class="category_name">
-                                    <h3><a href="shop.html">{{$category->label}}</a></h3>
-                                </figcaption>
-                            </figure>
-                        </article>
-                    </div>
+                        <div class="col-lg-2">
+                            <article class="single_category">
+                                <figure>
+                                    <div class="category_thumb">
+                                        <a href="{{$category->route}}"><img
+                                                src="assets/img/s-product/category1.jpg" alt=""></a>
+                                    </div>
+                                    <figcaption class="category_name">
+                                        <h3>
+                                            <a href="{{$category->route}}">{{$category->label}}</a>
+                                        </h3>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
                     @endforeach
                 </div>
             </div>

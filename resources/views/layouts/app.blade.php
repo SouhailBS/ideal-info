@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title> | @yield("title")</title>
+    <title>{{config('company.MAIN_INFO_SOCIETE_NOM')}} | @yield("title")</title>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="keywords" content=""/>

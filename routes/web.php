@@ -19,3 +19,6 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 Route::get('/products', [ProductController::class, 'listing'])->name("product-listing");
 Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");
+Route::get('/assets/{file}', function (){
+
+})->name("dolibarr");

@@ -46,8 +46,8 @@ return [
 
         'dolibarr' => [
             'driver' => 'local',
-            'root' => env("DOLIBARR_PATH"),
-            'url' => env('APP_URL').'/assets',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/static',
             'visibility' => 'public',
             'throw' => false,
         ],

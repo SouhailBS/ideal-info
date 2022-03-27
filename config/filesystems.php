@@ -47,7 +47,7 @@ return [
         'dolibarr' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/static',
+            'url' => env('APP_URL').'/documents',
             'visibility' => 'public',
             'throw' => false,
         ],

@@ -14,9 +14,9 @@
                 <figure>
                     <div class="product_thumb">
                         <a class="primary_img" href="product-details.html"><img
-                                src="assets/img/product/product1.jpg" alt=""></a>
+                                src="/assets/img/product/product1.jpg" alt=""></a>
                         <a class="secondary_img" href="product-details.html"><img
-                                src="assets/img/product/product2.jpg" alt=""></a>
+                                src="/assets/img/product/product2.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>

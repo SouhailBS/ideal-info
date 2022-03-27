@@ -43,7 +43,7 @@
                     <figure>
                         <div class="product_thumb">
                             <a href="product-details.html"><img
-                                    src="assets/img/product/product1.jpg" alt=""></a>
+                                    src="/assets/img/product/product1.jpg" alt=""></a>
                         </div>
                         <div class="product_content">
                             <h3><a href="product-details.html">Natus erro at congue</a></h3>
@@ -72,7 +72,7 @@
                     <figure>
                         <div class="product_thumb">
                             <a href="product-details.html"><img
-                                    src="assets/img/product/product2.jpg" alt=""></a>
+                                    src="/assets/img/product/product2.jpg" alt=""></a>
                         </div>
                         <div class="product_content">
                             <h3><a href="product-details.html">Auctor gravida enim</a></h3>
@@ -101,7 +101,7 @@
                     <figure>
                         <div class="product_thumb">
                             <a href="product-details.html"><img
-                                    src="assets/img/product/product24.jpg" alt=""></a>
+                                    src="/assets/img/product/product24.jpg" alt=""></a>
                         </div>
                         <div class="product_content">
                             <h3><a href="product-details.html">Cillum dolore tortor</a></h3>

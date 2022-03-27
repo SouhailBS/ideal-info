@@ -6,7 +6,7 @@
             @if ($paginator->onFirstPage())
                 <li class="next" aria-disabled="true" aria-label="@lang('pagination.previous')">
                     {{--<a>&lsaquo;</a>--}}
-                    <span class="page-link" aria-hidden="true">&lsaquo;</span>
+                    <span aria-hidden="true">&lsaquo;</span>
                 </li>
             @else
                 <li class="next">

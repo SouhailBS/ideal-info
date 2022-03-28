@@ -245,7 +245,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-6">
                         <div class="logo">
-                            <a href="index.html"><img
+                            <a href="{{url('/')}}"><img
                                     src="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO")])}}"
                                     alt=""></a>
                         </div>
@@ -459,7 +459,7 @@
         <div class="row align-items-center">
             <div class="col-lg-3">
                 <div class="logo">
-                    <a href="index.html"><img src="/assets/img/logo/logo.png" alt=""></a>
+                    <a href="{{url('/')}}"><img src="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO")])}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-9">

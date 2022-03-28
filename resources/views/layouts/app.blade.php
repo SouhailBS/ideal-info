@@ -7,7 +7,7 @@
     <meta name="keywords" content=""/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="shortcut icon" href="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")])}}" type="image/png">
 
     @yield("robots")
 
@@ -18,7 +18,7 @@
     <meta property="og:title" content=" | @yield("title")"/>
     <meta property="og:description"
           content="@yield("description", ""))"/>
-    <meta property="og:image" content="@yield("image", url("/logo.png"))"/>
+    <meta property="og:image" content="@yield("image", route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")]))"/>
     <!-- Stylesheets -->
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('/css/plugins.css')}}">

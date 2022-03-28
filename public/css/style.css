@@ -960,7 +960,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /*header top css end*/
 /* 2.2 header middel css here */
 .logo a img {
-  max-width: 162px;
+  max-width: 200px;
 }
 @media only screen and (max-width: 767px) {
   .logo a img {

@@ -23,4 +23,4 @@ Route::get('/documents/{file}', function ($file) {
     $path = env('DOLIBARR_PATH') . '/' . $file;
 
     return response(file_get_contents($path), 200, ['Content-type' => mime_content_type($path)]);
-})->name("dolibarr");
+})->where('file', '.*')->name("dolibarr");

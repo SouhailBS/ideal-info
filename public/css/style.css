@@ -274,7 +274,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     Scroll Up
 -----------------------------------------*/
 #scrollUp {
-  background: #0063d1 none repeat scroll 0 0;
+  background: #0099FF none repeat scroll 0 0;
   bottom: 85px;
   color: #ffffff;
   cursor: pointer;
@@ -508,7 +508,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /* 02. Element */
 .button {
-  background: #0063d1;
+  background: #0099FF;
   box-shadow: none;
   color: #ffffff;
   display: inline-block;
@@ -608,7 +608,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-bottom: 1px solid #ebebeb;
 }
 .offcanvas_main_menu li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .offcanvas_main_menu li ul.sub-menu {
   padding-left: 20px;
@@ -623,7 +623,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 14px;
 }
 .Offcanvas_footer span a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .Offcanvas_footer ul {
   margin-top: 20px;
@@ -649,31 +649,31 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   background: #3c5b9b;
 }
 .Offcanvas_footer ul li.facebook a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .Offcanvas_footer ul li.twitter a {
   background: #1DA1F2;
 }
 .Offcanvas_footer ul li.twitter a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .Offcanvas_footer ul li.pinterest a {
   background: #BD081B;
 }
 .Offcanvas_footer ul li.pinterest a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .Offcanvas_footer ul li.google-plus a {
   background: #DD4D42;
 }
 .Offcanvas_footer ul li.google-plus a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .Offcanvas_footer ul li.linkedin a {
   background: #010103;
 }
 .Offcanvas_footer ul li.linkedin a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .slinky-theme-default a:not(.back) {
@@ -684,7 +684,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .slinky-theme-default a:not(.back):hover {
   background: inherit;
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .canvas_close {
@@ -705,8 +705,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 50%;
 }
 .canvas_close a:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #fff;
 }
 
@@ -741,7 +741,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .canvas_open a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .Offcanvas_menu_two .canvas_close a:hover {
@@ -837,13 +837,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .sticky_header_right .main_menu nav > ul > li > a.active {
-  color: #0063d1;
+  color: #0099FF;
 }
 .sticky_header_right .main_menu nav > ul > li > a::before {
   display: none;
 }
 .sticky_header_right .main_menu nav > ul > li:hover > a {
-  color: #0063d1;
+  color: #0099FF;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .sticky_header_right .header_wishlist {
@@ -884,7 +884,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .support_info p a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .top_right {
@@ -909,7 +909,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 20px;
 }
 .top_right > ul > li:hover > a {
-  color: #0063d1;
+  color: #0099FF;
 }
 @media only screen and (max-width: 767px) {
   .top_right > ul > li {
@@ -954,7 +954,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .top_right > ul > li:hover a:not([href]):not([tabindex]) {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 /*header top css end*/
@@ -1181,7 +1181,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   top: -2px;
   bottom: -2px;
   right: -2px;
-  background: #0063d1;
+  background: #0099FF;
   color: #fff;
   font-weight: 400;
   padding: 0 20px;
@@ -1264,7 +1264,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 20px;
   text-align: center;
   color: #fff;
-  background: #0063d1;
+  background: #0099FF;
   border-radius: 50%;
   top: -7px;
   font-size: 11px;
@@ -1276,7 +1276,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: block;
 }
 .header_wishlist a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .header_wishlist a span {
   font-size: 32px;
@@ -1293,7 +1293,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   position: relative;
 }
 .mini_cart_wrapper:hover > a {
-  color: #0063d1;
+  color: #0099FF;
 }
 .mini_cart_wrapper span.cart_quantity {
   position: absolute;
@@ -1303,7 +1303,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 20px;
   text-align: center;
   color: #fff;
-  background: #0063d1;
+  background: #0099FF;
   border-radius: 50%;
   top: -7px;
   font-size: 11px;
@@ -1396,7 +1396,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border: 1px solid transparent;
 }
 .cart_img:hover {
-  border-color: #0063d1;
+  border-color: #0099FF;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .cart_img {
@@ -1430,7 +1430,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .cart_info a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .cart_info p {
   font-size: 12px;
@@ -1450,8 +1450,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 50%;
 }
 .cart_remove a:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #ffffff;
 }
 
@@ -1506,15 +1506,15 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border: 1px solid #ebebeb;
 }
 .cart_button a:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #fff;
 }
 
 /*header middel css end*/
 /* 2.4 main menu css here */
 .main_menu_area {
-  background: #0063d1;
+  background: #0099FF;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .main_menu_area {
@@ -1617,7 +1617,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   transition: .3s ease;
 }
 .sticky_header_right .main_menu nav > ul > li:hover > a::before {
-  background: #0063d1;
+  background: #0099FF;
   bottom: -14px;
   content: '';
   display: block;
@@ -1674,7 +1674,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 13px;
 }
 .main_menu nav > ul > li ul.sub_menu li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .main_menu nav > ul > li.mega_items {
   position: static;
@@ -1713,7 +1713,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 8px;
 }
 .mega_menu_inner > li > a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .mega_menu_inner > li ul li {
   display: block;
@@ -1726,7 +1726,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-transform: capitalize;
 }
 .mega_menu_inner > li ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 /*main menu css end*/
@@ -1907,12 +1907,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .categories_menu_toggle > ul > li > a:hover {
-    color: #0063d1;
+    color: #0099FF;
   }
 }
 @media only screen and (max-width: 767px) {
   .categories_menu_toggle > ul > li > a:hover {
-    color: #0063d1;
+    color: #0099FF;
   }
 }
 .categories_menu_toggle > ul > li:last-child > a {
@@ -1924,7 +1924,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   left: 100%;
 }
 .categories_menu_toggle > ul > li:hover > a {
-  color: #0063d1;
+  color: #0099FF;
 }
 .categories_menu_toggle > ul > li ul.categories_mega_menu {
   position: absolute;
@@ -2009,7 +2009,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 10px;
 }
 .categories_menu_toggle > ul > li ul.categories_mega_menu > li > a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .categories_menu_toggle > ul > li ul.categories_mega_menu > li.menu_item_children > a {
@@ -2098,7 +2098,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 30px;
 }
 .categorie_sub_menu li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .categorie_sub_menu li a {
@@ -2219,7 +2219,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .categories_menu_toggle ul li.has-sub ul.categorie_sub li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .categories_menu_toggle ul li.has-sub {
@@ -2404,7 +2404,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .slider_area .owl-dots .owl-dot.active::before {
   position: absolute;
   content: "";
-  background: #0063d1;
+  background: #0099FF;
   width: 12px;
   height: 12px;
   left: -3px;
@@ -2488,7 +2488,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .slider_content p span {
-  color: #0063d1;
+  color: #0099FF;
 }
 .slider_content a {
   font-size: 13px;
@@ -2870,7 +2870,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .product_carousel .owl-nav div:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .product_carousel .owl-nav div.owl-next {
   right: -35px;
@@ -2956,7 +2956,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 0;
 }
 .product_content h3 a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .action_links {
@@ -2979,7 +2979,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   height: 32px;
   text-align: center;
   font-size: 17px;
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
   display: block;
   transition: all 0.5s ease;
@@ -3008,7 +3008,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 500;
   display: inline-block;
   transition: all 0.5s ease;
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
   border-radius: 5px;
 }
@@ -3033,7 +3033,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 5px;
 }
 .price_box span.current_price {
-  color: #0063d1;
+  color: #0099FF;
   font-weight: 500;
   font-size: 16px;
 }
@@ -3053,7 +3053,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .countdown_area {
   display: flex;
   justify-content: space-between;
-  background: #0063d1;
+  background: #0099FF;
   padding: 8px 10px;
   border-radius: 4px;
 }
@@ -3160,7 +3160,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .top_category_header a {
   color: #ffffff;
-  background: #0063d1;
+  background: #0099FF;
   text-transform: capitalize;
   display: inline-block;
   padding: 10px 15px;
@@ -3202,10 +3202,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 4px;
 }
 .single_category:hover {
-  border-color: #0063d1;
+  border-color: #0099FF;
 }
 .single_category:hover::before {
-  border-color: #0063d1;
+  border-color: #0099FF;
 }
 .single_category::before {
   border: 1px solid transparent;
@@ -3253,7 +3253,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .category_name h3 a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 /*featured product css here*/
@@ -3368,7 +3368,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .featured_container > button:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .featured_container > button.next_arrow {
   right: -35px;
@@ -3448,7 +3448,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .product_slick button:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .product_slick button.next_arrow {
   right: -35px;
@@ -3543,7 +3543,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .small_product_container button:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .small_product_container button.next_arrow {
   right: 0;
@@ -3574,7 +3574,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 0;
 }
 .product_ratings ul li a {
-  color: #0063d1;
+  color: #0099FF;
   font-size: 21px;
 }
 
@@ -3611,10 +3611,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 25px;
 }
 .product_tab_btn ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .product_tab_btn ul li a.active {
-  color: #0063d1;
+  color: #0099FF;
 }
 @media only screen and (max-width: 767px) {
   .product_tab_btn ul li a {
@@ -3775,8 +3775,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .product_deals_column4 .owl-nav div:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #ffffff;
 }
 .product_deals_column4 .owl-nav div.owl-next {
@@ -3923,7 +3923,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .blog_carousel .owl-nav div:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .blog_carousel .owl-nav div.owl-next {
   right: -25px;
@@ -3964,7 +3964,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 10px;
 }
 .blog_content p a {
-  color: #0063d1;
+  color: #0099FF;
 }
 .blog_content p a:hover {
   text-decoration: underline;
@@ -3977,7 +3977,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 500;
 }
 .blog_content h3 a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 /*home four css here*/
@@ -4153,7 +4153,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border: 0;
   height: 100%;
   padding: 0 35px;
-  background: #0063d1;
+  background: #0099FF;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -4350,10 +4350,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   transition: 0.3s;
 }
 .testimonial_active .owl-dots .owl-dot.active {
-  background: #0063d1;
+  background: #0099FF;
 }
 .testimonial_active .owl-dots .owl-dot:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .testimonial_thumb {
@@ -4419,7 +4419,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .testimonial_content h3 a {
-  color: #0063d1;
+  color: #0099FF;
   font-weight: 500;
   margin-right: 10px;
 }
@@ -4480,7 +4480,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .brand_container .owl-nav div:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .brand_container .owl-nav div.owl-next {
   right: -35px;
@@ -4637,7 +4637,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .footer_contact p span {
   font-size: 16px;
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .footer_menu ul li {
@@ -4663,7 +4663,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .footer_menu ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .footer_social_link {
@@ -4757,7 +4757,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   height: 100%;
   font-size: 12px;
   color: #fff;
-  background: #0063d1;
+  background: #0099FF;
   font-weight: 500;
   padding: 0 18px;
   border: 0;
@@ -4798,7 +4798,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .copyright_area p a:hover {
   text-decoration: underline;
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .footer_bottom {
@@ -4950,8 +4950,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .collection_content a:hover {
-  color: #0063d1;
-  border-color: #0063d1;
+  color: #0099FF;
+  border-color: #0099FF;
 }
 
 @media only screen and (max-width: 767px) {
@@ -5074,8 +5074,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-bottom: 2px solid #757575;
 }
 .categories_content a:hover {
-  color: #0063d1;
-  border-color: #0063d1;
+  color: #0099FF;
+  border-color: #0099FF;
 }
 
 #fp-nav {
@@ -5159,7 +5159,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #999;
 }
 .breadcrumb_content ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .widget_inner {
@@ -5222,7 +5222,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   padding: 10px 0;
 }
 .widget_list > ul > li > a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .widget_list > ul > li.widget_sub_categories > a {
   position: relative;
@@ -5266,7 +5266,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .ui-slider-horizontal .ui-slider-range {
-  background: #0063d1;
+  background: #0099FF;
   height: 5px;
 }
 
@@ -5288,7 +5288,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   top: -7px;
   cursor: pointer;
   border-radius: 50%;
-  border: 5px solid #0063d1;
+  border: 5px solid #0099FF;
 }
 
 .widget_list.widget_filter form {
@@ -5320,7 +5320,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   transition: 0.3s;
 }
 .widget_list.widget_filter form button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -5426,8 +5426,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .tag_cloud a:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #ffffff;
 }
 
@@ -5494,7 +5494,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 0;
 }
 .list_button ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .list_button ul li a i {
   margin-right: 5px;
@@ -5505,10 +5505,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-align: center;
 }
 .list_button ul li a.active {
-  color: #0063d1;
+  color: #0099FF;
 }
 .list_button ul li a.active i {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
 }
 
@@ -5516,7 +5516,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: inline-block;
 }
 .product_ratting ul li a {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 @media only screen and (max-width: 767px) {
@@ -5554,11 +5554,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .pagination ul li a:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
 }
 .pagination ul li.current {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
 }
 .pagination ul li.next {
@@ -5788,7 +5788,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 7px;
 }
 .right_caption .action_links ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .right_caption .action_links ul li.quick_button a span {
   font-size: 22px;
@@ -5808,8 +5808,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .right_caption .add_to_cart a {
   background: #fff;
-  color: #0063d1;
-  border: 2px solid #0063d1;
+  color: #0099FF;
+  border: 2px solid #0099FF;
   width: 100%;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -5823,7 +5823,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .right_caption .add_to_cart a:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #fff;
 }
 
@@ -5986,7 +5986,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-left: 10px;
 }
 .product_d_right .product_ratting ul li.review a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .product_d_right .price_box {
   margin-bottom: 14px;
@@ -6117,7 +6117,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-left: 0;
 }
 .product_nav ul li a {
-  background: #0063d1;
+  background: #0099FF;
   border-radius: 3px;
   color: #ffffff;
   display: block;
@@ -6178,7 +6178,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border: 0;
   font-size: 16px;
   margin-left: 20px;
-  background: #0063d1;
+  background: #0099FF;
   height: 42px;
   line-height: 42px;
   text-transform: capitalize;
@@ -6273,7 +6273,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 28px;
 }
 .product_d_action ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .product_meta {
@@ -6292,7 +6292,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 400;
 }
 .product_meta span a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .product_info_button {
@@ -6351,7 +6351,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 13px;
 }
 .product_review_form button:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
 }
 
@@ -6456,7 +6456,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: inline-block;
 }
 .star_rating ul li a {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .reviews_comment_box {
@@ -6517,7 +6517,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   visibility: hidden;
 }
 .s-tab-zoom.owl-carousel .owl-nav div:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
 }
 .s-tab-zoom.owl-carousel .owl-nav div.owl-next {
@@ -6613,7 +6613,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 14px;
 }
 .grouped_form table tbody tr td.grouped-product-list.label a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .grouped_form table tbody tr td.grouped-product-list.price {
   font-size: 14px;
@@ -6673,7 +6673,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 0;
 }
 .product_d_meta span a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 /*product sidebar css here*/
@@ -6856,7 +6856,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   width: 100%;
 }
 .table_desc .cart_page table thead tr th {
-  border-bottom: 3px solid #0063d1;
+  border-bottom: 3px solid #0099FF;
   border-right: 1px solid #ebebeb;
   font-size: 16px;
   font-weight: 500;
@@ -6878,7 +6878,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #242424;
 }
 .table_desc .cart_page table tbody tr td.product_remove a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .table_desc .cart_page table tbody tr td.product_thumb {
   max-width: 180px;
@@ -6896,7 +6896,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 400;
 }
 .table_desc .cart_page table tbody tr td.product_name a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .table_desc .cart_page table tbody tr td.product-price {
   min-width: 130px;
@@ -6952,7 +6952,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .cart_submit button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .coupon_inner {
@@ -6979,7 +6979,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .coupon_inner button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .coupon_inner input {
   border: 1px solid #ebebeb;
@@ -7013,7 +7013,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .coupon_inner a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .coupon_code {
@@ -7070,7 +7070,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-align: right;
 }
 .checkout_btn a {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
   font-size: 15px;
   padding: 3px 14px;
@@ -7124,11 +7124,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 400;
   background-color: #f7f6f7;
   padding: 15px 10px;
-  border-top: 3px solid #0063d1;
+  border-top: 3px solid #0099FF;
   margin-bottom: 0;
 }
 .user-actions h3 a {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .checkout_info {
@@ -7140,7 +7140,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 15px;
 }
 .checkout_info a {
-  color: #0063d1;
+  color: #0099FF;
   margin-top: 15px;
   display: block;
 }
@@ -7183,7 +7183,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .form_group button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .form_group input[type="checkbox"] {
@@ -7208,7 +7208,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   cursor: pointer;
 }
 .form_group.group_3 label:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 #checkout_coupon input {
@@ -7242,7 +7242,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 #checkout_coupon button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .mb-20 {
@@ -7281,7 +7281,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 500;
 }
 .checkout_form label span {
-  color: #0063d1;
+  color: #0099FF;
 }
 .checkout_form label.righ_0 {
   cursor: pointer;
@@ -7323,7 +7323,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   padding: 5px 10px;
   text-transform: capitalize;
   color: #ffffff;
-  background: #0063d1;
+  background: #0099FF;
   font-weight: 500;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -7428,7 +7428,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .table_desc.wishlist table tbody tr td.product_total a {
-  background: #0063d1;
+  background: #0099FF;
   font-size: 12px;
   font-weight: 500;
   height: 38px;
@@ -7460,7 +7460,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: block;
 }
 .wishlist_share ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .wishlist_area {
@@ -7507,7 +7507,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 10px;
 }
 .contact_message ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .contact_message label {
   line-height: 18px;
@@ -7547,7 +7547,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 4px;
 }
 .contact_message button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .contact_message.content {
@@ -7600,7 +7600,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 12px;
 }
 .account_form label:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .account_form input {
   border: 1px solid #ebebeb;
@@ -7611,7 +7611,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   width: 100%;
 }
 .account_form button {
-  background: #0063d1;
+  background: #0099FF;
   border: 0;
   color: #ffffff;
   display: inline-block;
@@ -7646,7 +7646,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 39px;
 }
 .login_submit a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .login_submit a {
@@ -7700,7 +7700,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   padding-bottom: 60px;
 }
 .accordion_area .card-header {
-  background: #0063d1;
+  background: #0099FF;
 }
 .accordion_area .card-header:first-child {
   border-radius: inherit;
@@ -7745,7 +7745,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .card-header.card_accor button.btn-link {
-  border: 1px solid #0063d1;
+  border: 1px solid #0099FF;
   width: 100%;
   text-align: left;
   font-size: 14px;
@@ -7804,11 +7804,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .dashboard_tab_button ul li a:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
 }
 .dashboard_tab_button ul li a.active {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .main_content_area {
@@ -7840,10 +7840,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-top: 10px;
 }
 .dashboard_content button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .dashboard_content p a {
-  color: #0063d1;
+  color: #0099FF;
   font-weight: 500;
 }
 
@@ -7862,7 +7862,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   min-width: 150px;
 }
 .table-responsive table tbody tr td:last-child a {
-  color: #0063d1;
+  color: #0099FF;
 }
 .table-responsive .table {
   border-left: 1px solid #ebebeb;
@@ -8161,7 +8161,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   content: "";
   width: 37px;
   height: 2px;
-  background: #0063d1;
+  background: #0099FF;
   bottom: 0;
   left: 50%;
   transform: translatex(-50%);
@@ -8245,7 +8245,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .services_icone i {
   font-size: 35px;
   line-height: 46px;
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .services_desc h3 {
@@ -8334,8 +8334,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 30px;
 }
 .unlimited_services_content a:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #fff;
 }
 
@@ -8355,7 +8355,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .priceing_title {
   padding: 20px;
-  background: #0063d1;
+  background: #0099FF;
 }
 .priceing_title h1 {
   color: #fff;
@@ -8401,8 +8401,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .priceing_list a.list_button, .priceing_list a:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #fff;
 }
 
@@ -8464,9 +8464,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border: 1px solid #242424;
 }
 .advantages_button a:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #fff;
-  border-color: #0063d1;
+  border-color: #0099FF;
 }
 @media only screen and (max-width: 767px) {
   .advantages_button a {
@@ -8600,7 +8600,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 24px;
 }
 .blog_wrapper .blog_meta span a {
-  color: #0063d1;
+  color: #0099FF;
 }
 .blog_wrapper .blog_meta span a:hover {
   text-decoration: underline;
@@ -8642,7 +8642,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .readmore_button a {
   height: 38px;
   line-height: 40px;
-  background: #0063d1;
+  background: #0099FF;
   border: 0;
   color: #fff;
   display: block;
@@ -8695,7 +8695,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 50%;
 }
 .blog_sidebar_widget .widget_list.comments .post_info span a {
-  color: #0063d1;
+  color: #0099FF;
 }
 .blog_sidebar_widget .widget_categories ul li a {
   margin-left: 0;
@@ -8727,7 +8727,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .widget_search button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .tag_widget ul li {
@@ -8745,8 +8745,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-radius: 3px;
 }
 .tag_widget ul li a:hover {
-  background: #0063d1;
-  border-color: #0063d1;
+  background: #0099FF;
+  border-color: #0099FF;
   color: #fff;
 }
 
@@ -8786,7 +8786,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .post_info h3 a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .post_info span {
   font-size: 12px;
@@ -8802,7 +8802,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-left: 0;
 }
 .blog_categories ul li a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .blog_categories ul li:last-child a {
   padding-bottom: 0;
@@ -9087,7 +9087,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   padding: 30px 45px;
   background: #f6f6f6;
   border: 1px solid #ebebeb;
-  border-left: 4px solid #0063d1;
+  border-left: 4px solid #0099FF;
 }
 .blog_details .post_content blockquote p {
   font-size: 16px;
@@ -9137,7 +9137,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .blog_details .social_sharing ul li a:hover {
   color: #ffffff;
-  background: #0063d1;
+  background: #0099FF;
 }
 @media only screen and (max-width: 767px) {
   .blog_details .social_sharing ul li a {
@@ -9174,7 +9174,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 700;
 }
 .entry_content .post_meta span:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .comments_box {
@@ -9222,7 +9222,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 5px;
 }
 .comment_list .comment_content h5 a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .comment_list .comment_content span {
   line-height: 18px;
@@ -9254,7 +9254,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: block;
 }
 .comment_reply a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .comments_form h3 {
@@ -9302,7 +9302,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 500;
 }
 .comments_form form button:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 @media only screen and (max-width: 767px) {
   .comments_form form button {
@@ -9374,7 +9374,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #242424;
 }
 .related_content h4 a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .related_content span {
   font-size: 13px;
@@ -9480,31 +9480,31 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   background: #3c5b9b;
 }
 .modal_social ul li.facebook a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .modal_social ul li.twitter a {
   background: #1DA1F2;
 }
 .modal_social ul li.twitter a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .modal_social ul li.pinterest a {
   background: #BD081B;
 }
 .modal_social ul li.pinterest a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .modal_social ul li.google-plus a {
   background: #DC5043;
 }
 .modal_social ul li.google-plus a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 .modal_social ul li.linkedin a {
   background: #010103;
 }
 .modal_social ul li.linkedin a:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 .modal_price {
@@ -9512,7 +9512,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .modal_price span {
   font-weight: 600;
-  color: #0063d1;
+  color: #0099FF;
   font-size: 16px;
 }
 .modal_price span.old_price {
@@ -9587,9 +9587,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .modal_add_to_cart form button:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
-  border-color: #0063d1;
+  border-color: #0099FF;
 }
 
 .modal_body {
@@ -9628,7 +9628,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .modal-content button.close:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 .modal_add_to_cart.mb-15 {
@@ -9665,7 +9665,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   visibility: hidden;
 }
 .product_navactive.owl-carousel .owl-nav div:hover {
-  background: #0063d1;
+  background: #0099FF;
   color: #ffffff;
 }
 .product_navactive.owl-carousel .owl-nav div.owl-next {
@@ -9759,7 +9759,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 45px;
 }
 #frm_subscribe form a.theme-btn-outlined:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 @media only screen and (max-width: 767px) {
   #frm_subscribe form a.theme-btn-outlined {
@@ -9807,7 +9807,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   transition: 0.3s;
 }
 #popup2:hover {
-  background: #0063d1;
+  background: #0099FF;
 }
 
 /*newsletter popup css end*/
@@ -9822,7 +9822,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .error_form h1 {
   font-size: 200px;
   font-weight: 700;
-  color: #0063d1;
+  color: #0099FF;
   letter-spacing: 10px;
   line-height: 160px;
   margin: 0 0 54px;
@@ -9897,12 +9897,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 600;
 }
 .error_form form button:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .error_form a {
   color: #fff;
   display: inline-block;
-  background: #0063d1;
+  background: #0099FF;
   font-size: 12px;
   font-weight: bold;
   height: 40px;
@@ -10017,7 +10017,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #a43d21;
 }
 .privacy_content p a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .privacy_content.section_1 h2 {
   margin-bottom: 14px;
@@ -10105,7 +10105,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 10px;
 }
 .compare-table .table tbody tr td.product-image-title .title:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .compare-table .table tbody tr td.pro-desc p {
   text-align: left;
@@ -10125,7 +10125,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .compare-table .table tbody tr td.pro-addtocart .add-to-cart {
   position: relative;
-  background: #0063d1;
+  background: #0099FF;
   border-radius: 4px;
   display: inline-block;
   width: 170px;
@@ -10155,14 +10155,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 20px;
 }
 .compare-table .table tbody tr td.pro-remove button:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 .compare-table .table tbody tr td.pro-ratting a {
   font-size: 14px;
   color: #242424;
 }
 .compare-table .table tbody tr td.pro-ratting a:hover {
-  color: #0063d1;
+  color: #0099FF;
 }
 
 /*# sourceMappingURL=style.css.map */

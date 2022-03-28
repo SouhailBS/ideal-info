@@ -30,7 +30,7 @@
 
                                             @else
                                                 <a class="primary_img" href="{{$product->route}}"><img
-                                                        src="{{route("dolibarr", ["file"=>$product->photos->get(0)])}}"
+                                                        src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(0)])}}"
                                                         alt=""></a>
                                                 @if($product->photos->get(1))
                                                     <a class="secondary_img" href="{{$product->route}}"><img

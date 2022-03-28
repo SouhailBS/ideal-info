@@ -30,11 +30,11 @@
 
                                             @else
                                                 <a class="primary_img" href="{{$product->route}}"><img
-                                                        src="{{$product->photos[0]}}"
+                                                        src="{{$product->photos->first}}"
                                                         alt=""></a>
                                                 @isset($product->photos[1])
                                                     <a class="secondary_img" href="{{$product->route}}"><img
-                                                            src="{{$product->photos[1]}}"
+                                                            src="{{$product->photos->get(1)}}"
                                                             alt=""></a>
                                                 @endisset
                                             @endif

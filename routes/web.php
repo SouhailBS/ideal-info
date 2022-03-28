@@ -22,7 +22,9 @@ Route::view('/login', 'pages.auth.login')->middleware(RedirectIfAuthenticated::c
 Route::post('/auth/login', [LoginController::class, 'authenticate'])->name("login");
 Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");
-
+Route::middleware('auth:web')->group(function (){
+    Route::view('/account', 'pages.account')->name("account");
+});
 Route::get('/documents/{file}', function ($file) {
     $path = env('DOLIBARR_PATH') . '/' . $file;
 

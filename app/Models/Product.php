@@ -50,17 +50,16 @@ class Product extends Model
         return $fmt->formatCurrency($value, 'TND');
     }
 
+    private function image_route($dir_element)
+    {
+        if (!is_dir($dir_element)) {
+            return route("dolibarr", ["file" => 'produit/' . $this->ref . '/' . $dir_element]);
+        }
+    }
 
     private function scanFiles($dir)
     {
         $scanned_dir = scandir($dir);
-        return array_filter($scanned_dir, "image_route");
-    }
-}
-
-function image_route($dir_element)
-{
-    if (!is_dir($dir_element)) {
-        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/' . $dir_element]);
+        return array_filter($scanned_dir, Closure::fromCallable([$this, 'image_route']));
     }
 }

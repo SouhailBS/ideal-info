@@ -19,3 +19,8 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 Route::get('/products', [ProductController::class, 'listing'])->name("product-listing");
 Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");
+Route::get('/documents/{file}', function ($file) {
+    $path = env('DOLIBARR_PATH') . '/' . $file;
+
+    return response(file_get_contents($path), 200, ['Content-type' => mime_content_type($path)]);
+})->name("dolibarr");

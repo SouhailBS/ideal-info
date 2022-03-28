@@ -44,14 +44,6 @@ return [
             'throw' => false,
         ],
 
-        'dolibarr' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/documents',
-            'visibility' => 'public',
-            'throw' => false,
-        ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

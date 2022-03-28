@@ -60,6 +60,6 @@ class Product extends Model
     function scanFiles($dir)
     {
         $scanned_dir = scandir($dir);
-        return array_filter($scanned_dir, "image_route");
+        return array_filter($scanned_dir, $this->image_route);
     }
 }

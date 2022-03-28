@@ -30,6 +30,7 @@ class Product extends Model
     protected $primaryKey = 'rowid';
     protected $appends = [
         "route",
+        "photos"
     ];
 
     public function getRouteAttribute(): string
@@ -37,10 +38,28 @@ class Product extends Model
         return route('single-product', ['product' => $this->rowid, 'slug' => Str::slug($this->label)]);
     }
 
+    public function getPhotosAttribute(): array
+    {
+        return collect($this->scanFiles(env("DOLIBARR_PATH") . '/produit/' . $this->ref));
+    }
+
     public function getPriceTtcAttribute($value)
     {
         $fmt = new NumberFormatter('fr_FR', NumberFormatter::CURRENCY);
         $fmt->setPattern('#,##0.00 DT');
         return $fmt->formatCurrency($value, 'TND');
+    }
+
+    function image_route($dir_element)
+    {
+        if (!is_dir($dir_element)) {
+            return route("dolibarr", ["file" => 'produit/' . $this->ref . '/' . $dir_element]);
+        }
+    }
+
+    function scanFiles($dir)
+    {
+        $scanned_dir = scandir($dir);
+        return array_filter($scanned_dir, "image_route");
     }
 }

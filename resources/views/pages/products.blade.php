@@ -22,25 +22,21 @@
                                 <article class="single_product">
                                     <figure>
                                         <div class="product_thumb">
-                                            @php
-                                                $path_pictures = env("DOLIBARR_PATH") .'/produit/' . $product->ref; //format the path
-                                            @endphp
-                                            @if(is_dir($path_pictures))
-                                                @php
-                                                    $pictures = scandir($path_pictures);
-                                                @endphp
-                                                @foreach($pictures as $picture)
-                                                    @if(!is_dir($path_pictures.'/'.$picture))
-                                                        <a class="primary_img" href="product-details.html"><img
-                                                                src="{{route("dolibarr", ["file"=>'produit/' . $product->ref.'/'.$picture])}}"
-                                                                alt=""></a>
-                                                    @endif
-                                                @endforeach
-                                            @else
+                                            @if($product->photos->isEmpty())
                                                 <a class="primary_img" href="product-details.html"><img
                                                         src="/assets/img/product/product1.jpg" alt=""></a>
                                                 <a class="secondary_img" href="product-details.html"><img
                                                         src="/assets/img/product/product2.jpg" alt=""></a>
+
+                                            @else
+                                                <a class="primary_img" href="{{$product->route}}"><img
+                                                        src="{{$product->photos[0]}}"
+                                                        alt=""></a>
+                                                @isset($product->photos[1])
+                                                    <a class="secondary_img" href="{{$product->route}}"><img
+                                                            src="{{$product->photos[1]}}"
+                                                            alt=""></a>
+                                                @endisset
                                             @endif
                                             <div class="label_product">
                                                 @if($product->stock>0)

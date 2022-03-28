@@ -46,8 +46,12 @@ class Category extends Model
     public function getImageAttribute(): string
     {
         $dir = env("DOLIBARR_PATH") . '/categorie/' . $this->rowid . '/0/' . $this->rowid;
-        if (is_dir($dir))
-            return route("dolibarr", ["file" => $dir . '/' . $this->scanFiles($dir)[0]]);
+        if (is_dir($dir)) {
+            $images = $this->scanFiles($dir);
+            if (count($images) > 0)
+                return route("dolibarr", ["file" => $dir . '/' . $images[0]]);
+        }
+
         return "assets/img/s-product/category1.jpg";
     }
 

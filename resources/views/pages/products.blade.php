@@ -32,7 +32,8 @@
                                                 @foreach($pictures as $picture)
                                                     @if(!is_dir($path_pictures.'/'.$picture))
                                                         <a class="primary_img" href="product-details.html"><img
-                                                                src="/assets/img/product/product1.jpg" alt=""></a>
+                                                                src="{{route("dolibarr", ["file"=>'produit/' . $product->ref.'/'.$picture])}}"
+                                                                alt=""></a>
                                                     @endif
                                                 @endforeach
                                             @else

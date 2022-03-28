@@ -230,7 +230,12 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="top_right text-right">
                             <ul>
-                                <li><a href="my-account.html"> My Account </a></li>
+                                @auth
+                                    <li><a href="my-account.html">Mon compte</a></li>
+                                @endauth
+                                @guest
+                                    <li><a href="{{route("login-form")}}">Se connecter</a></li>
+                                @endguest
                                 <li><a href="checkout.html"> Checkout </a></li>
                             </ul>
                         </div>

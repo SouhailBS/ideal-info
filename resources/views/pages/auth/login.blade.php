@@ -23,7 +23,7 @@
                             <div class="login_submit">
                                 <a href="#">Lost your password?</a>
                                 <label for="remember">
-                                    <input id="remember" type="checkbox">
+                                    <input id="remember" value="1" type="checkbox">
                                     Remember me
                                 </label>
                                 <button type="submit">Connexion</button>

@@ -22,10 +22,10 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            dd("ok");
+
             return redirect('/');
         }
-        dd("ko");
+
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput(['email']);

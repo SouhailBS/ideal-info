@@ -29,6 +29,7 @@
                                                         src="/assets/img/product/product2.jpg" alt=""></a>
 
                                             @else
+                                                {{dd($product->photos)}}
                                                 <a class="primary_img" href="{{$product->route}}"><img
                                                         src="{{$product->photos->get(0)}}"
                                                         alt=""></a>

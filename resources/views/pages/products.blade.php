@@ -31,13 +31,13 @@
                                             @else
                                                 {{dd($product->photos)}}
                                                 <a class="primary_img" href="{{$product->route}}"><img
-                                                        src="{{$product->photos->get(0)}}"
+                                                        src="{{route("dolibarr", ["file"=>$product->photos->get(0)])}}"
                                                         alt=""></a>
-                                                @isset($product->photos[1])
+                                                @if($product->photos->get(1))
                                                     <a class="secondary_img" href="{{$product->route}}"><img
-                                                            src="{{$product->photos->get(1)}}"
+                                                            src="{{route("dolibarr", ["file"=>$product->photos->get(1)])}}"
                                                             alt=""></a>
-                                                @endisset
+                                                @endif
                                             @endif
                                             <div class="label_product">
                                                 @if($product->stock>0)

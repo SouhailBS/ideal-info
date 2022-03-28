@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name("home");
-Route::view('/login', 'pages.auth.login')->name("login-form");
+Route::view('/login', 'pages.auth.login')->middleware(RedirectIfAuthenticated::class)->name("login-form");
 Route::post('/auth/login', [LoginController::class, 'authenticate'])->name("login");
 Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");

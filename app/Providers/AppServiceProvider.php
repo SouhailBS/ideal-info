@@ -57,6 +57,7 @@ class AppServiceProvider extends ServiceProvider
             'MAIN_INFO_SOCIETE_TOWN',
             'MAIN_INFO_SOCIETE_WEB',
             'MAIN_INFO_SOCIETE_ZIP',
+            'MAIN_INFO_SOCIETE_NOTE'
         ])->get();
         config(['company' => $company->map(function ($item) {
             return [$item->name => $item->value];

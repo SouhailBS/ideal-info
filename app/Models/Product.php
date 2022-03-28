@@ -60,6 +60,6 @@ class Product extends Model
     private function scanFiles($dir)
     {
         $scanned_dir = scandir($dir);
-        return array_filter($scanned_dir, Closure::fromCallable([$this, 'image_route']));
+        return array_filter($scanned_dir, $this->image_route(...));
     }
 }

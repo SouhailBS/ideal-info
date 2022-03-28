@@ -16,8 +16,9 @@
                             <article class="single_category">
                                 <figure>
                                     <div class="category_thumb">
+
                                         <a href="{{$category->route}}"><img
-                                                src="assets/img/s-product/category1.jpg" alt=""></a>
+                                                src="{{$category->image}}" alt=""></a>
                                     </div>
                                     <figcaption class="category_name">
                                         <h3>

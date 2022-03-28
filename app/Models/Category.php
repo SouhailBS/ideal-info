@@ -49,7 +49,7 @@ class Category extends Model
         if (is_dir($dir)) {
             $images = array_values($this->scanFiles($dir));
             if (count($images) > 0)
-                return route("dolibarr", ["file" => $dir . '/' . $images[0]]);
+                return route("dolibarr", ["file" => 'categorie/' . $this->rowid . '/0/' . $this->rowid . '/' . $images[0]]);
         }
 
         return "assets/img/s-product/category1.jpg";

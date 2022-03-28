@@ -48,7 +48,6 @@ class Category extends Model
         $dir = env("DOLIBARR_PATH") . '/categorie/' . $this->rowid . '/0/' . $this->rowid;
         if (is_dir($dir)) {
             $images = $this->scanFiles($dir);
-            dd($images);
             if (count($images) > 0)
                 return route("dolibarr", ["file" => $dir . '/' . $images[0]]);
         }

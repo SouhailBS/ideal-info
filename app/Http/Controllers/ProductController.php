@@ -19,9 +19,22 @@ class ProductController extends Controller
     {
         if ($slug != Str::slug($category->label))
             return redirect($category->route);
-        $products = Product::where('tosell', '>', '0')->paginate(12)->withQueryString();
+        $sortDisplay = "Trier par";
+        $sortDisplayValues = [
+            "price_ttc.asc" => "Prix croissant",
+            "price_ttc.desc" => "Prix décroissant",
+            "label.asc" => "Nom A-Z",
+            "label.desc" => "Nom Z-A",
+        ];
+
+        if (request()->has("orderby") && isset($sortDisplayValues[request()->get("orderby")])) {
+            $order = explode('.', request()->get("orderby"));
+            $products = Product::where('tosell', '>', '0')->orderBy($order[0], $order[1])->paginate(12)->withQueryString();
+            $sortDisplay .= ": " . $sortDisplayValues[request()->get("orderby")];
+        } else
+            $products = Product::where('tosell', '>', '0')->paginate(12)->withQueryString();
         $category->loadMissing("subCategories");
-        return view("pages.products")->with(["title" => $category->label, "category" => $category, "products" => $products]);
+        return view("pages.products")->with(["sortDisplay" => $sortDisplay, "category" => $category, "products" => $products]);
     }
 
     public function product(Product $product, $slug)

@@ -8,16 +8,15 @@
         <button data-role="grid_list" type="button" class="active btn-list" data-bs-toggle="tooltip"
                 title="List"></button>
     </div>
-    <div class=" niceselect_option">
-        <form class="select_option" action="#">
-            <select name="orderby" id="short">
 
-                <option selected value="1">Sort by average rating</option>
-                <option value="2">Sort by popularity</option>
-                <option value="3">Sort by newness</option>
-                <option value="4">Sort by price: low to high</option>
-                <option value="5">Sort by price: high to low</option>
-                <option value="6">Product Name: Z</option>
+    <div class="niceselect_option">
+        <form action="{{url()->current()}}">
+            <select class="nice-select" name="orderby" id="short" onchange="this.form.submit()">
+                <option data-display="{{$sortDisplay}}" value="none">Ne pas trier</option>
+                <option value="price_ttc.asc">Prix croissant</option>
+                <option value="price_ttc.desc">Prix décroissant</option>
+                <option value="label.asc">Nom A-Z</option>
+                <option value="label.desc">Nom Z-A</option>
             </select>
         </form>
     </div>

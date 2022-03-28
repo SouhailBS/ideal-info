@@ -564,11 +564,6 @@
         }
     });
 
-
-
-    /*--- niceSelect---*/
-     $('.select_option').niceSelect();
-
     /*---  Accordion---*/
     $(".faequently-accordion").collapse({
         accordion:true,
@@ -618,7 +613,7 @@
        " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
     /*---niceSelect---*/
-     $('.niceselect_option').niceSelect();
+     $('.nice-select').niceSelect();
 
     /*---elevateZoom---*/
     $("#zoom1").elevateZoom({

@@ -1,5 +1,5 @@
 @extends("layouts.app")
-@section("title", $title)
+@section("title", $category->label)
 
 @section("content")
     @isset($category)

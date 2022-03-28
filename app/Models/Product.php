@@ -40,7 +40,10 @@ class Product extends Model
 
     public function getPhotosAttribute(): \Illuminate\Support\Collection
     {
-        return collect($this->scanFiles(env("DOLIBARR_PATH") . '/produit/' . $this->ref));
+        $dir = env("DOLIBARR_PATH") . '/produit/' . $this->ref;
+        if (is_dir($dir))
+            return collect($this->scanFiles($dir));
+        return collect([]);
     }
 
     public function getPriceTtcAttribute($value)

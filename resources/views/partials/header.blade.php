@@ -30,7 +30,7 @@
                                     <option value="2">Accessories</option>
                                     <option value="3">Accessories & More</option>
                                     <option value="4">Butters & Eggs</option>
-                                    <option value="5">Camera & Video </option>
+                                    <option value="5">Camera & Video</option>
                                     <option value="6">Mornitors</option>
                                     <option value="7">Tablets</option>
                                     <option value="8">Laptops</option>
@@ -58,7 +58,8 @@
                         </div>
                         <div class="mini_cart_wrapper">
                             <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                            aria-hidden="true"></i>$147.00 <i class="fa fa-angle-down"></i></a>
+                                                            aria-hidden="true"></i>$147.00 <i
+                                    class="fa fa-angle-down"></i></a>
                             <span class="cart_quantity">2</span>
                             <!--mini cart-->
                             <div class="mini_cart">
@@ -221,7 +222,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="support_info">
-                            <p>Service client: <a href="tel:{{config('company.MAIN_INFO_SOCIETE_TEL')}}">{{config('company.MAIN_INFO_SOCIETE_TEL')}}</a></p>
+                            <p>Service client: <a
+                                    href="tel:{{config('company.MAIN_INFO_SOCIETE_TEL')}}">{{config('company.MAIN_INFO_SOCIETE_TEL')}}</a>
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -242,7 +245,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-6">
                         <div class="logo">
-                            <a href="index.html"><img src="{{Storage::disk("dolibarr")->url('mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO"))}}" alt=""></a>
+                            <a href="index.html"><img
+                                    src="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO")])}}"
+                                    alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-6">
@@ -255,7 +260,7 @@
                                             <option value="2">Accessories</option>
                                             <option value="3">Accessories & More</option>
                                             <option value="4">Butters & Eggs</option>
-                                            <option value="5">Camera & Video </option>
+                                            <option value="5">Camera & Video</option>
                                             <option value="6">Mornitors</option>
                                             <option value="7">Tablets</option>
                                             <option value="8">Laptops</option>
@@ -282,7 +287,8 @@
                                 </div>
                                 <div class="mini_cart_wrapper">
                                     <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                                    aria-hidden="true"></i>$147.00 <i class="fa fa-angle-down"></i></a>
+                                                                    aria-hidden="true"></i>$147.00 <i
+                                            class="fa fa-angle-down"></i></a>
                                     <span class="cart_quantity">2</span>
                                     <!--mini cart-->
                                     <div class="mini_cart">
@@ -349,7 +355,8 @@
                         <div class="main_menu menu_position">
                             <nav>
                                 <ul>
-                                    <li class="active"><a class="active" href="index.html">home<i class="fa fa-angle-down"></i></a>
+                                    <li class="active"><a class="active" href="index.html">home<i
+                                                class="fa fa-angle-down"></i></a>
                                         <ul class="sub_menu">
                                             <li><a href="index.html">Home shop 1</a></li>
                                             <li><a href="index-2.html">Home shop 2</a></li>
@@ -548,7 +555,8 @@
                         </div>
                         <div class="mini_cart_wrapper">
                             <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                            aria-hidden="true"></i>$147.00 <i class="fa fa-angle-down"></i></a>
+                                                            aria-hidden="true"></i>$147.00 <i
+                                    class="fa fa-angle-down"></i></a>
                             <span class="cart_quantity">2</span>
                             <!--mini cart-->
                             <div class="mini_cart">

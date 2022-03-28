@@ -34,7 +34,7 @@
                                                         alt=""></a>
                                                 @if($product->photos->get(1))
                                                     <a class="secondary_img" href="{{$product->route}}"><img
-                                                            src="{{route("dolibarr", ["file"=>$product->photos->get(1)])}}"
+                                                            src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(1)])}}"
                                                             alt=""></a>
                                                 @endif
                                             @endif

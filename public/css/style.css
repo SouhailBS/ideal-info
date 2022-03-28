@@ -4619,6 +4619,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 14px;
   margin-bottom: 18px;
   line-height: 25px;
+    text-align: justify;
 }
 .footer_contact p:last-child {
   margin-bottom: 0;

@@ -13,7 +13,7 @@
                             <ul role="tablist" class="nav flex-column dashboard-list">
                                 <li><a href="#account-details" data-bs-toggle="tab" class="nav-link active">Détails du compte</a>
                                 </li>
-                                <li><a href="#orders" data-bs-toggle="tab" class="nav-link">Ordres</a></li>
+                                <li><a href="#orders" data-bs-toggle="tab" class="nav-link">Commandes</a></li>
                                 <li><a href="#address" data-bs-toggle="tab" class="nav-link">Adresses</a></li>
 
                                 <li><a href="login.html" class="nav-link">Se déconnecter</a></li>
@@ -23,7 +23,7 @@
                     <div class="col-sm-12 col-md-9 col-lg-9">
                         <!-- Tab panes -->
                         <div class="tab-content dashboard_content">
-                            <div class="tab-pane fade" id="orders">
+                            <div class="tab-pane" id="orders">
                                 <h3>Orders</h3>
                                 <div class="table-responsive">
                                     <table class="table">
@@ -70,26 +70,25 @@
                                 </address>
                                 <p>Bangladesh</p>
                             </div>
-                            <div class="tab-pane fade" id="account-details">
+                            <div class="tab-pane fade show" id="account-details">
                                 <h3>Account details </h3>
                                 <div class="login">
                                     <div class="login_form_container">
                                         <div class="account_login_form">
                                             <form action="#">
-                                                <p>Already have an account? <a href="#">Log in instead!</a></p>
                                                 <div class="input-radio">
                                                     <span class="custom-radio"><input type="radio" value="1"
-                                                                                      name="id_gender"> Mr.</span>
-                                                    <span class="custom-radio"><input type="radio" value="1"
-                                                                                      name="id_gender"> Mrs.</span>
+                                                                                      name="id_gender"> M.</span>
+                                                    <span class="custom-radio"><input type="radio" value="2"
+                                                                                      name="id_gender"> Mme.</span>
                                                 </div>
                                                 <br>
-                                                <label>First Name</label>
-                                                <input type="text" name="first-name">
-                                                <label>Last Name</label>
-                                                <input type="text" name="last-name">
-                                                <label>Email</label>
-                                                <input type="text" name="email-name">
+                                                <label for="firstname">Prénom</label>
+                                                <input value="{{auth()->user()->firstname}}" type="text" name="firstname" id="firstname" required placeholder="Votre prénom">
+                                                <label for="lastname">Nom</label>
+                                                <input value="{{auth()->user()->lastname}}" type="text" name="lastname" id="lastname" required placeholder="Votre nom">
+                                                <label for="email">Email</label>
+                                                <input value="{{auth()->user()->email}}" type="email" name="email" id="email" required placeholder="Votre adresse email">
                                                 <label>Password</label>
                                                 <input type="password" name="user-password">
                                                 <label>Birthdate</label>

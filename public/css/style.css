@@ -11542,4 +11542,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: #0063d1;
 }
 
+.nav-link.active:focus {color: #fff;}
+
 /*# sourceMappingURL=style.css.map */

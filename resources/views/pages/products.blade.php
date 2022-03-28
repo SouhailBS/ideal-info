@@ -22,10 +22,21 @@
                                 <article class="single_product">
                                     <figure>
                                         <div class="product_thumb">
+                                            @php
+                                                $path_pictures = env("DOLIBARR_PATH") . "/" .'/produit' . $product->ref; //format the path
+                                                $pictures = scandir($path_pictures);
+                                            @endphp
+                                            @foreach($pictures as $picture)
+                                                @if(!is_dir($path_pictures.'/'.$picture))
+                                                    <a class="primary_img" href="product-details.html"><img
+                                                            src="/assets/img/product/product1.jpg" alt=""></a>
+                                                @endif
+                                            @endforeach
                                             <a class="primary_img" href="product-details.html"><img
                                                     src="/assets/img/product/product1.jpg" alt=""></a>
                                             <a class="secondary_img" href="product-details.html"><img
                                                     src="/assets/img/product/product2.jpg" alt=""></a>
+
                                             <div class="label_product">
                                                 @if($product->stock>0)
                                                     <span class="label_sale">Dispo</span>

@@ -6,14 +6,16 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container contact_us">
                         <div class="footer_logo">
-                            <a href="#"><img src="/assets/img/logo/logo.png" alt=""></a>
+                            <a href="{{url('/')}}"><img
+                                    src="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO")])}}"
+                                    alt=""></a>
                         </div>
                         <div class="footer_contact">
                             <p>We are a team of designers and developers that
                                 create high quality HTML Template, Woocommerce, Shopify Theme.</p>
                             <p><span>Address</span> Your address goes here.</p>
                             <p><span>Mobile: </span><a href="tel:0123456789">0123456789</a> – <a
-                                    href="tel:0123456789">0123456789</a> </p>
+                                    href="tel:0123456789">0123456789</a></p>
                             <p><span>Support: </span><a href="mailto:demo@example.com">demo@example.com</a>
                             </p>
                         </div>
@@ -69,7 +71,7 @@
                             <h3>Join Our Newsletter Now</h3>
                             <form id="mc-form" class="mc-form footer-newsletter">
                                 <input id="mc-email" type="email" autocomplete="off"
-                                       placeholder="Your email address..." />
+                                       placeholder="Your email address..."/>
                                 <button id="mc-submit">Subscribe!</button>
                             </form>
                             <!-- mailchimp-alerts Start -->
@@ -89,7 +91,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                     <div class="copyright_area">
-                        <p class="copyright-text">2006 - {{now()->year}} &copy; <a href="{{url('/')}}">{{config('company.MAIN_INFO_SOCIETE_NOM')}}</a>.</p>
+                        <p class="copyright-text">2006 - {{now()->year}} &copy; <a
+                                href="{{url('/')}}">{{config('company.MAIN_INFO_SOCIETE_NOM')}}</a>.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

@@ -11,8 +11,7 @@
                                     alt=""></a>
                         </div>
                         <div class="footer_contact">
-                            <p>We are a team of designers and developers that
-                                create high quality HTML Template, Woocommerce, Shopify Theme.</p>
+                            <p>{{config("company.MAIN_INFO_SOCIETE_OBJECT")}}</p>
                             <p><span>Address</span> Your address goes here.</p>
                             <p><span>Mobile: </span><a href="tel:0123456789">0123456789</a> – <a
                                     href="tel:0123456789">0123456789</a></p>

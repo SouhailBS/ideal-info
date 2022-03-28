@@ -108,11 +108,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="product_desc">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                        enim
-                                                        ad minim veniam, quis nostrud exercitation ullamco,Proin lectus
-                                                        ipsum, gravida et mattis vulputate, tristique ut lectus</p>
+                                                    <p>{{$product->description}}</p>
                                                 </div>
                                             </div>
                                             <div class="right_caption">

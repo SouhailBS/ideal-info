@@ -23,7 +23,7 @@
                                     <figure>
                                         <div class="product_thumb">
                                             @php
-                                                $path_pictures = env("DOLIBARR_PATH") . "/" .'/produit' . $product->ref; //format the path
+                                                $path_pictures = env("DOLIBARR_PATH") .'/produit/' . $product->ref; //format the path
                                                 $pictures = scandir($path_pictures);
                                             @endphp
                                             @foreach($pictures as $picture)

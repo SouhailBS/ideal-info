@@ -18,7 +18,11 @@
                         <a class="secondary_img" href="product-details.html"><img
                                 src="/assets/img/product/product2.jpg" alt=""></a>
                         <div class="label_product">
-                            <span class="label_sale">sale</span>
+                            @if($product->stock>0)
+                                <span class="label_sale">Dispo</span>
+                            @else
+                                <span class="label_out_of_stock">Épuisé</span>
+                            @endif
                         </div>
                         <div class="action_links">
                             <ul>
@@ -36,8 +40,8 @@
                     </div>
                     <figcaption class="product_content">
                         <div class="price_box">
-                            <span class="old_price">{{$product->price}} DT</span>
-                            <span class="current_price">{{$product->price_ttc}} DT</span>
+                            <span class="old_price">{{$product->price}}</span>
+                            <span class="current_price">{{$product->price_ttc}}</span>
                         </div>
                         <h3 class="product_name"><a href="product-details.html">{{$product->label}}</a></h3>
                     </figcaption>

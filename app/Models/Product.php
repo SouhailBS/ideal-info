@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use NumberFormatter;
 
 /**
  * @property mixed $route
@@ -34,5 +35,12 @@ class Product extends Model
     public function getRouteAttribute(): string
     {
         return route('single-product', ['product' => $this->rowid, 'slug' => Str::slug($this->label)]);
+    }
+
+    public function getPriceTtcAttribute($value)
+    {
+        $fmt = new NumberFormatter('fr_FR', NumberFormatter::CURRENCY);
+        $fmt->setPattern('#,##0.00 DT');
+        return $fmt->formatCurrency($value, 'TND');
     }
 }

@@ -76,7 +76,7 @@
 
                             </div>
                             <div class="price_box">
-                                <span class="current_price">{{$product->price_ttc}} DT</span>
+                                <span class="current_price">{{$product->price_ttc}}</span>
                                 <span class="old_price">$80.00</span>
 
                             </div>

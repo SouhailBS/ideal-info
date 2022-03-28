@@ -53,7 +53,7 @@
                                         <div class="product_content grid_content">
                                             <div class="price_box">
                                                 <span class="old_price">$86.00</span>
-                                                <span class="current_price">{{$product->price_ttc}} DT</span>
+                                                <span class="current_price">{{$product->price_ttc}}</span>
                                             </div>
                                             <div class="product_ratings">
                                                 <ul>
@@ -72,7 +72,7 @@
                                             <div class="left_caption">
                                                 <div class="price_box">
                                                     <span class="old_price">$86.00</span>
-                                                    <span class="current_price">{{$product->price_ttc}} DT</span>
+                                                    <span class="current_price">{{$product->price_ttc}}</span>
                                                 </div>
                                                 <h3 class="product_name"><a
                                                         href="{{$product->route}}">{{$product->label}}</a>

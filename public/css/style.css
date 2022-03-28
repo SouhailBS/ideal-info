@@ -1553,10 +1553,17 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .main_menu nav > ul > li.active {
     background-color: rgba(0,0,0,.1);
 }
+.sticky_header_right .main_menu nav > ul > li:hover,
+.sticky_header_right .main_menu nav > ul > li.active {
+    background-color: transparent;
+}
 .main_menu nav > ul > li {
   display: inline-block;
   position: relative;
-  padding: 14px 20px;
+  padding: 14px 16px;
+}
+.sticky_header_right .main_menu nav > ul > li {
+    padding: 14px 8px;
 }
 .main_menu nav > ul > li:last-child {
   margin-right: 0;
@@ -1602,6 +1609,22 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   right: 50%;
   top: auto;
   width: 0;
+  z-index: 9;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -ms-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+.sticky_header_right .main_menu nav > ul > li:hover > a::before {
+  background: #0063d1;
+  bottom: -14px;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: auto;
+  width: 100%;
   z-index: 9;
   -webkit-transition: .3s ease;
   -moz-transition: .3s ease;

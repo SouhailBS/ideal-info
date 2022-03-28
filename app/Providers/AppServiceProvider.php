@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -59,5 +61,9 @@ class AppServiceProvider extends ServiceProvider
         config(['company' => $company->map(function ($item) {
             return [$item->name => $item->value];
         })->collapse()]);
+
+        View::composer('*', function($view){
+            $view->with('categories', Category::where('visible', '0')->where('fk_parent', '2')->get());
+        });
     }
 }

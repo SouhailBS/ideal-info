@@ -38,7 +38,7 @@ class Product extends Model
         return route('single-product', ['product' => $this->rowid, 'slug' => Str::slug($this->label)]);
     }
 
-    public function getPhotosAttribute(): array
+    public function getPhotosAttribute(): \Illuminate\Support\Collection
     {
         return collect($this->scanFiles(env("DOLIBARR_PATH") . '/produit/' . $this->ref));
     }

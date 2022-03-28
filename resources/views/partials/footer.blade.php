@@ -11,7 +11,7 @@
                                     alt=""></a>
                         </div>
                         <div class="footer_contact">
-                            <p>{{config("company.MAIN_INFO_SOCIETE_OBJECT")}}</p>
+                            <p>{{config("company.MAIN_INFO_SOCIETE_NOTE")}}</p>
                             <p><span>Address</span> Your address goes here.</p>
                             <p><span>Mobile: </span><a href="tel:0123456789">0123456789</a> – <a
                                     href="tel:0123456789">0123456789</a></p>

@@ -108,7 +108,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="product_desc">
-                                                    <p>{!! $product->description !!}}</p>
+                                                    <p>{!! $product->description !!}</p>
                                                 </div>
                                             </div>
                                             <div class="right_caption">

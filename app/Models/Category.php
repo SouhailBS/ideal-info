@@ -51,6 +51,11 @@ class Category extends Model
         return $this->belongsTo(Category::class, 'fk_parent');
     }
 
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'categorie_product', 'fk_categorie', 'fk_product');
+    }
+
     public function getImageAttribute(): string
     {
         $dir = $this->baseDir . $this->rowid . '/0/' . $this->rowid . '/photos';

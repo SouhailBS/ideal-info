@@ -32,7 +32,7 @@ class ProductController extends Controller
             $products = Product::where('tosell', '>', '0')->orderBy($order[0], $order[1])->paginate(12)->withQueryString();
             $sortDisplay .= ": " . $sortDisplayValues[request()->get("orderby")];
         } else
-            $products = Product::where('tosell', '>', '0')->paginate(12)->withQueryString();
+            $products = $category->products()->where('tosell', '>', '0')->paginate(12)->withQueryString();
 
         $category->loadMissing("subCategories");
         return view("pages.products")->with(["sortDisplay" => $sortDisplay, "category" => $category, "products" => $products]);

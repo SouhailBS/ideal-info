@@ -33,6 +33,7 @@ class ProductController extends Controller
             $sortDisplay .= ": " . $sortDisplayValues[request()->get("orderby")];
         } else
             $products = Product::where('tosell', '>', '0')->paginate(12)->withQueryString();
+
         $category->loadMissing("subCategories");
         return view("pages.products")->with(["sortDisplay" => $sortDisplay, "category" => $category, "products" => $products]);
     }

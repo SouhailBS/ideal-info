@@ -47,6 +47,12 @@ class User extends Authenticatable
     public function getAuthPassword() {
         return $this->pass_crypted;
     }
+
+    /**
+     * Get the column name for the "remember me" token.
+     *
+     * @return string
+     */
     public function getRememberTokenName()
     {
         return 'pass';

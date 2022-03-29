@@ -28,6 +28,14 @@ class Category extends Model
         "image"
     ];
 
+    protected $baseDir = "";
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->baseDir = env("DOLIBARR_PATH") . '/categorie/';
+    }
+
     public function getRouteAttribute(): string
     {
         return route('category-product-listing', ['category' => $this->rowid, 'slug' => Str::slug($this->label)]);
@@ -45,7 +53,7 @@ class Category extends Model
 
     public function getImageAttribute(): string
     {
-        $dir = env("DOLIBARR_PATH") . '/categorie/' . $this->rowid . '/0/' . $this->rowid . '/photos';
+        $dir = $this->baseDir . $this->rowid . '/0/' . $this->rowid . '/photos';
         if (is_dir($dir)) {
             $images = array_values($this->scanFiles($dir));
             if (count($images) > 0)
@@ -57,7 +65,7 @@ class Category extends Model
 
     private function image_route($dir_element)
     {
-        if (!is_dir($dir_element)) {
+        if (!is_dir($this->baseDir . $this->rowid . '/0/' . $this->rowid . '/photos/' . $dir_element)) {
             return $dir_element;
         }
     }

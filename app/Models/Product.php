@@ -41,7 +41,6 @@ class Product extends Model
         $this->baseDir = env("DOLIBARR_PATH") . '/produit/';
     }
 
-
     public function getRouteAttribute(): string
     {
         return route('single-product', ['product' => $this->rowid, 'slug' => Str::slug($this->label)]);

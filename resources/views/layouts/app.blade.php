@@ -15,7 +15,7 @@
           content="@yield("description", "")"/>
     <meta property="og:url" content="{{url()->current()}}"/>
     <meta property="og:type" content="@yield("type", "website")"/>
-    <meta property="og:title" content=" | @yield("title")"/>
+    <meta property="og:title" content="{{config('company.MAIN_INFO_SOCIETE_NOM')}} | @yield("title")"/>
     <meta property="og:description"
           content="@yield("description", ""))"/>
     <meta property="og:image" content="@yield("image", route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")]))"/>

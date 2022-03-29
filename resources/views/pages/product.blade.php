@@ -1,8 +1,9 @@
 @extends("layouts.app")
 @section("title", $product->label)
+@section("type", 'og:product')
 
 @section("content")
-    <x-breadcrumbs :levels="[$product]"/>
+    <x-breadcrumbs :levels="[$product->categories->last, $product]"/>
     <!--product details start-->
     <div class="product_details mt-60 mb-60">
         <div class="container">

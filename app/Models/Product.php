@@ -33,6 +33,15 @@ class Product extends Model
         "photos"
     ];
 
+    protected $baseDir = "";
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->baseDir = env("DOLIBARR_PATH") . '/produit/';
+    }
+
+
     public function getRouteAttribute(): string
     {
         return route('single-product', ['product' => $this->rowid, 'slug' => Str::slug($this->label)]);
@@ -54,7 +63,7 @@ class Product extends Model
 
     public function getPhotosAttribute(): \Illuminate\Support\Collection
     {
-        $dir = env("DOLIBARR_PATH") . '/produit/' . $this->ref;
+        $dir = $this->baseDir . $this->ref;
         if (is_dir($dir))
             return collect($this->scanFiles($dir))->values();
         return collect([]);
@@ -62,7 +71,7 @@ class Product extends Model
 
     private function image_route($dir_element)
     {
-        if (!is_dir(env("DOLIBARR_PATH") . '/produit/' . $this->ref . '/'.$dir_element)) {
+        if (!is_dir($this->baseDir . $this->ref . '/'.$dir_element)) {
             return $dir_element;
         }
     }

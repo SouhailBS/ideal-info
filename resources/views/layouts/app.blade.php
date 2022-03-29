@@ -26,6 +26,18 @@
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 
     @stack("styles")
+    <script>
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'b51a2d3458351b942d4c98d628cd7498f2cab201';
+        _smartsupp.cookieDomain = '.ideal-info.net';
+        _smartsupp.sitePlatform = 'Boutique Ideal Informatique';
+        window.smartsupp||(function(d) {
+            var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+            s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+            c.type='text/javascript';c.charset='utf-8';c.async=true;
+            c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        })(document);
+    </script>
 </head>
 
 <body>

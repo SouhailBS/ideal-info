@@ -62,7 +62,7 @@ class Product extends Model
 
     private function image_route($dir_element)
     {
-        if (!is_dir($dir_element)) {
+        if (!is_dir(env("DOLIBARR_PATH") . '/produit/' . $this->ref . '/'.$dir_element)) {
             return $dir_element;
         }
     }

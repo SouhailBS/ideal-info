@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function getAuthPassword() {
         return $this->pass_crypted;
     }
+    public function getRememberTokenName()
+    {
+        return 'pass';
+    }
 }

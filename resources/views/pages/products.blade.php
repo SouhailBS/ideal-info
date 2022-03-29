@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-lg-9 col-md-12">
                     @if($products->isEmpty())
-                        <div class="shop_toolbar_wrapper">Aucun produit à afficher</div>
+                        <div class="shop_toolbar_wrapper text-center"><h5>Aucun produit à afficher</h5></div>
                     @else
                     <!--shop wrapper start-->
                         @include("partials.catalog.toolbar-top")

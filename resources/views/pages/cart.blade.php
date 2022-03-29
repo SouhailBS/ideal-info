@@ -34,7 +34,7 @@
                                                 <td class="product_thumb">
                                                     <a href="{{$item->associatedModel->route}}">
                                                         <img
-                                                            src="{{route("dolibarr", ["file"=>'produit/' . $item->ref . '/' .$item->associatedModel->photos->get(0)])}}"
+                                                            src="{{route("dolibarr", ["file"=>'produit/' . $item->associatedModel->ref . '/' .$item->associatedModel->photos->get(0)])}}"
                                                             alt=""></a>
                                                 </td>
                                                 <td class="product_name">

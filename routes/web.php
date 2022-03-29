@@ -24,6 +24,7 @@ Route::get('/products/category/{category}/{slug}', [ProductController::class, 'c
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");
 Route::middleware('auth:web')->group(function (){
     Route::view('/account', 'pages.account')->name("account");
+    Route::get("/auth/logout", [LoginController::class, 'logout'])->name("logout");
 });
 Route::get('/documents/{file}', function ($file) {
     $path = env('DOLIBARR_PATH') . '/' . $file;

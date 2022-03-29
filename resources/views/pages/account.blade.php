@@ -16,7 +16,7 @@
                                 <li><a href="#orders" data-bs-toggle="tab" class="nav-link">Commandes</a></li>
                                 <li><a href="#address" data-bs-toggle="tab" class="nav-link">Adresses</a></li>
 
-                                <li><a href="login.html" class="nav-link">Se déconnecter</a></li>
+                                <li><a href="{{route("logout")}}" class="nav-link">Se déconnecter</a></li>
                             </ul>
                         </div>
                     </div>

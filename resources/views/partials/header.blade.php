@@ -14,13 +14,10 @@
                         <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
                     </div>
                     <div class="support_info">
-                        <p>Telephone Enquiry: <a href="tel:0123456789">0123456789</a></p>
+                        @include("partials.support-info")
                     </div>
                     <div class="top_right text-right">
-                        <ul>
-                            <li><a href="my-account.html"> My Account </a></li>
-                            <li><a href="checkout.html"> Checkout </a></li>
-                        </ul>
+                        @include("partials.top-right-actions")
                     </div>
                     <div class="search_container">
                         <form action="#">
@@ -113,91 +110,11 @@
                         </div>
                     </div>
                     <div id="menu" class="text-left ">
-                        <ul class="offcanvas_main_menu">
-                            <li class="menu-item-has-children active">
-                                <a href="#">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home 1</a></li>
-                                    <li><a href="index-2.html">Home 2</a></li>
-                                    <li><a href="index-3.html">Home 3</a></li>
-                                    <li><a href="index-4.html">Home 4</a></li>
-                                    <li><a href="index-5.html">Home 5</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Shop</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Shop Layouts</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="shop.html">shop</a></li>
-                                            <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                            <li><a href="shop-fullwidth-list.html">Full Width list</a></li>
-                                            <li><a href="shop-right-sidebar.html">Right Sidebar </a></li>
-                                            <li><a href="shop-right-sidebar-list.html"> Right Sidebar list</a></li>
-                                            <li><a href="shop-list.html">List View</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">other Pages</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="cart.html">cart</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="my-account.html">my account</a></li>
-                                            <li><a href="404.html">Error 404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Product Types</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="product-sidebar.html">product sidebar</a></li>
-                                            <li><a href="product-grouped.html">product grouped</a></li>
-                                            <li><a href="variable-product.html">product variable</a></li>
-                                            <li><a href="product-countdown.html">product countdown</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">blog</a></li>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                    <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                    <li><a href="blog-sidebar.html">blog left sidebar</a></li>
-                                    <li><a href="blog-no-sidebar.html">blog no sidebar</a></li>
-                                </ul>
-
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">pages </a>
-                                <ul class="sub-menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="services.html">services</a></li>
-                                    <li><a href="privacy-policy.html">privacy policy</a></li>
-                                    <li><a href="faq.html">Frequently Questions</a></li>
-                                    <li><a href="contact.html">contact</a></li>
-                                    <li><a href="login.html">login</a></li>
-                                    <li><a href="404.html">Error 404</a></li>
-                                    <li><a href="compare.html">Compare</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="my-account.html">my account</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="about.html">about Us</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="contact.html"> Contact Us</a>
-                            </li>
-                        </ul>
+                        @include('partials.menu-mobile')
                     </div>
 
                     <div class="Offcanvas_footer">
-                        <span><a href="#"><i class="fa fa-envelope-o"></i> info@yourdomain.com</a></span>
+                        <span><a href="mailto:{{config("company.MAIN_INFO_SOCIETE_MAIL")}}"><i class="fa fa-envelope-o"></i> {{config("company.MAIN_INFO_SOCIETE_MAIL")}}</a></span>
                         <ul>
                             <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -222,22 +139,12 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="support_info">
-                            <p>Service client: <a
-                                    href="tel:{{config('company.MAIN_INFO_SOCIETE_TEL')}}">{{config('company.MAIN_INFO_SOCIETE_TEL')}}</a>
-                            </p>
+                            @include("partials.support-info")
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="top_right text-right">
-                            <ul>
-                                @auth
-                                    <li><a href="my-account.html">Mon compte</a></li>
-                                @endauth
-                                @guest
-                                    <li><a href="{{route("login-form")}}">Se connecter</a></li>
-                                @endguest
-                                <li><a href="checkout.html"> Checkout </a></li>
-                            </ul>
+                            @include("partials.top-right-actions")
                         </div>
                     </div>
                 </div>

@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
-                        <form action="#">
+                        <form method="GET" action="{{route("add-to-cart", ["product"=>$product])}}">
 
                             <h1>{{$product->label}}</h1>
                             <div class="product_nav">
@@ -89,7 +89,7 @@
                             <div class="product_desc">
                                 <p>{!! $product->description !!}</p>
                             </div>
-                            <div class="product_variant color">
+                            {{--<div class="product_variant color">
                                 <h3>Available Options</h3>
                                 <label>color</label>
                                 <ul>
@@ -98,13 +98,11 @@
                                     <li class="color3"><a href="#"></a></li>
                                     <li class="color4"><a href="#"></a></li>
                                 </ul>
-                            </div>
+                            </div>--}}
                             <div class="product_variant quantity">
-                                <form method="GET" action="{{route("add-to-cart", ["product"=>$product])}}">
-                                    <label for="qte">Quantité</label>
-                                    <input id="qte" min="1" max="100" value="1" name="quantity" type="number">
-                                    <button class="button" type="submit">Ajouter au panier</button>
-                                </form>
+                                <label for="qte">Quantité</label>
+                                <input id="qte" min="1" max="100" value="1" name="quantity" type="number">
+                                <button class="button" type="submit">Ajouter au panier</button>
                             </div>
                             {{--<div class=" product_d_action">
                                 <ul>

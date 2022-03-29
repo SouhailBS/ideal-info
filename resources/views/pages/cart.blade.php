@@ -28,12 +28,14 @@
                                         @foreach(Cart::getContent() as $item)
                                             <tr>
                                                 <td class="product_remove">
-                                                    <a href="{{route("delete-from-cart", ["product"=>$item->id])}}"><i class="fa fa-trash-o"></i></a>
+                                                    <a href="{{route("delete-from-cart", ["product"=>$item->id])}}"><i
+                                                            class="fa fa-trash-o"></i></a>
                                                 </td>
                                                 <td class="product_thumb">
                                                     <a href="{{$item->associatedModel->route}}">
-                                                        <img src="{{$item->associatedModel->photos->get(0)}}"
-                                                             alt=""></a>
+                                                        <img
+                                                            src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$item->associatedModel->photos->get(0)])}}"
+                                                            alt=""></a>
                                                 </td>
                                                 <td class="product_name">
                                                     <a href="{{$item->associatedModel->route}}">{{$item->name}}</a>

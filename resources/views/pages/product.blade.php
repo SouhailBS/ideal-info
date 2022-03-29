@@ -120,18 +120,8 @@
 
                         </form>
                         <div class="priduct_social">
-                            <ul>
-                                <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i>
-                                        Like</a></li>
-                                <li><a class="twitter" href="#" title="twitter"><i class="fa fa-twitter"></i> tweet</a>
-                                </li>
-                                <li><a class="pinterest" href="#" title="pinterest"><i class="fa fa-pinterest"></i>
-                                        save</a></li>
-                                <li><a class="google-plus" href="#" title="google +"><i class="fa fa-google-plus"></i>
-                                        share</a></li>
-                                <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i>
-                                        linked</a></li>
-                            </ul>
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_inline_share_toolbox"></div>
                         </div>
 
                     </div>
@@ -550,4 +540,6 @@
 @endsection
 
 @push("scripts")
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
 @endpush

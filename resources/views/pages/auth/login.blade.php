@@ -36,9 +36,9 @@
                 <!--login area start-->
 
                 <!--image area start-->
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 d-none d-md-block">
                     <div class="account_form register text-center">
-                        <img src="/img/login.png" class="mt-md-4 w-50">
+                        <img src="/img/login.png" class="mt-md-4 w-50" alt="Connectez-vous à votre compte">
                     </div>
                 </div>
                 <!--image area end-->

@@ -16,9 +16,9 @@
                     <!--shop wrapper start-->
                     @include("partials.catalog.toolbar-top")
 
-                    <div class="row shop_wrapper grid_list">
+                    <div class="row shop_wrapper @if($products->count()>5)grid_4 @else grid_list @endif">
                         @foreach($products as $product)
-                            <div class="col-12 ">
+                            <div class="@if($products->count()>5)col-lg-3 col-md-4 col-sm-6 @else col-12 @endif">
                                 <article class="single_product">
                                     <figure>
                                         <div class="product_thumb">

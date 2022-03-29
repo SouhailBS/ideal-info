@@ -112,7 +112,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="product_desc">
-                                                    <p>{!! $product->description !!}</p>
+                                                    <p>{!! Str::limit($product->description, 220, ' ...') !!}</p>
                                                 </div>
                                             </div>
                                             <div class="right_caption">

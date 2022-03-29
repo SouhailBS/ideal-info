@@ -9,8 +9,8 @@
                             <img src="assets/img/about/shipping1.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Free Delivery</h2>
-                            <p>For all oders over $99</p>
+                            <h2>Livraison gratuite</h2>
+                            <p>Pour toutes commandes de plus de 300 DT</p>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                             <img src="assets/img/about/shipping3.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Shop With Confidence</h2>
+                            <h2>Achetez en toute confiance</h2>
                             <p>If goods have problems</p>
                         </div>
                     </div>

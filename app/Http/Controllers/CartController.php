@@ -12,7 +12,7 @@ class CartController extends Controller
         \Cart::add(['id' => $product->rowid,
             'name' => $product->label,
             'price' => preg_replace("/[^0-9.,]/", "", $product->price_ttc),
-            'quantity' => 1,
+            'quantity' => $request->get("quantity", 1),
             'attributes' => array(),
             'associatedModel' => $product]);
         return back();

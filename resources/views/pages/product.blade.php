@@ -100,17 +100,18 @@
                                 </ul>
                             </div>
                             <div class="product_variant quantity">
-                                <label>quantity</label>
-                                <input min="1" max="100" value="1" type="number">
-                                <button class="button" type="submit">add to cart</button>
-
+                                <form method="GET" action="{{route("add-to-cart", ["product"=>$product])}}">
+                                    <label for="qte">Quantité</label>
+                                    <input id="qte" min="1" max="100" value="1" name="quantity" type="number">
+                                    <button class="button" type="submit">Ajouter au panier</button>
+                                </form>
                             </div>
-                            <div class=" product_d_action">
+                            {{--<div class=" product_d_action">
                                 <ul>
                                     <li><a href="#" title="Add to wishlist">+ Add to Wishlist</a></li>
                                     <li><a href="#" title="Add to wishlist">+ Compare</a></li>
                                 </ul>
-                            </div>
+                            </div>--}}
                             <div class="product_meta">
                                 <span>Categories:
                                     @foreach($product->categories as $cat)

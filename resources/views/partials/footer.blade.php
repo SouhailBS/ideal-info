@@ -12,7 +12,11 @@
                         </div>
                         <div class="footer_contact">
                             <p>{{config("company.MAIN_INFO_SOCIETE_NOTE")}}</p>
-                            <p><span>Adresse: </span>{{config("company.MAIN_INFO_SOCIETE_ADDRESS")}}</p>
+                            <p><span>Adresse: </span>{{config("company.MAIN_INFO_SOCIETE_ADDRESS")}}
+                                , {{config("company.MAIN_INFO_SOCIETE_ZIP")}}
+                                , {{config("company.MAIN_INFO_SOCIETE_TOWN")}}
+                                , {{explode(':', config("company.MAIN_INFO_SOCIETE_STATE"))[2]}}
+                                , {{explode(':', config("company.MAIN_INFO_SOCIETE_COUNTRY"))[2]}}</p>
                             <p><span>Appelez-nous: </span><a
                                     href="tel:{{config("company.MAIN_INFO_SOCIETE_TEL")}}">{{config("company.MAIN_INFO_SOCIETE_TEL")}}</a>
                                 – <a

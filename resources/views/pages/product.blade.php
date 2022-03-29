@@ -10,45 +10,45 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product-details-tab">
                         <div id="img-1" class="zoomWrapper single-zoom">
-                            <a href="#">
-                                <img id="zoom1" src="/assets/img/product/productbig5.jpg"
-                                     data-zoom-image="/assets/img/product/productbig5.jpg" alt="big-1">
-                            </a>
+                            @if($product->photos->isEmpty())
+                                <a href="#">
+                                    <img id="zoom1" src="/assets/img/product/productbig5.jpg"
+                                         data-zoom-image="/assets/img/product/productbig5.jpg" alt="big-1">
+                                </a>
+                            @else
+                                <a href="{{$product->route}}">
+                                    <img id="zoom1"
+                                         src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(0)])}}"
+                                         data-zoom-image="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(0)])}}"
+                                         alt="big-1">
+                                </a>
+                            @endif
                         </div>
                         <div class="single-zoom-thumb">
                             <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                                <li>
-                                    <a href="#" class="elevatezoom-gallery active" data-update=""
-                                       data-image="/assets/img/product/productbig.jpg"
-                                       data-zoom-image="/assets/img/product/productbig.jpg">
-                                        <img src="/assets/img/product/productbig.jpg" alt="zo-th-1"/>
-                                    </a>
+                                @if($product->photos->isEmpty())
+                                    <li>
+                                        <a href="#" class="elevatezoom-gallery active" data-update=""
+                                           data-image="/assets/img/product/productbig.jpg"
+                                           data-zoom-image="/assets/img/product/productbig.jpg">
+                                            <img src="/assets/img/product/productbig.jpg" alt="zo-th-1"/>
+                                        </a>
 
-                                </li>
-                                <li>
-                                    <a href="#" class="elevatezoom-gallery active" data-update=""
-                                       data-image="/assets/img/product/productbig1.jpg"
-                                       data-zoom-image="/assets/img/product/productbig1.jpg">
-                                        <img src="/assets/img/product/productbig1.jpg" alt="zo-th-1"/>
-                                    </a>
+                                    </li>
+                                @else
+                                    @foreach($product->photos as $img)
+                                        <li>
+                                            <a href="#" class="elevatezoom-gallery active" data-update=""
+                                               data-image="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}"
+                                               data-zoom-image="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}">
+                                                <img
+                                                    src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}"
+                                                    alt="zo-th-1"/>
+                                            </a>
 
-                                </li>
-                                <li>
-                                    <a href="#" class="elevatezoom-gallery active" data-update=""
-                                       data-image="/assets/img/product/productbig2.jpg"
-                                       data-zoom-image="/assets/img/product/productbig2.jpg">
-                                        <img src="/assets/img/product/productbig2.jpg" alt="zo-th-1"/>
-                                    </a>
-
-                                </li>
-                                <li>
-                                    <a href="#" class="elevatezoom-gallery active" data-update=""
-                                       data-image="/assets/img/product/productbig3.jpg"
-                                       data-zoom-image="/assets/img/product/productbig3.jpg">
-                                        <img src="/assets/img/product/productbig3.jpg" alt="zo-th-1"/>
-                                    </a>
-
-                                </li>
+                                        </li>
+                                    @endforeach
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -76,15 +76,17 @@
 
                             </div>
                             <div class="price_box">
-                                <span class="current_price">{{$product->price_ttc}}</span>
-                                <span class="old_price">$80.00</span>
+                                @if($product->price_min>0)
+                                    <span class="old_price">{{$product->price_ttc}}</span>
+                                    <span
+                                        class="current_price">{{$product->price_min_ttc}}</span>
+                                @else
+                                    <span class="current_price">{{$product->price_ttc}}</span>
+                                @endif
 
                             </div>
                             <div class="product_desc">
-                                <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus
-                                    eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non
-                                    neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et
-                                    placerat vestibulum, metus nisi posuere nisl, in </p>
+                                <p>{!! $product->description !!}</p>
                             </div>
                             <div class="product_variant color">
                                 <h3>Available Options</h3>

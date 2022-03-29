@@ -12,10 +12,14 @@
                         </div>
                         <div class="footer_contact">
                             <p>{{config("company.MAIN_INFO_SOCIETE_NOTE")}}</p>
-                            <p><span>Address</span> Your address goes here.</p>
-                            <p><span>Mobile: </span><a href="tel:0123456789">0123456789</a> – <a
-                                    href="tel:0123456789">0123456789</a></p>
-                            <p><span>Support: </span><a href="mailto:demo@example.com">demo@example.com</a>
+                            <p><span>Adresse: </span>{{config("company.MAIN_INFO_SOCIETE_ADDRESS")}}</p>
+                            <p><span>Appelez-nous: </span><a
+                                    href="tel:{{config("company.MAIN_INFO_SOCIETE_TEL")}}">{{config("company.MAIN_INFO_SOCIETE_TEL")}}</a>
+                                – <a
+                                    href="tel:{{config("company.MAIN_INFO_SOCIETE_FAX")}}">{{config("company.MAIN_INFO_SOCIETE_FAX")}}</a>
+                            </p>
+                            <p><span>Écrivez-nous: </span><a
+                                    href="mailto:{{config("company.MAIN_INFO_SOCIETE_MAIL")}}">{{config("company.MAIN_INFO_SOCIETE_MAIL")}}</a>
                             </p>
                         </div>
                     </div>

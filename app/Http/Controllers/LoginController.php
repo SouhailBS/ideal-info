@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -15,7 +17,7 @@ class LoginController extends Controller
      */
     public function authenticate(Request $request)
     {
-        $credentials = $request->validate([
+        $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
             'remember_me' => ['sometimes', 'boolean'],
@@ -28,14 +30,14 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+            'email' => 'Les informations d\'identification fournies ne correspondent pas à nos enregistrements.',
+        ])->withInput($request->except('password'));
     }
 
     /**
      * Log the user out of the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
@@ -49,5 +51,30 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    public function register(){}
+    public function register(Request $request)
+    {
+        $request->validate([
+            'civility' => ['required', 'in:MR,MME'],
+            'firstname' => ['required'],
+            'lastname' => ['required'],
+            'email' => ['required', 'email', 'unique:App\Models\User,email'],
+            'password' => ['required', 'min:8'],
+        ]);
+
+        $user = new User($request->except("password"));
+        $user->pass_crypted = Hash::make($request->password);
+        $user->fk_adherent_type = 2;
+        $user->login = $request->email;
+        $user->ref = 3;
+        $user->morphy = 'phy';
+        $user->save();
+
+        Auth::login($user);
+
+        return redirect()->route("account");
+    }//
 }
+/*'email' => [
+    'required',
+    Rule::unique('users')->ignore($user->id),
+],*/

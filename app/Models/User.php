@@ -11,6 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
     /**
      * The table associated with the model.
      *
@@ -26,12 +27,38 @@ class User extends Authenticatable
     protected $primaryKey = 'rowid';
 
     /**
+     * The name of the "created at" column.
+     *
+     * @var string
+     */
+    const CREATED_AT = 'datec';
+
+    /**
+     * The name of the "updated at" column.
+     *
+     * @var string
+     */
+    const UPDATED_AT = 'datevalid';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'civility',
+        'firstname',
+        'lastname',
+        'email'
+    ];
+
+    /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
     protected $hidden = [
-        'pass',//replacing remember_token
+        'note_private',//replacing remember_token
         'pass_crypted',
     ];
 
@@ -44,7 +71,9 @@ class User extends Authenticatable
         'datec' => 'datetime',
         'datevalid' => 'datetime',
     ];
-    public function getAuthPassword() {
+
+    public function getAuthPassword()
+    {
         return $this->pass_crypted;
     }
 
@@ -57,4 +86,5 @@ class User extends Authenticatable
     {
         return 'note_private';
     }
+
 }

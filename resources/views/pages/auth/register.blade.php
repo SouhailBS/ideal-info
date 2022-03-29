@@ -25,23 +25,30 @@
                                 Titre:
                                 <label for="gender_m">
                                     <span class="custom-radio">
-                                        <input type="radio" value="1" name="id_gender" id="gender_m"> M.</span>
+                                        <input @if(old('civility') == "MR") checked @endif type="radio" value="MR"
+                                               name="civility" id="gender_m"> M.</span>
                                 </label>
                                 <label for="gender_mm">
                                 <span class="custom-radio">
-                                    <input type="radio" value="2" name="id_gender" id="gender_mm"> Mme.</span></label>
+                                    <input @if(old('civility') == "MME") checked @endif type="radio" value="MME"
+                                           name="civility" id="gender_mm"> Mme.</span></label>
                             </div>
                             <label for="firstname">Prénom</label>
-                            <input type="text" name="firstname" id="firstname" required placeholder="Votre prénom">
+                            <input value="{{old('firstname')}}" type="text" name="firstname" id="firstname" required
+                                   placeholder="Votre prénom">
                             <label for="lastname">Nom</label>
-                            <input type="text" name="lastname" id="lastname" required placeholder="Votre nom">
+                            <input value="{{old('lastname')}}" type="text" name="lastname" id="lastname" required
+                                   placeholder="Votre nom">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" required placeholder="Votre adresse email">
+                            <input value="{{old('email')}}" type="email" name="email" id="email" required
+                                   placeholder="Votre adresse email">
                             <label for="password">Mot de passe</label>
-                            <input type="password" name="password" id="password" required placeholder="Votre mot de passe">
-                            <br>
-                            <br>
-                            <div class="login_submit">
+                            <input type="password" name="password" id="password" required
+                                   placeholder="Votre mot de passe">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger mt-2">{{ $error }}</div>
+                            @endforeach
+                            <div class="login_submit mt-3">
                                 <button type="submit">S'inscrire</button>
                             </div>
                         </form>

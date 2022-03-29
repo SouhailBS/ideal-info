@@ -14,7 +14,7 @@
                             @csrf
                             <p>
                                 <label for="email">E-mail <span>*</span></label>
-                                <input id="email" type="email" name="email" required placeholder="Votre adresse email">
+                                <input value="{{old('email')}}" id="email" type="email" name="email" required placeholder="Votre adresse email">
                             </p>
                             <p>
                                 <label for="pass">Mot de passe <span>*</span></label>

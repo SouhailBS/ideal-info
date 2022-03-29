@@ -13,18 +13,18 @@
                         <form method="POST" action="{{route("login")}}">
                             @csrf
                             <p>
-                                <label>E-mail <span>*</span></label>
-                                <input type="email" name="email" required placeholder="Votre adresse email">
+                                <label for="email">E-mail <span>*</span></label>
+                                <input id="email" type="email" name="email" required placeholder="Votre adresse email">
                             </p>
                             <p>
-                                <label>Mot de passe <span>*</span></label>
-                                <input type="password" name="password" required placeholder="Votre mot de passe">
+                                <label for="pass">Mot de passe <span>*</span></label>
+                                <input id="pass" type="password" name="password" required placeholder="Votre mot de passe">
                             </p>
                             <div class="login_submit">
                                 <a href="#">Lost your password?</a>
                                 <label for="remember">
-                                    <input id="remember" value="1" type="checkbox">
-                                    Remember me
+                                    <input id="remember" name="remember_token" value="1" type="checkbox">
+                                    Rester connecté
                                 </label>
                                 <button type="submit">Connexion</button>
 

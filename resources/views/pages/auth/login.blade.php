@@ -39,19 +39,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form register">
                         <h2>Register</h2>
-                        <form action="#">
-                            <p>
-                                <label>Email address <span>*</span></label>
-                                <input type="text">
-                            </p>
-                            <p>
-                                <label>Passwords <span>*</span></label>
-                                <input type="password">
-                            </p>
-                            <div class="login_submit">
-                                <button type="submit">Register</button>
-                            </div>
-                        </form>
+                        <img src="/img/login.png">
                     </div>
                 </div>
                 <!--register area end-->

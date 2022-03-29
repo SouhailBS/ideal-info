@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -65,8 +66,9 @@ class LoginController extends Controller
         $user->pass_crypted = Hash::make($request->password);
         $user->fk_adherent_type = 2;
         $user->login = $request->email;
-        $user->ref = 3;
+        $user->ref = Str::uuid()->toString();
         $user->morphy = 'phy';
+        $user->statut = 1;
         $user->save();
 
         Auth::login($user);

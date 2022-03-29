@@ -35,14 +35,13 @@
                 </div>
                 <!--login area start-->
 
-                <!--register area start-->
+                <!--image area start-->
                 <div class="col-lg-6 col-md-6">
-                    <div class="account_form register">
-                        <h2>Register</h2>
-                        <img src="/img/login.png">
+                    <div class="account_form register text-center">
+                        <img src="/img/login.png" class="mt-md-4 w-50">
                     </div>
                 </div>
-                <!--register area end-->
+                <!--image area end-->
             </div>
         </div>
     </div>

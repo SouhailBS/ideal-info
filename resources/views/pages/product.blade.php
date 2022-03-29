@@ -111,7 +111,11 @@
                                 </ul>
                             </div>
                             <div class="product_meta">
-                                <span>Category: <a href="#">Clothing</a></span>
+                                <span>Categories:
+                                    @foreach($product->categories as $cat)
+                                        <a href="{{$cat->route}}">{{$cat->label}}</a>
+                                    @endforeach
+                                </span>
                             </div>
 
                         </form>

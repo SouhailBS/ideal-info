@@ -41,6 +41,11 @@ class Product extends Model
         $this->baseDir = env("DOLIBARR_PATH") . '/produit/';
     }
 
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'categorie_product', 'fk_product', 'fk_categorie');
+    }
+
     public function getRouteAttribute(): string
     {
         return route('single-product', ['product' => $this->rowid, 'slug' => Str::slug($this->label)]);
@@ -70,7 +75,7 @@ class Product extends Model
 
     private function image_route($dir_element)
     {
-        if (!is_dir($this->baseDir . $this->ref . '/'.$dir_element)) {
+        if (!is_dir($this->baseDir . $this->ref . '/' . $dir_element)) {
             return $dir_element;
         }
     }

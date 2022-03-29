@@ -10,7 +10,7 @@ class LoginController extends Controller
     /**
      * Handle an authentication attempt.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function authenticate(Request $request)
@@ -21,7 +21,7 @@ class LoginController extends Controller
             'remember_me' => ['sometimes', 'boolean'],
         ]);
 
-        if (Auth::attempt($credentials, request()->get("remember_me", false))) {
+        if (Auth::attempt(request()->only(['email', 'password']), request()->get("remember_me", false))) {
             $request->session()->regenerate();
 
             return redirect('/');

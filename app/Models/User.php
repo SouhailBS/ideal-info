@@ -55,6 +55,6 @@ class User extends Authenticatable
      */
     public function getRememberTokenName()
     {
-        return 'pass';
+        return 'note_private';
     }
 }

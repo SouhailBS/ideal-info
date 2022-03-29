@@ -45,6 +45,13 @@ class Product extends Model
         return $fmt->formatCurrency($value, 'TND');
     }
 
+    public function getPriceMinTtcAttribute($value)
+    {
+        $fmt = new NumberFormatter('fr_FR', NumberFormatter::CURRENCY);
+        $fmt->setPattern('#,##0.00 DT');
+        return $fmt->formatCurrency($value, 'TND');
+    }
+
     public function getPhotosAttribute(): \Illuminate\Support\Collection
     {
         $dir = env("DOLIBARR_PATH") . '/produit/' . $this->ref;

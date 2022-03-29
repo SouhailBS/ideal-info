@@ -64,8 +64,12 @@
                                         </div>
                                         <div class="product_content grid_content">
                                             <div class="price_box">
-                                                <span class="old_price">$86.00</span>
-                                                <span class="current_price">{{$product->price_ttc}}</span>
+                                                @if($product->price_min>0)
+                                                    <span class="old_price">{{$product->price_ttc}}</span>
+                                                    <span class="current_price">{{$product->price_min_ttc}}</span>
+                                                @else
+                                                    <span class="current_price">{{$product->price_ttc}}</span>
+                                                @endif
                                             </div>
                                             <div class="product_ratings">
                                                 <ul>
@@ -83,8 +87,12 @@
                                         <div class="product_content list_content">
                                             <div class="left_caption">
                                                 <div class="price_box">
-                                                    <span class="old_price">$86.00</span>
-                                                    <span class="current_price">{{$product->price_ttc}}</span>
+                                                    @if($product->price_min>0)
+                                                        <span class="old_price">{{$product->price_ttc}}</span>
+                                                        <span class="current_price">{{$product->price_min_ttc}}</span>
+                                                    @else
+                                                        <span class="current_price">{{$product->price_ttc}}</span>
+                                                    @endif
                                                 </div>
                                                 <h3 class="product_name"><a
                                                         href="{{$product->route}}">{{$product->label}}</a>

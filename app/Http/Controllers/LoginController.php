@@ -6,7 +6,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -66,7 +65,7 @@ class LoginController extends Controller
         $user->pass_crypted = Hash::make($request->password);
         $user->fk_adherent_type = 2;
         $user->login = $request->email;
-        $user->ref = Str::uuid()->toString();
+        $user->ref = $this->generateNumericOTP(30);
         $user->morphy = 'phy';
         $user->statut = 1;
         $user->save();
@@ -74,9 +73,21 @@ class LoginController extends Controller
         Auth::login($user);
 
         return redirect()->route("account");
-    }//
+    }
+
+    private function generateNumericOTP($n): string
+    {
+        $generator = "1357902468";
+        $result = "";
+        for ($i = 1; $i <= $n; $i++) {
+            $result .= substr($generator, (rand() % (strlen($generator))), 1);
+        }
+        return $result;
+    }
 }
+
 /*'email' => [
     'required',
     Rule::unique('users')->ignore($user->id),
 ],*/
+

@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name("home");
 Route::view('/login', 'pages.auth.login')->middleware(RedirectIfAuthenticated::class)->name("login-form");
+Route::view('/register', 'pages.auth.register')->middleware(RedirectIfAuthenticated::class)->name("register-form");
 Route::post('/auth/login', [LoginController::class, 'authenticate'])->name("login");
+Route::post('/auth/register', [LoginController::class, 'register'])->name("register");
 Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");
 Route::middleware('auth:web')->group(function (){

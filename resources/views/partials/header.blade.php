@@ -37,16 +37,19 @@
                     </div>
 
                     <div class="middel_right_info">
-                        <div class="header_wishlist">
+                        {{--<div class="header_wishlist">
                             <a href="wishlist.html"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                             <span class="wishlist_quantity">3</span>
-                        </div>
+                        </div>--}}
                         <div class="mini_cart_wrapper">
                             <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                            aria-hidden="true"></i>$147.00 <i
+                                                            aria-hidden="true"></i>{{numfmt_format_currency(numfmt_create( 'tn_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
+                                <i
                                     class="fa fa-angle-down"></i></a>
-                            <span class="cart_quantity">2</span>
-                            <!--mini cart-->
+                            @if(!Cart::isEmpty())
+                                <span class="cart_quantity">{{Cart::getContent()->count()}}</span>
+                        @endif
+                        <!--mini cart-->
                             <div class="mini_cart">
                                 <div class="cart_item">
                                     <div class="cart_img">
@@ -85,7 +88,7 @@
 
                                 <div class="mini_cart_footer">
                                     <div class="cart_button">
-                                        <a href="cart.html">View cart</a>
+                                        <a href="{{route("cart")}}">View cart</a>
                                     </div>
                                     <div class="cart_button">
                                         <a href="checkout.html">Checkout</a>
@@ -170,16 +173,19 @@
                                 </form>
                             </div>
                             <div class="middel_right_info">
-                                <div class="header_wishlist">
+                                {{--<div class="header_wishlist">
                                     <a href="wishlist.html"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                                     <span class="wishlist_quantity">3</span>
-                                </div>
+                                </div>--}}
                                 <div class="mini_cart_wrapper">
                                     <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                                    aria-hidden="true"></i>$147.00 <i
+                                                                    aria-hidden="true"></i>{{numfmt_format_currency(numfmt_create( 'tn_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
+                                        <i
                                             class="fa fa-angle-down"></i></a>
-                                    <span class="cart_quantity">2</span>
-                                    <!--mini cart-->
+                                    @if(!Cart::isEmpty())
+                                        <span class="cart_quantity">{{Cart::getContent()->count()}}</span>
+                                @endif
+                                <!--mini cart-->
                                     <div class="mini_cart">
                                         <div class="cart_item">
                                             <div class="cart_img">
@@ -218,7 +224,7 @@
 
                                         <div class="mini_cart_footer">
                                             <div class="cart_button">
-                                                <a href="cart.html">View cart</a>
+                                                <a href="{{route("cart")}}">Voir mon panier</a>
                                             </div>
                                             <div class="cart_button">
                                                 <a href="checkout.html">Checkout</a>
@@ -275,10 +281,12 @@
                     </div>
                     <div class="middel_right_info">
                         <div class="mini_cart_wrapper">
-                            <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                            aria-hidden="true"></i></a>
-                            <span class="cart_quantity">2</span>
-                            <!--mini cart-->
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                            @if(!Cart::isEmpty())
+                                <span class="cart_quantity">{{Cart::getContent()->count()}}</span>
+                        @endif
+                        <!--mini cart-->
                             <div class="mini_cart">
                                 <div class="cart_item">
                                     <div class="cart_img">
@@ -317,7 +325,7 @@
 
                                 <div class="mini_cart_footer">
                                     <div class="cart_button">
-                                        <a href="cart.html">View cart</a>
+                                        <a href="{{route("cart")}}">View cart</a>
                                     </div>
                                     <div class="cart_button">
                                         <a href="checkout.html">Checkout</a>

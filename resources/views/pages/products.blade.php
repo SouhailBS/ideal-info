@@ -59,7 +59,7 @@
                                                 </ul>
                                             </div>
                                             <div class="add_to_cart">
-                                                <a href="cart.html" title="add to cart">Add to cart</a>
+                                                <a href="{{route("add-to-cart", ["product"=>$product])}}" title="Ajouter au panier">Ajouter au panier</a>
                                             </div>
                                         </div>
                                         <div class="product_content grid_content">
@@ -117,7 +117,7 @@
                                             </div>
                                             <div class="right_caption">
                                                 <div class="add_to_cart">
-                                                    <a href="cart.html" title="add to cart">Add to cart</a>
+                                                    <a href="{{route("add-to-cart", ["product"=>$product])}}" title="Ajouter au panier">Ajouter au panier</a>
                                                 </div>
                                                 <div class="action_links">
                                                     <ul>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -24,6 +25,9 @@ Route::post('/auth/login', [LoginController::class, 'authenticate'])->name("logi
 Route::post('/auth/register', [LoginController::class, 'register'])->name("register");
 Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");
+Route::view('/cart', 'pages.cart')->name('cart');
+Route::get('/cart/product/{product}', [CartController::class, 'add'])->name('add-to-cart');
+Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
 Route::middleware('auth:web')->group(function (){
     Route::view('/account', 'pages.account')->name("account");
     Route::get("/auth/logout", [LoginController::class, 'logout'])->name("logout");

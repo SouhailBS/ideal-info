@@ -44,7 +44,7 @@
                 <a href="{{route("cart")}}">Voir mon panier</a>
             </div>
             <div class="cart_button">
-                <a href="checkout.html">Checkout</a>
+                <a href="{{route("checkout")}}">Passer la commande</a>
             </div>
 
         </div>

@@ -106,7 +106,7 @@
                                             <p class="cart_amount">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal() + $shipping, 'TND')}}</p>
                                         </div>
                                         <div class="checkout_btn">
-                                            <a href="#">Proceed to Checkout</a>
+                                            <a href="{{route("checkout")}}">Passer la commande</a>
                                         </div>
                                     </div>
                                 </div>

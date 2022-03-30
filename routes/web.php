@@ -26,6 +26,7 @@ Route::post('/auth/register', [LoginController::class, 'register'])->name("regis
 Route::get('/products/category/{category}/{slug}', [ProductController::class, 'category'])->name("category-product-listing");
 Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])->name("single-product");
 Route::view('/cart', 'pages.cart')->name('cart');
+Route::view('/checkout', 'pages.checkout')->name('checkout');
 Route::get('/cart/product/{product}', [CartController::class, 'add'])->name('add-to-cart');
 Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
 Route::middleware('auth:web')->group(function (){

@@ -29,6 +29,10 @@
                                             alt=""></a>
                                 @endif
                             @endif
+                            <div class="label_product left">
+                                <span class="label_promo">Promo</span>
+                                <span class="label_discount">-70,00 TND</span>
+                            </div>
                             <div class="label_product">
                                 @if($product->stock>0)
                                     <span class="label_sale">Dispo</span>

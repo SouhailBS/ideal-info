@@ -1,5 +1,5 @@
 <!-- modal area start-->
-<div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal_box_{{$product->rowid}}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">

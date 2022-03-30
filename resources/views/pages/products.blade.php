@@ -141,7 +141,7 @@
                                                             <li class="compare"><a href="#" title="compare"><span
                                                                         class="ion-levels"></span> Compare</a></li>
                                                             <li class="quick_button"><a href="#" data-bs-toggle="modal"
-                                                                                        data-bs-target="#modal_box"
+                                                                                        data-bs-target="#modal_box_{{$product->rowid}}"
                                                                                         title="Aperçu"> <span
                                                                         class="ion-ios-search-strong"></span> Aperçu</a>
                                                             </li>

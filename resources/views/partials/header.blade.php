@@ -42,10 +42,10 @@
                             <span class="wishlist_quantity">3</span>
                         </div>--}}
                         <div class="mini_cart_wrapper">
-                            <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                            aria-hidden="true"></i>{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
-                                <i
-                                    class="fa fa-angle-down"></i></a>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                {{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
+                                <i class="fa fa-angle-down"></i></a>
                             @if(!Cart::isEmpty())
                                 <span class="cart_quantity">{{Cart::getContent()->count()}}</span>
                             @endif

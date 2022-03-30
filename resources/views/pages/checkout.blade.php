@@ -36,10 +36,11 @@
                 @auth
                     @php
                         $shipping = 8;
-                        if (\Cart::getTotal()>300)
+                        if (\Cart::getTotal()>=300)
                             $shipping = 0;
                     @endphp
-                    <form action="#">
+                    <form method="POST" action="{{route("submit-checkout")}}">
+                        @csrf
                         <div class="checkout_form">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
@@ -66,19 +67,50 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6 mb-20">
-                                            <label for="region">Région <span>*</span></label>
-                                            <input type="text" id="region" name="region" required placeholder="Région">
+                                        <div class="col-lg-4 mb-20">
+                                            <label for="zip">Code postal <span>*</span></label>
+                                            <input type="number" id="zip" name="zip" required placeholder="Code postal">
                                         </div>
 
-                                        <div class="col-lg-6 mb-20">
-                                            <label for="ville">Ville <span>*</span></label>
-                                            <input type="text" id="ville" name="ville" required placeholder="Ville">
+                                        <div class="col-lg-4 mb-20">
+                                            <label for="region">Ville <span>*</span></label>
+                                            <input type="text" id="region" name="town" required placeholder="Région">
+                                        </div>
+
+                                        <div class="col-lg-4 mb-20">
+                                            <label for="ville">Région <span>*</span></label>
+                                            <select class="nice-select" id="ville" name="fk_departement">
+                                                <option value="0">&nbsp;</option>
+                                                <option value="363">Ariana</option>
+                                                <option value="364">Béja</option>
+                                                <option value="365">Ben Arous</option>
+                                                <option value="366">Bizerte</option>
+                                                <option value="367">Gabès</option>
+                                                <option value="368">Gafsa</option>
+                                                <option value="369">Jendouba</option>
+                                                <option value="370">Kairouan</option>
+                                                <option value="371">Kasserine</option>
+                                                <option value="372">Kébili</option>
+                                                <option value="373">La Manouba</option>
+                                                <option value="374">Le Kef</option>
+                                                <option value="375">Mahdia</option>
+                                                <option value="376">Médenine</option>
+                                                <option value="377">Monastir</option>
+                                                <option value="378">Nabeul</option>
+                                                <option value="379">Sfax</option>
+                                                <option value="380">Sidi Bouzid</option>
+                                                <option value="381">Siliana</option>
+                                                <option value="382">Sousse</option>
+                                                <option value="383">Tataouine</option>
+                                                <option value="384">Tozeur</option>
+                                                <option value="385">Tunis</option>
+                                                <option value="386">Zaghouan</option>
+                                            </select>
                                         </div>
 
                                         <div class="col-lg-6 mb-20">
                                             <label for="tel">Téléphone<span>*</span></label>
-                                            <input type="tel" id="tel" name="tel" required
+                                            <input type="tel" id="tel" name="phone" required
                                                    placeholder="Votre numéro de téléphone">
                                         </div>
 
@@ -90,7 +122,8 @@
 
                                         <div class="col-12 mb-20">
                                             <label for="company">Votre Société</label>
-                                            <input type="text" name="company" id="company" placeholder="Votre Société">
+                                            <input type="text" name="name_alias" id="company"
+                                                   placeholder="Votre Société">
                                         </div>
 
                                         <div class="col-12 mb-20">
@@ -103,7 +136,7 @@
                                         <div class="col-12">
                                             <div class="order-notes">
                                                 <label for="order_note">Notes</label>
-                                                <textarea id="order_note"
+                                                <textarea name="note" id="order_note"
                                                           placeholder="Remarques concernant votre commande, par exemple notes spéciales pour la livraison."></textarea>
                                             </div>
                                         </div>

@@ -4,7 +4,7 @@
 @section("content")
     @php
         $shipping = 8;
-        if (\Cart::getTotal()>300)
+        if (\Cart::getTotal()>=300)
             $shipping = 0;
     @endphp
     <!--shopping cart area start -->

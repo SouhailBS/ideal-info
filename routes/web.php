@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -29,9 +30,10 @@ Route::view('/cart', 'pages.cart')->name('cart');
 Route::view('/checkout', 'pages.checkout')->name('checkout');
 Route::get('/cart/product/{product}', [CartController::class, 'add'])->name('add-to-cart');
 Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
-Route::middleware('auth:web')->group(function (){
+Route::middleware('auth:web')->group(function () {
     Route::view('/account', 'pages.account')->name("account");
     Route::get("/auth/logout", [LoginController::class, 'logout'])->name("logout");
+    Route::post('/checkout', [CheckoutController::class, 'checkout'])->name("submit-checkout");
 });
 Route::get('/documents/{file}', function ($file) {
     $path = env('DOLIBARR_PATH') . '/' . $file;

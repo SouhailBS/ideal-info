@@ -19,7 +19,7 @@
                         <div class="col-12">
                             <div class="user-actions">
                                 <h3>
-                                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i>
                                     Déjà client?
                                     <a class="Returning" href="{{route("login-form")}}">Cliquez ici pour vous
                                         connecter</a>
@@ -28,11 +28,10 @@
                             </div>
                             <div class="user-actions">
                                 <h3>
-                                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                                    <i class="fa fa-user-plus" aria-hidden="true"></i>
                                     Nouveau client?
                                     <a class="Returning" href="{{route("register-form")}}">Cliquez ici pour vous
                                         inscrire</a>
-
                                 </h3>
                             </div>
                         </div>
@@ -48,11 +47,15 @@
                                     <div class="row">
                                         <div class="col-lg-6 mb-20">
                                             <label for="firstname">Prénom <span>*</span></label>
-                                            <input type="text" name="firstname" id="firstname" value="{{auth()->user()->firstname}}" required placeholder="Votre prénom">
+                                            <input type="text" name="firstname" id="firstname"
+                                                   value="{{auth()->user()->firstname}}" required
+                                                   placeholder="Votre prénom">
                                         </div>
                                         <div class="col-lg-6 mb-20">
                                             <label for="lastname">Nom <span>*</span></label>
-                                            <input type="text" name="lastname" id="lastname" value="{{auth()->user()->lastname}}" required placeholder="Votre nom">
+                                            <input type="text" name="lastname" id="lastname"
+                                                   value="{{auth()->user()->lastname}}" required
+                                                   placeholder="Votre nom">
                                         </div>
                                         <div class="col-12 mb-20">
                                             <label for="company">Votre Société<span>Facultatif</span></label>
@@ -60,15 +63,18 @@
                                         </div>
 
                                         <div class="col-12 mb-20">
-                                            <label for="address">Adresse <span>*</span></label>
-                                            <textarea id="address" name="address" placeholder="Votre adresse" type="text"></textarea>
+                                            <div class="order-notes">
+                                                <label for="address">Adresse <span>*</span></label>
+                                                <textarea id="address" name="address" placeholder="Votre adresse"
+                                                          type="text"></textarea>
+                                            </div>
                                         </div>
 
-                                        <div class="col-12 mb-20">
+                                        <div class="col-lg-6 mb-20">
                                             <label>Region <span>*</span></label>
                                             <input type="text">
                                         </div>
-                                        <div class="col-12 mb-20">
+                                        <div class="col-lg-6 mb-20">
                                             <label>Ville <span>*</span></label>
                                             <input type="text">
                                         </div>

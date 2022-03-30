@@ -6,7 +6,8 @@
     <div class="shopping_cart_area mt-60">
         <div class="container">
             @if(Cart::isEmpty())
-                <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit dans votre panier</h5></div>
+                <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit dans votre panier</h5>
+                </div>
             @else
                 <form action="#">
                     <div class="row">
@@ -47,8 +48,7 @@
                                                            value="{{$item->quantity}}"
                                                            type="number">
                                                 </td>
-                                                <td class="product_total">£130.00</td>
-
+                                                <td class="product_total">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ),$item->quantity * $item->price , 'TND')}}</td>
 
                                             </tr>
                                         @endforeach
@@ -80,7 +80,7 @@
                                     <div class="coupon_inner">
                                         <div class="cart_subtotal">
                                             <p>Subtotal</p>
-                                            <p class="cart_amount">£215.00</p>
+                                            <p class="cart_amount">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}</p>
                                         </div>
                                         <div class="cart_subtotal ">
                                             <p>Shipping</p>
@@ -90,7 +90,7 @@
 
                                         <div class="cart_subtotal">
                                             <p>Total TTC</p>
-                                            <p class="cart_amount">{{numfmt_format_currency(numfmt_create( 'tn_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}</p>
+                                            <p class="cart_amount">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}</p>
                                         </div>
                                         <div class="checkout_btn">
                                             <a href="#">Proceed to Checkout</a>

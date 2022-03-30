@@ -43,7 +43,7 @@
                         </div>--}}
                         <div class="mini_cart_wrapper">
                             <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                            aria-hidden="true"></i>{{numfmt_format_currency(numfmt_create( 'tn_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
+                                                            aria-hidden="true"></i>{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
                                 <i
                                     class="fa fa-angle-down"></i></a>
                             @if(!Cart::isEmpty())
@@ -179,7 +179,7 @@
                                 </div>--}}
                                 <div class="mini_cart_wrapper">
                                     <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                                    aria-hidden="true"></i>{{numfmt_format_currency(numfmt_create( 'tn_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
+                                                                    aria-hidden="true"></i>{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}
                                         <i
                                             class="fa fa-angle-down"></i></a>
                                     @if(!Cart::isEmpty())

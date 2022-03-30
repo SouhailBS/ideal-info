@@ -67,7 +67,7 @@ class Product extends Model
         return $fmt->formatCurrency($value, 'TND');
     }
 
-    public function getPriceDiscountAttribute()
+    public function getDiscountAttribute()
     {
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
         //$fmt->setPattern('#,##0.00 DT');

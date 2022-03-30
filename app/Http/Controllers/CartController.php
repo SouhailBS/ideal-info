@@ -10,18 +10,17 @@ class CartController extends Controller
 {
     public function add(Request $request, Product $product)
     {
-        $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
-
         \Cart::add(['id' => $product->rowid,
             'name' => $product->label,
-            'price' => $fmt->parseCurrency($product->price_ttc, $curr),
+            'price' => $product->price_min > 0 ? $product->getRawOriginal('price_min_ttc') : $product->getRawOriginal('price_ttc'),
             'quantity' => $request->get("quantity", 1),
             'attributes' => array(),
             'associatedModel' => $product]);
         return back();
     }
 
-    public function delete($product){
+    public function delete($product)
+    {
         \Cart::remove($product);
         return back();
     }

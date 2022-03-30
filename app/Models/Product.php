@@ -63,21 +63,21 @@ class Product extends Model
     public function getPriceTtcAttribute($value)
     {
         $fmt = new NumberFormatter('fr-TN', NumberFormatter::CURRENCY);
-        //$fmt->setPattern('#,##0.00 DT');
+        $fmt->setPattern('#,##0.00 DT');
         return $fmt->formatCurrency($value, 'TND');
     }
 
     public function getDiscountAttribute()
     {
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
-        //$fmt->setPattern('#,##0.00 DT');
+        $fmt->setPattern('#,##0.00 DT');
         return $fmt->formatCurrency($this->getRawOriginal('price_min_ttc') - $this->getRawOriginal('price_ttc'), 'TND');
     }
 
     public function getPriceMinTtcAttribute($value)
     {
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
-        //$fmt->setPattern('#,##0.00 DT');
+        $fmt->setPattern('#,##0.00 DT');
         return $fmt->formatCurrency($value, 'TND');
     }
 

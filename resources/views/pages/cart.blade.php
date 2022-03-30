@@ -2,6 +2,11 @@
 @section("title", "Panier")
 
 @section("content")
+    @php
+        $shipping = 8;
+        if (\Cart::getTotal()>300)
+            $shipping = 0;
+    @endphp
     <!--shopping cart area start -->
     <div class="shopping_cart_area mt-60">
         <div class="container">
@@ -41,14 +46,25 @@
                                                 <td class="product_name">
                                                     <a href="{{$item->associatedModel->route}}">{{$item->name}}</a>
                                                 </td>
-                                                <td class="product-price">{{$item->associatedModel->price_ttc}}</td>
+                                                <td class="product-price">
+                                                    @if($item->associatedModel->price_min>0)
+                                                        <div class="price_box">
+                                                            <span
+                                                                class="d-block current_price">{{$item->associatedModel->price_min_ttc}}</span>
+                                                            <span
+                                                                class="d-block old_price">{{$item->associatedModel->price_ttc}}</span>
+                                                        </div>
+                                                    @else
+                                                        {{$item->associatedModel->price_ttc}}
+                                                    @endif
+                                                </td>
                                                 <td class="product_quantity"><label>Quantité</label>
                                                     <input min="1"
                                                            max="100"
                                                            value="{{$item->quantity}}"
                                                            type="number">
                                                 </td>
-                                                <td class="product_total">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ),$item->quantity * $item->price , 'TND')}}</td>
+                                                <td class="product_total">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ),$item->getPriceSum() , 'TND')}}</td>
 
                                             </tr>
                                         @endforeach
@@ -66,31 +82,28 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="coupon_code left">
-                                    <h3>Coupon</h3>
+                                    <h3>Livraison</h3>
                                     <div class="coupon_inner">
-                                        <p>Enter your coupon code if you have one.</p>
-                                        <input placeholder="Coupon code" type="text">
-                                        <button type="submit">Apply coupon</button>
+                                        <p>Livraison gratuite pour toutes commandes de plus de 300 DT.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="coupon_code right">
-                                    <h3>Cart Totals</h3>
+                                    <h3>TOTAUX DU PANIER</h3>
                                     <div class="coupon_inner">
                                         <div class="cart_subtotal">
-                                            <p>Subtotal</p>
+                                            <p>{{Cart::getContent()->sum('quantity')}} articles</p>
                                             <p class="cart_amount">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}</p>
                                         </div>
-                                        <div class="cart_subtotal ">
-                                            <p>Shipping</p>
-                                            <p class="cart_amount"><span>Flat Rate:</span> £255.00</p>
+                                        <div class="cart_subtotal">
+                                            <p>Livraison</p>
+                                            <p class="cart_amount"> {{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), $shipping, 'TND')}}</p>
                                         </div>
-                                        <a href="#">Calculate shipping</a>
 
                                         <div class="cart_subtotal">
                                             <p>Total TTC</p>
-                                            <p class="cart_amount">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}</p>
+                                            <p class="cart_amount">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal() + $shipping, 'TND')}}</p>
                                         </div>
                                         <div class="checkout_btn">
                                             <a href="#">Proceed to Checkout</a>

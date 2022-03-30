@@ -14,7 +14,8 @@
                 </div>
                 <div class="col-lg-9 col-md-12">
                     @if($products->isEmpty())
-                        <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit à afficher</h5></div>
+                        <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit à afficher</h5>
+                        </div>
                     @else
                     <!--shop wrapper start-->
                         @include("partials.catalog.toolbar-top")
@@ -57,8 +58,8 @@
                                                         <li class="compare"><a href="#" title="compare"><span
                                                                     class="ion-levels"></span></a></li>
                                                         <li class="quick_button"><a href="#" data-bs-toggle="modal"
-                                                                                    data-bs-target="#modal_box"
-                                                                                    title="quick view"> <span
+                                                                                    data-bs-target="#modal_box_{{$product->rowid}}"
+                                                                                    title="Aperçu"> <span
                                                                     class="ion-ios-search-strong"></span></a></li>
                                                     </ul>
                                                 </div>
@@ -141,8 +142,8 @@
                                                                         class="ion-levels"></span> Compare</a></li>
                                                             <li class="quick_button"><a href="#" data-bs-toggle="modal"
                                                                                         data-bs-target="#modal_box"
-                                                                                        title="quick view"> <span
-                                                                        class="ion-ios-search-strong"></span> Quick View</a>
+                                                                                        title="Aperçu"> <span
+                                                                        class="ion-ios-search-strong"></span> Aperçu</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -151,6 +152,9 @@
                                         </figure>
                                     </article>
                                 </div>
+                                @push("modals")
+                                @include('partials.catalog.product-modal')
+                                @endpush
                             @endforeach
                         </div>
 

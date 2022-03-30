@@ -49,11 +49,15 @@
 
 @include("partials.footer")
 
+@stack('modals')
 <!-- Plugins JS -->
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
 <script src="{{asset('/js/main.js')}}"></script>
 
 @stack('scripts')
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
 </body>
 </html>

@@ -30,7 +30,7 @@
                                 @endif
                             @endif
                             <div class="label_product left">
-                                <span class="label_promo">Nouveau</span>
+                                <span class="label_new">Nouveau</span>
                                 <span class="label_promo">Promo</span>
                                 <span class="label_discount">-70,00 TND</span>
                             </div>

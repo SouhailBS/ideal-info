@@ -3271,7 +3271,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: bold;
 }
 .single_product:hover .label_product {
-    opacity: .5;
+    opacity: 0;
 }
 .label_product span.label_out_of_stock {
     text-transform: uppercase;

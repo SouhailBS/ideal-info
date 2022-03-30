@@ -3243,9 +3243,23 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     top: 5px;
     right: 5px;
 }
+
 .label_product.left {
     left: 5px;
     right: auto;
+}
+
+.label_product span {
+    padding: 0 5px;
+    margin: 5px 0;
+}
+
+.label_product span:first-child {
+    margin-top: 0;
+}
+
+.label_product span:last-child {
+    margin-bottom: 0;
 }
 
 .label_product span.label_sale {
@@ -3273,11 +3287,23 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     text-align: center;
     display: block;
     font-weight: bold;
+    color: #ffffff;
 }
 
 .label_product span.label_discount {
+    color: #ffffff;
     text-transform: uppercase;
     background: #de0d0d;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+}
+
+.label_product span.label_new {
+    color: #ffffff;
+    text-transform: uppercase;
+    background: #0063d1;
     font-size: 12px;
     text-align: center;
     display: block;
@@ -11559,6 +11585,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: #0063d1;
 }
 
-.nav-link.active:focus {color: #fff;}
+.nav-link.active:focus {
+    color: #fff;
+}
 
 /*# sourceMappingURL=style.css.map */

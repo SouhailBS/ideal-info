@@ -27,4 +27,7 @@
             </div>
         </li>
     @endforeach
+
+    <li><a href="about.html">Nos Services</a></li>
+    <li><a href="contact.html"> Contactez-nous</a></li>
 </ul>

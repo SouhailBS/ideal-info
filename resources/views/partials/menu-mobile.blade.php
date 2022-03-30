@@ -20,4 +20,6 @@
             @endif
         </li>
     @endforeach
+    <li class="menu-item-has-children"><a href="about.html">Nos Services</a></li>
+    <li class="menu-item-has-children"><a href="contact.html"> Contactez-nous</a></li>
 </ul>

@@ -31,8 +31,10 @@
                             @endif
                             <div class="label_product left">
                                 <span class="label_new">Nouveau</span>
-                                <span class="label_promo">Promo</span>
-                                <span class="label_discount">-70,00 TND</span>
+                                @if($product->price_min>0)
+                                    <span class="label_promo">Promo</span>
+                                    <span class="label_discount">{{$roduct->discount}}</span>
+                                @endif
                             </div>
                             <div class="label_product">
                                 @if($product->stock>0)
@@ -43,14 +45,14 @@
                             </div>
                             <div class="action_links">
                                 <ul>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
-                                                class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                    </li>
+                                    {{--                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i--}}
+                                    {{--                                                class="fa fa-heart-o" aria-hidden="true"></i></a></li>--}}
+                                    {{--                                    <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>--}}
+                                    {{--                                    </li>--}}
                                     <li class="quick_button"><a href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#modal_box"
-                                                                title="quick view"> <span
-                                                class="ion-ios-search-strong"></span></a></li>
+                                                                data-bs-target="#modal_box_{{$product->rowid}}"
+                                                                title="Aperçu"> <span
+                                                class="ion-ios-search-strong"></span> Aperçu</a></li>
                                 </ul>
                             </div>
                             <div class="add_to_cart">

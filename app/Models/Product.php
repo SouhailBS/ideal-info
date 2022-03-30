@@ -30,7 +30,8 @@ class Product extends Model
     protected $primaryKey = 'rowid';
     protected $appends = [
         "route",
-        "photos"
+        "photos",
+        "discount"
     ];
     /**
      * The attributes that should be cast.
@@ -64,6 +65,13 @@ class Product extends Model
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
         //$fmt->setPattern('#,##0.00 DT');
         return $fmt->formatCurrency($value, 'TND');
+    }
+
+    public function getPriceDiscountAttribute()
+    {
+        $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
+        //$fmt->setPattern('#,##0.00 DT');
+        return $fmt->formatCurrency($this->getRawOriginal('price_ttc') - $this->getRawOriginal('price_min_ttc'), 'TND');
     }
 
     public function getPriceMinTtcAttribute($value)

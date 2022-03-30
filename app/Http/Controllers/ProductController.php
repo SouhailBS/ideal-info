@@ -40,6 +40,7 @@ class ProductController extends Controller
 
     public function product(Product $product, $slug)
     {
+        abort_unless($product->tosell, 410);
         if ($slug != Str::slug($product->label))
             return redirect($product->route);
 

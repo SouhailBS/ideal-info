@@ -32,6 +32,14 @@ class Product extends Model
         "route",
         "photos"
     ];
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'tosell' => 'boolean',
+    ];
 
     protected $baseDir = "";
 

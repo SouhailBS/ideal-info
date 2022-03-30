@@ -30,7 +30,6 @@
                                 @endif
                             @endif
                             <div class="label_product left">
-                                <span class="label_new">Nouveau</span>
                                 @if($product->price_min>0)
                                     <span class="label_promo">Promo</span>
                                     <span class="label_discount">{{$product->discount}}</span>

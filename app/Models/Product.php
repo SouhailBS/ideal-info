@@ -62,7 +62,7 @@ class Product extends Model
 
     public function getPriceTtcAttribute($value)
     {
-        $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
+        $fmt = new NumberFormatter('fr-TN', NumberFormatter::CURRENCY);
         //$fmt->setPattern('#,##0.00 DT');
         return $fmt->formatCurrency($value, 'TND');
     }
@@ -71,7 +71,7 @@ class Product extends Model
     {
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
         //$fmt->setPattern('#,##0.00 DT');
-        return $fmt->formatCurrency(floatval($this->getRawOriginal('price_min_ttc')) - floatval($this->getRawOriginal('price_ttc')), 'TND');
+        return $fmt->formatCurrency($this->getRawOriginal('price_min_ttc') - $this->getRawOriginal('price_ttc'), 'TND');
     }
 
     public function getPriceMinTtcAttribute($value)

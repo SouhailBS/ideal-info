@@ -6,7 +6,7 @@
     <div class="shopping_cart_area mt-60">
         <div class="container">
             @if(Cart::isEmpty())
-                Votre panier est vide
+                <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit dans votre panier</h5></div>
             @else
                 <form action="#">
                     <div class="row">

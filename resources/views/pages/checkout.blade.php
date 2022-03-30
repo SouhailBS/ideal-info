@@ -39,10 +39,10 @@
                         if (\Cart::getTotal()>300)
                             $shipping = 0;
                     @endphp
-                    <div class="checkout_form">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <form action="#">
+                    <form action="#">
+                        <div class="checkout_form">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
                                     <h3>Détails de livraison</h3>
                                     <div class="row">
                                         <div class="col-lg-6 mb-20">
@@ -108,10 +108,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <form action="#">
+
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+
                                     <h3>Votre commande</h3>
                                     <div class="order_table table-responsive">
                                         <table>
@@ -124,7 +124,8 @@
                                             <tbody>
                                             @foreach(Cart::getContent() as $item)
                                                 <tr>
-                                                    <td> {{$item->name}} <strong> × {{$item->quantity}}</strong></td>
+                                                    <td> {{$item->name}} <strong> × {{$item->quantity}}</strong>
+                                                    </td>
                                                     <td> {{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ),$item->getPriceSum() , 'TND')}}</td>
                                                 </tr>
                                             @endforeach
@@ -154,10 +155,11 @@
                                             <button type="submit">Confirmer ma commande</button>
                                         </div>
                                     </div>
-                                </form>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 @endauth
             @endif
         </div>

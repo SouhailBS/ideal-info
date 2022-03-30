@@ -13,13 +13,20 @@ class CheckoutController extends Controller
 
         ]);
 
-        $client = new Client($request->except(['firstname', 'lastname', 'note']));
-        $client->code_client = "CU2203-00352";
-        $client->nom = $request->firstname . " " . $request->lastname;
-        $client->client = 1;
-        $client->fournisseur = 0;
-        $client->fk_pays = 10;
-        $client->status = 1;
-        $client->save();
+        $user = auth()->user();
+        if (!$user->fk_soc) {
+            $client = new Client($request->except(['firstname', 'lastname', 'note', 'identity']));
+            //$client->code_client = "CU2203-00352";
+            $client->nom = $request->firstname . " " . $request->lastname;
+            $client->client = 1;
+            $client->fournisseur = 0;
+            $client->fk_pays = 10;
+            $client->status = 1;
+            $client->siret = $request->identity;
+            $client->save();
+            $user->fk_soc = $client->rowid;
+            $user->save();
+        }
+
     }
 }

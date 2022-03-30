@@ -52,11 +52,12 @@
                                     <li class="quick_button"><a href="#" data-bs-toggle="modal"
                                                                 data-bs-target="#modal_box_{{$product->rowid}}"
                                                                 title="Aperçu"> <span
-                                                class="ion-ios-search-strong"></span> Aperçu</a></li>
+                                                class="ion-ios-search-strong"></span></a></li>
                                 </ul>
                             </div>
                             <div class="add_to_cart">
-                                <a href="cart.html" title="add to cart">Add to cart</a>
+                                <a href="{{route("add-to-cart", ["product"=>$product])}}"
+                                   title="Ajouter au panier">Ajouter au panier</a>
                             </div>
                         </div>
                         <figcaption class="product_content">

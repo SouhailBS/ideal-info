@@ -51,12 +51,12 @@
                                                 </div>
                                                 <div class="action_links">
                                                     <ul>
-                                                        <li class="wishlist"><a href="wishlist.html"
+                                                        {{--<li class="wishlist"><a href="wishlist.html"
                                                                                 title="Add to Wishlist"><i
                                                                     class="fa fa-heart-o" aria-hidden="true"></i></a>
                                                         </li>
                                                         <li class="compare"><a href="#" title="compare"><span
-                                                                    class="ion-levels"></span></a></li>
+                                                                    class="ion-levels"></span></a></li>--}}
                                                         <li class="quick_button"><a href="#" data-bs-toggle="modal"
                                                                                     data-bs-target="#modal_box_{{$product->rowid}}"
                                                                                     title="Aperçu"> <span

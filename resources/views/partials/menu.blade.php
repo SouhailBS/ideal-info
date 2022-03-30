@@ -12,7 +12,7 @@
         </li>--}}
         <li class="mega_items"><a href="{{$category->route}}">{{$category->label}}<i
                     class="fa fa-angle-down"></i></a>
-            <div class="mega_menu">
+            <div class="mega_menu @if($loop->iteration<($categories->count()/2)) left @endif">
                 <ul class="mega_menu_inner">
                     @foreach($category->subCategories as $subCategory)
                         <li><a href="{{$subCategory->route}}">{{$subCategory->label}}</a>

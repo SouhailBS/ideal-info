@@ -1870,9 +1870,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     position: static;
 }
 
+.main_menu nav > ul > li .mega_menu ul.mega_menu_inner li {
+    margin-right: 40px;
+}
+
+.main_menu nav > ul > li .mega_menu.left {
+    left: 0;
+    right: auto;
+}
 .main_menu nav > ul > li .mega_menu {
     position: absolute;
-    min-width: 100%;
     padding: 25px 30px 30px 30px;
     background: #fff;
     box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.1);
@@ -1880,8 +1887,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     transform: perspective(600px) rotateX(-90deg);
     -webkit-transform-origin: 0 0 0;
     transform-origin: 0 0 0;
-    left: 0;
-    right: auto;
+    left: auto;
+    right: 0;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: 0.5s;
@@ -3270,9 +3277,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: block;
     font-weight: bold;
 }
+
 .single_product:hover .label_product {
     opacity: 0;
 }
+
 .label_product span.label_out_of_stock {
     text-transform: uppercase;
     color: #de0d0d;

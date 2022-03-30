@@ -93,7 +93,7 @@
                                             <input type="text" name="company" id="company" placeholder="Votre Société">
                                         </div>
 
-                                        <div class="col-lg-6 mb-20">
+                                        <div class="col-12 mb-20">
                                             <label for="identity">Numéro CIN ou matricule fiscal <span>*</span></label>
                                             <input type="text" id="identity" name="identity" required
                                                    placeholder="Votre numéro CIN ou matricule fiscal">

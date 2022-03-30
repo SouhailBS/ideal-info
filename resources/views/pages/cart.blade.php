@@ -41,7 +41,7 @@
                                                     <a href="{{$item->associatedModel->route}}">{{$item->name}}</a>
                                                 </td>
                                                 <td class="product-price">{{$item->associatedModel->price_ttc}}</td>
-                                                <td class="product_quantity"><label>Quantity</label>
+                                                <td class="product_quantity"><label>Quantité</label>
                                                     <input min="1"
                                                            max="100"
                                                            value="{{$item->quantity}}"

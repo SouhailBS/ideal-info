@@ -91,7 +91,7 @@
                                 <div class="modal_social">
                                     <h2>Partager ce produit</h2>
                                     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                                    <div class="addthis_inline_share_toolbox_mkde"></div>
+                                    <div class="addthis_inline_share_toolbox_mkde" data-url="{{$product->route}}"></div>
                                 </div>
                             </div>
                         </div>

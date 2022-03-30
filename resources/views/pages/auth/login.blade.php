@@ -12,6 +12,7 @@
                         <h2>Connectez-vous à votre compte</h2>
                         <form method="POST" action="{{route("login")}}">
                             @csrf
+                            <p class="text-center">Vous n'avez pas un compte? <a href="{{route("register-form")}}">Créez-en un !</a></p>
                             <p>
                                 <label for="email">E-mail <span>*</span></label>
                                 <input value="{{old('email')}}" id="email" type="email" name="email" required placeholder="Votre adresse email">

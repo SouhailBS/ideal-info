@@ -33,7 +33,7 @@
         @endforeach
         <div class="mini_cart_table">
             <div class="cart_total">
-                <span>total:</span>
+                <span>Total:</span>
                 <span
                     class="price">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal(), 'TND')}}</span>
             </div>

@@ -10,6 +10,7 @@
     <!--shopping cart area start -->
     <div class="shopping_cart_area mt-60">
         <div class="container">
+
             @if(Cart::isEmpty())
                 <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit dans votre panier</h5>
                 </div>

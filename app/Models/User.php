@@ -87,4 +87,8 @@ class User extends Authenticatable
         return 'note_private';
     }
 
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'fk_soc', 'rowid');
+    }
 }

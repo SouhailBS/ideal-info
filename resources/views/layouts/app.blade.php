@@ -69,7 +69,7 @@
 <script>
     $(document).ready(function () {
         startConfetti();
-        setTimeout(stopConfetti, 10000)
+        setTimeout(stopConfetti, 5000);
     });
 </script>
 @stack('scripts')

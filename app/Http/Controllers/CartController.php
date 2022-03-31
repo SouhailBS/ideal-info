@@ -19,6 +19,25 @@ class CartController extends Controller
         return back();
     }
 
+    public function update(Request $request)
+    {
+
+        foreach ($request->except('_token') as $key => $item) {
+            $product = Product::where('rowid', $key)->first();
+            \Cart::update($product->rowid, [
+                'name' => $product->label,
+                'price' => $product->price_min > 0 ? $product->getRawOriginal('price_min_ttc') : $product->getRawOriginal('price_ttc'),
+                'quantity' => [
+                    'relative' => false,
+                    'value' => $item
+                ],
+                'attributes' => array(),
+                'associatedModel' => $product
+            ]);
+        }
+        return back();
+    }
+
     public function delete($product)
     {
         \Cart::remove($product);

@@ -4,7 +4,7 @@
 @section("content")
     @php
         $shipping = 8;
-        if (\Cart::getTotal()>=300)
+        if (\Cart::getTotal()>=200)
             $shipping = 0;
     @endphp
     <!--shopping cart area start -->
@@ -15,7 +15,8 @@
                 <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit dans votre panier</h5>
                 </div>
             @else
-                <form action="#">
+                <form method="POST" action="{{route("update-cart")}}">
+                    @csrf
                     <div class="row">
                         <div class="col-12">
                             <div class="table_desc">
@@ -59,8 +60,8 @@
                                                         {{$item->associatedModel->price_ttc}}
                                                     @endif
                                                 </td>
-                                                <td class="product_quantity"><label>Quantité</label>
-                                                    <input min="1"
+                                                <td class="product_quantity"><label for="qty">Quantité</label>
+                                                    <input id="qty" name="{{$item->id}}" min="1"
                                                            max="100"
                                                            value="{{$item->quantity}}"
                                                            type="number">
@@ -73,7 +74,7 @@
                                     </table>
                                 </div>
                                 <div class="cart_submit">
-                                    <button type="submit">update cart</button>
+                                    <button type="submit">mettre à jour le panier</button>
                                 </div>
                             </div>
                         </div>

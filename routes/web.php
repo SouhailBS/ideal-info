@@ -29,6 +29,7 @@ Route::get('/products/{product}/{slug}', [ProductController::class, 'product'])-
 Route::view('/cart', 'pages.cart')->name('cart');
 Route::view('/checkout', 'pages.checkout')->name('checkout');
 Route::get('/cart/product/{product}', [CartController::class, 'add'])->name('add-to-cart');
+Route::post('/cart/product', [CartController::class, 'update'])->name('update-cart');
 Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
 Route::get('/products/promotions', [ProductController::class, 'promo'])->name("promo");
 Route::view('/our-services', 'pages.our-services')->name('our-services');

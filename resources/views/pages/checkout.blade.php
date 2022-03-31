@@ -36,7 +36,7 @@
                 @auth
                     @php
                         $shipping = 8;
-                        if (\Cart::getTotal()>=300)
+                        if (\Cart::getTotal()>=200)
                             $shipping = 0;
                     @endphp
                     <form method="POST" action="{{route("submit-checkout")}}">

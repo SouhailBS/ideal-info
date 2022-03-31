@@ -20,43 +20,67 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="contact_message content">
-                        <h3>contact us</h3>
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum
-                            est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum
-                            formas human. qui sequitur mutationem consuetudium lectorum. Mirum est notare quam</p>
+                        <h3>Nous contacter</h3>
+                        <p>{{config("company.MAIN_INFO_SOCIETE_NOTE")}}</p>
                         <ul>
-                            <li><i class="fa fa-fax"></i> Address : Your address goes here.</li>
-                            <li><i class="fa fa-envelope-o"> </i> Email: <a
-                                    href="mailto:demo@example.com">demo@example.com </a>
+                            <li>
+                                <i class="fa fa-fax"></i> Adresse : {{config("company.MAIN_INFO_SOCIETE_ADDRESS")}}
+                                , {{config("company.MAIN_INFO_SOCIETE_ZIP")}}
+                                , {{config("company.MAIN_INFO_SOCIETE_TOWN")}}
+                                , {{explode(':', config("company.MAIN_INFO_SOCIETE_STATE"))[2]}}
+                                , {{explode(':', config("company.MAIN_INFO_SOCIETE_COUNTRY"))[2]}}
                             </li>
-                            <li><i class="fa fa-phone"></i> Phone:<a href="tel: 0123456789"> 0123456789 </a></li>
+                            <li>
+                                <i class="fa fa-envelope-o"> </i>
+                                Email: <a
+                                    href="mailto:{{config("company.MAIN_INFO_SOCIETE_MAIL")}}">{{config("company.MAIN_INFO_SOCIETE_MAIL")}}</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i> Téléphone: <a
+                                    href="tel:{{config("company.MAIN_INFO_SOCIETE_TEL")}}">{{config("company.MAIN_INFO_SOCIETE_TEL")}}</a>
+                                – <a
+                                    href="tel:{{config("company.MAIN_INFO_SOCIETE_FAX")}}">{{config("company.MAIN_INFO_SOCIETE_FAX")}}</a>
+                            </li>
                         </ul>
-                        >
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
+                    @if (session('success'))
+                        <div class="alert alert-success mb-2">
+                            {!! session('success') !!}
+                        </div>
+                    @endif
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger mt-2">{{ $error }}</div>
+                    @endforeach
                     <div class="contact_message form">
-                        <h3>Tell us your project</h3>
-                        <form id="contact-form" method="POST"
-                              action="https://template.hasthemes.com/junko/junko/assets/mail.php">
-                            <p>
-                                <label> Your Name (required)</label>
-                                <input name="name" placeholder="Name *" type="text">
-                            </p>
-                            <p>
-                                <label> Your Email (required)</label>
-                                <input name="email" placeholder="Email *" type="email">
-                            </p>
-                            <p>
-                                <label> Subject</label>
-                                <input name="subject" placeholder="Subject *" type="text">
-                            </p>
-                            <div class="contact_textarea">
-                                <label> Your Message</label>
-                                <textarea placeholder="Message *" name="message" class="form-control2"></textarea>
+                        <h3>Discutez avec nous</h3>
+                        <form method="POST" action="{{route("submit-contact")}}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6 mb-20">
+                                    <label for="name"> Votre nom (obligatoire)</label>
+                                    <input value="{{old('nom')}}" id="name" name="nom" placeholder="Votre nom *" type="text">
+                                </div>
+                                <div class="col-lg-6 mb-20">
+                                    <label for="email"> Votre adresse email (obligatoire)</label>
+                                    <input value="{{old('email')}}" id="email" name="email" placeholder="Email *" type="email">
+                                </div>
+
+                                <div class="col-12 mb-20">
+                                    <label for="subject"> Sujet</label>
+                                    <input value="{{old('subject')}}" id="subject" name="subject" placeholder="Sujet" type="text">
+                                </div>
+                                <div class="contact_textarea col-12">
+                                    <label for="msg"> Votre Message</label>
+                                    <textarea required id="msg" placeholder="Message *" name="message"
+                                              class="form-control2">{{old('message')}}</textarea>
+                                </div>
+
+                                <div class="d-grid gap-2 col-12">
+                                    <button type="submit"> Envoyer</button>
+                                </div>
                             </div>
-                            <button type="submit"> Send</button>
-                            <p class="form-messege"></p>
                         </form>
 
                     </div>

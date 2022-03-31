@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -22,6 +22,17 @@ class HomeController extends Controller
             "promo" => $promo,
             "categories" => $categories
         ]);
+    }
+
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'nom' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        return back()->with('success', 'Nous avons reçu votre message.');
     }
 
 }

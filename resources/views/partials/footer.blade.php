@@ -59,19 +59,19 @@
                         <h3>Suivez-nous</h3>
                         <div class="footer_social_link">
                             <ul>
-                                <li><a class="facebook" href="{{config("company.MAIN_INFO_SOCIETE_FACEBOOK_URL")}}"
+                                <li><a target="_blank" class="facebook" href="{{config("company.MAIN_INFO_SOCIETE_FACEBOOK_URL")}}"
                                        title="Facebook"><i class="fa fa-facebook"></i></a>
                                 </li>
-                                <li><a class="twitter" href="{{config("company.MAIN_INFO_SOCIETE_TWITTER_URL")}}"
+                                <li><a target="_blank" class="twitter" href="{{config("company.MAIN_INFO_SOCIETE_TWITTER_URL")}}"
                                        title="Twitter"><i class="fa fa-twitter"></i></a>
                                 </li>
-                                <li><a class="instagram" href="{{config("company.MAIN_INFO_SOCIETE_INSTAGRAM_URL")}}"
+                                <li><a target="_blank" class="instagram" href="{{config("company.MAIN_INFO_SOCIETE_INSTAGRAM_URL")}}"
                                        title="Instagram"><i
                                             class="fa fa-instagram"></i></a></li>
-                                <li><a class="linkedin" href="{{config("company.MAIN_INFO_SOCIETE_LINKEDIN_URL")}}"
+                                <li><a target="_blank" class="linkedin" href="{{config("company.MAIN_INFO_SOCIETE_LINKEDIN_URL")}}"
                                        title="LinkedIn"><i class="fa fa-linkedin"></i></a>
                                 </li>
-                                <li><a class="whatsapp" href="{{config("company.MAIN_INFO_SOCIETE_WHATSAPP_URL")}}"
+                                <li><a target="_blank" class="whatsapp" href="{{config("company.MAIN_INFO_SOCIETE_WHATSAPP_URL")}}"
                                        title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
                         </div>

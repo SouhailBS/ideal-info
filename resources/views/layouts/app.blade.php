@@ -7,7 +7,9 @@
     <meta name="keywords" content=""/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="shortcut icon" href="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")])}}" type="image/png">
+    <link rel="shortcut icon"
+          href="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")])}}"
+          type="image/png">
 
     @yield("robots")
 
@@ -18,7 +20,8 @@
     <meta property="og:title" content="{{config('company.MAIN_INFO_SOCIETE_NOM')}} | @yield("title")"/>
     <meta property="og:description"
           content="@yield("description", ""))"/>
-    <meta property="og:image" content="@yield("image", route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")]))"/>
+    <meta property="og:image"
+          content="@yield("image", route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")]))"/>
     <!-- Stylesheets -->
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('/css/plugins.css')}}">
@@ -31,11 +34,18 @@
         _smartsupp.key = 'b51a2d3458351b942d4c98d628cd7498f2cab201';
         _smartsupp.cookieDomain = '.ideal-info.net';
         _smartsupp.sitePlatform = 'Boutique en ligne: Ideal Informatique';
-        window.smartsupp||(function(d) {
-            var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-            s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-            c.type='text/javascript';c.charset='utf-8';c.async=true;
-            c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        window.smartsupp || (function (d) {
+            var s, c, o = smartsupp = function () {
+                o._.push(arguments)
+            };
+            o._ = [];
+            s = d.getElementsByTagName('script')[0];
+            c = d.createElement('script');
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.async = true;
+            c.src = '//www.smartsuppchat.com/loader.js?';
+            s.parentNode.insertBefore(c, s);
         })(document);
     </script>
 </head>
@@ -54,7 +64,14 @@
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
 <script src="{{asset('/js/main.js')}}"></script>
-
+<!-- Confetti JS -->
+<script src="{{asset('/js/confetti.js')}}"></script>
+<script>
+    $(document).ready(function () {
+        startConfetti();
+        setTimeout(stopConfetti, 10000)
+    });
+</script>
 @stack('scripts')
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

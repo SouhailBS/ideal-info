@@ -2,13 +2,17 @@
 <aside class="sidebar_widget">
     <div class="widget_inner">
         <div class="widget_list widget_categories">
-            <h2>{{$category->label}}</h2>
-            <ul>
-                @php
+            @php
+                if (isset($category)){
                     $sideCategories = $category;
                     if($category->subCategories->isEmpty())
                         $sideCategories = $category->parent;
-                @endphp
+                    }
+                else
+                    $sideCategories = $mainCategory;
+            @endphp
+            <h2>{{$sideCategories->label}}</h2>
+            <ul>
 
                 @foreach($sideCategories->subCategories as $subCategory)
                     @if($subCategory->subCategories->isEmpty())

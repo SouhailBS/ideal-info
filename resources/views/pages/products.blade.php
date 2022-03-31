@@ -1,5 +1,5 @@
 @extends("layouts.app")
-@section("title", $category->label)
+@section("title", isset($category)? $category->label: $title)
 
 @section("content")
     @isset($category)
@@ -42,6 +42,13 @@
                                                                 alt=""></a>
                                                     @endif
                                                 @endif
+
+                                                <div class="label_product left">
+                                                    @if($product->price_min>0)
+                                                        <span class="label_promo">Promo</span>
+                                                        <span class="label_discount">{{$product->discount}}</span>
+                                                    @endif
+                                                </div>
                                                 <div class="label_product">
                                                     @if($product->stock>0)
                                                         <span class="label_sale">Dispo</span>
@@ -153,7 +160,7 @@
                                     </article>
                                 </div>
                                 @push("modals")
-                                @include('partials.catalog.product-modal')
+                                    @include('partials.catalog.product-modal')
                                 @endpush
                             @endforeach
                         </div>

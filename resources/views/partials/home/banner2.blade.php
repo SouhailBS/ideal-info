@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="single_banner">
                     <div class="banner_thumb">
-                        <a href="shop.html"><img src="assets/img/bg/banner8.jpg" alt=""></a>
+                        <a href="{{route("promo")}}"><img src="/img/affiche-bas.jpg" alt=""></a>
                     </div>
                 </div>
             </div>

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{asset('/css/plugins.css')}}">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/confetti.css')}}">
 
     @stack("styles")
     <script>
@@ -60,20 +61,28 @@
 @include("partials.footer")
 
 @stack('modals')
+<div class="conf-wrapper d-none">
+    @for($i=149;$i>=0;$i--)
+        <div class="confetti-{{$i}}"></div>
+    @endfor
+</div>
 <!-- Plugins JS -->
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
 <script src="{{asset('/js/main.js')}}"></script>
-<!-- Confetti JS -->
-<script src="{{asset('/js/confetti.js')}}"></script>
+
+@stack('scripts')
 <script>
     $(document).ready(function () {
-        startConfetti();
-        setTimeout(stopConfetti, 5000);
+        if(!localStorage.getItem("birthday2022")) {
+            $(".conf-wrapper").removeClass("d-none");
+            setTimeout(function () {
+                $(".conf-wrapper").remove();
+                localStorage.setItem("birthday2022", 'true');
+            }, 5000);
+        }
     });
 </script>
-@stack('scripts')
-
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
 </body>

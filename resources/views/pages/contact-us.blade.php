@@ -24,7 +24,7 @@
                         <p>{{config("company.MAIN_INFO_SOCIETE_NOTE")}}</p>
                         <ul>
                             <li>
-                                <i class="fa fa-fax"></i> Adresse : {{config("company.MAIN_INFO_SOCIETE_ADDRESS")}}
+                                <i class="fa fa-home"></i> Adresse : {{config("company.MAIN_INFO_SOCIETE_ADDRESS")}}
                                 , {{config("company.MAIN_INFO_SOCIETE_ZIP")}}
                                 , {{config("company.MAIN_INFO_SOCIETE_TOWN")}}
                                 , {{explode(':', config("company.MAIN_INFO_SOCIETE_STATE"))[2]}}

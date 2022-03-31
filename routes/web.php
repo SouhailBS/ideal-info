@@ -30,7 +30,9 @@ Route::view('/cart', 'pages.cart')->name('cart');
 Route::view('/checkout', 'pages.checkout')->name('checkout');
 Route::get('/cart/product/{product}', [CartController::class, 'add'])->name('add-to-cart');
 Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
-Route::get("/products/promotions", [ProductController::class, 'promo'])->name("promo");
+Route::get('/products/promotions', [ProductController::class, 'promo'])->name("promo");
+Route::view('/our-services', 'pages.our-services')->name('our-services');
+Route::view('/contact-us', 'pages.contact-us')->name('contact-us');
 Route::middleware('auth:web')->group(function () {
     Route::view('/account', 'pages.account')->name("account");
     Route::get("/auth/logout", [LoginController::class, 'logout'])->name("logout");

@@ -3027,24 +3027,24 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .slider_section_five .single_slider {
-    height: 431px;
+    height: 300px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider_section_five .single_slider {
-        height: 336px;
+        height: 276px;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider_section_five .single_slider {
-        height: 336px;
+        height: 276px;
     }
 }
 
 @media only screen and (max-width: 767px) {
     .slider_section_five .single_slider {
-        height: 300px;
+        height: 200px;
     }
 }
 

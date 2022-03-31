@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section_title">
-                    <h2>Produits populaires</h2>
+                    <h2>Ordinateurs et accessoires gaming</h2>
                 </div>
             </div>
         </div>

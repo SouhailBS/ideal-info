@@ -39,6 +39,7 @@ class CheckoutController extends Controller
         $order->multicurrency_tx = 1;
         $order->ref = 'WEB-' . $user->fk_soc . '-' . time();
         $order->save();
+        $order->total_ht = 0;
         foreach (\Cart::getContent() as $item) {
             $order->total_ht += $item->associatedModel->price;
             $order_line = new OrderLine();
@@ -62,7 +63,6 @@ class CheckoutController extends Controller
             $order_line->multicurrency_total_tva = $order_line->total_tva;
             $order_line->save();
         }
-        $order->total_ht = 0;
         $order->total_ttc = \Cart::getTotal();
         $order->total_tva = $order->total_ttc - $order->total_ht;
 

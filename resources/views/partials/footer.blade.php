@@ -33,7 +33,7 @@
                         <h3>Liens utiles</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="">À propos de nous</a></li>
+                                <li><a href="{{route("about-us")}}">À propos de nous</a></li>
                                 <li><a href="{{route("contact-us")}}">Contactez-nous</a></li>
                                 <li><a href="{{route("our-services")}}">Nos Services</a></li>
                                 <li><a href="{{route("promo")}}">Nos promotions</a></li>

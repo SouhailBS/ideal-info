@@ -33,6 +33,7 @@ Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('d
 Route::get('/products/promotions', [ProductController::class, 'promo'])->name("promo");
 Route::view('/our-services', 'pages.our-services')->name('our-services');
 Route::view('/contact-us', 'pages.contact-us')->name('contact-us');
+Route::view('/about-us', 'pages.about-us')->name('about-us');
 Route::post('/contact', [HomeController::class, 'contact'])->name('submit-contact');
 Route::middleware('auth:web')->group(function () {
     Route::view('/account', 'pages.account')->name("account");

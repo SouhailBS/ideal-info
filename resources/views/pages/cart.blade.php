@@ -10,7 +10,14 @@
     <!--shopping cart area start -->
     <div class="shopping_cart_area mt-60">
         <div class="container">
-
+            @if (session('success'))
+                <div class="alert alert-success mb-2">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger mt-2">{{ $error }}</div>
+            @endforeach
             @if(Cart::isEmpty())
                 <div class="shop_toolbar_wrapper"><h5 class="w-100 text-center">Aucun produit dans votre panier</h5>
                 </div>

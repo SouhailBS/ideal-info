@@ -55,8 +55,13 @@
                                 </div>
                                 <h3 class="product_name"><a href="{{$product->route}}">{{$product->label}}</a></h3>
                                 <div class="add_to_cart">
-                                    <a href="{{route("add-to-cart", ["product"=>$product])}}"
-                                       title="Ajouter au panier">Ajouter au panier</a>
+                                    @if($product->stock>0)
+                                        <a href="{{route("add-to-cart", ["product"=>$product])}}"
+                                           title="Ajouter au panier">Ajouter au panier</a>
+                                    @else
+                                        <a class="disabled" aria-disabled="true" title="Produit épuisé">Ajouter au
+                                            panier</a>
+                                    @endif
                                 </div>
                             </figcaption>
                         </figure>

@@ -101,8 +101,14 @@
                             </div>--}}
                             <div class="product_variant quantity">
                                 <label for="qte">Quantité</label>
-                                <input id="qte" min="1" max="100" value="1" name="quantity" type="number">
-                                <button class="button" type="submit">Ajouter au panier</button>
+
+                                @if($product->stock>0)
+                                    <input id="qte" min="1" max="{{$product->stock}}" value="1" name="quantity" type="number">
+                                    <button class="button" type="submit">Ajouter au panier</button>
+                                @else
+                                    <input disabled id="qte" min="1" max="{{$product->stock}}" value="1" name="quantity" type="number">
+                                    <button class="button disabled" aria-disabled="true" title="Produit épuisé">Ajouter au panier</button>
+                                @endif
                             </div>
                             {{--<div class=" product_d_action">
                                 <ul>

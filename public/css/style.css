@@ -5386,6 +5386,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     background: #f26522;
 }
 
+.footer_social_link ul li a.rss {
+    background: #25D366;
+}
+
 .subscribe_form form {
     position: relative;
     width: 350px;

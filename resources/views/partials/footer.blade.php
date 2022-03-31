@@ -30,51 +30,52 @@
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widgets_container widget_menu">
-                        <h3>Information</h3>
+                        <h3>Liens utiles</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="blog.html">Delivery Information</a></li>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                                <li><a href="services.html">Terms & Conditions</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Gift Certificates</a></li>
+                                <li><a href="">À propos de nous</a></li>
+                                <li><a href="{{route("contact-us")}}">Contactez-nous</a></li>
+                                <li><a href="{{route("our-services")}}">Nos Services</a></li>
+                                <li><a href="{{route("promo")}}">Nos promotions</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widgets_container widget_menu">
-                        <h3>My Account</h3>
+                        <h3>Compte</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Order History</a></li>
-                                <li><a href="wishlist.html">Wish List</a></li>
-                                <li><a href="#">Newsletter</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                                <li><a href="faq.html">International Orders</a></li>
+                                <li><a href="{{route("account")}}">Mon Compte</a></li>
+                                <li><a href="{{route("cart")}}">Mon panier</a></li>
+                                <li><a href="{{route("login-form")}}">Se connecter</a></li>
+                                <li><a href="{{route("register-form")}}">Crée un compte</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container newsletter">
-                        <h3>Follow Us</h3>
+                        <h3>Suivez-nous</h3>
                         <div class="footer_social_link">
                             <ul>
-                                <li><a class="facebook" href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                <li><a class="facebook" href="{{config("company.MAIN_INFO_SOCIETE_FACEBOOK_URL")}}"
+                                       title="Facebook"><i class="fa fa-facebook"></i></a>
                                 </li>
-                                <li><a class="twitter" href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                <li><a class="twitter" href="{{config("company.MAIN_INFO_SOCIETE_TWITTER_URL")}}"
+                                       title="Twitter"><i class="fa fa-twitter"></i></a>
                                 </li>
-                                <li><a class="instagram" href="#" title="instagram"><i
+                                <li><a class="instagram" href="{{config("company.MAIN_INFO_SOCIETE_INSTAGRAM_URL")}}"
+                                       title="Instagram"><i
                                             class="fa fa-instagram"></i></a></li>
-                                <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i></a>
+                                <li><a class="linkedin" href="{{config("company.MAIN_INFO_SOCIETE_LINKEDIN_URL")}}"
+                                       title="LinkedIn"><i class="fa fa-linkedin"></i></a>
                                 </li>
-                                <li><a class="rss" href="#" title="rss"><i class="fa fa-rss"></i></a></li>
+                                <li><a class="whatsapp" href="{{config("company.MAIN_INFO_SOCIETE_WHATSAPP_URL")}}"
+                                       title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
-                        <div class="subscribe_form">
+                        {{--<div class="subscribe_form">
                             <h3>Join Our Newsletter Now</h3>
                             <form id="mc-form" class="mc-form footer-newsletter">
                                 <input id="mc-email" type="email" autocomplete="off"
@@ -87,7 +88,7 @@
                                 <div class="mailchimp-success"></div><!-- mailchimp-success end -->
                                 <div class="mailchimp-error"></div><!-- mailchimp-error end -->
                             </div><!-- mailchimp-alerts end -->
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>

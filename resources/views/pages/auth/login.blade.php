@@ -28,9 +28,7 @@
                                     Rester connecté
                                 </label>
                                 <button type="submit">Connexion</button>
-
                             </div>
-
                         </form>
                         @foreach ($errors->all() as $error)
                             <div class="alert alert-danger mt-2">{{ $error }}</div>

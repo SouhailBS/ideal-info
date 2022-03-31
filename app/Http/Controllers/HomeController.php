@@ -13,10 +13,10 @@ class HomeController extends Controller
         $bestSeller = Product::leftJoin('commandedet', 'product.rowid', '=', 'commandedet.fk_product')
             ->selectRaw(DB::getTablePrefix() . 'product.*, COALESCE(sum(' . DB::getTablePrefix() . 'commandedet.qty),0) total')
             ->groupBy('product.rowid')
-            ->orderBy('total', 'desc')
+            ->orderBy('total', 'asc')
             ->where('tosell', '>', '0')
             ->where('stock', '>', 0)
-            ->take(5)
+            ->take(20)
             ->get();
 
         $products = Product::where('tosell', '>', '0')->inRandomOrder()->take(20)->get();

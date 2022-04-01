@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MessageSent;
+use App\Mail\OrderReceived;
 use App\Models\Category;
 use App\Models\Employee;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -32,6 +35,9 @@ class HomeController extends Controller
             'email' => 'required|email',
             'message' => 'required'
         ]);
+
+        Mail::to(config('mail.reply_to.address'))
+            ->queue(new MessageSent((object)$request->all()));
 
         return back()->with('success', 'Nous avons reçu votre message.');
     }

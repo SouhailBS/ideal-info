@@ -292,7 +292,7 @@
                 </div>
             </div>
             <div class="product_carousel product_column5 owl-carousel">
-                @foreach($product->categories->last()->products()->where('tosell', '>', '0')->inRandomOrder()->take(30)->get() as $product)
+                @foreach($product->categories->last()->products()->where('tosell', '>', '0')->take(10)->get() as $product)
                     @include('partials.catalog.product-miniature')
                 @endforeach
             </div>

@@ -19,22 +19,8 @@
                     <div class="top_right text-right">
                         @include("partials.top-right-actions")
                     </div>
-                    <div class="search_container">
-                        <form action="#">
-                            <div class="hover_category">
-                                <select class="select_option" name="select" id="categories">
-                                    <option selected value="1">Tous les catégories</option>
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->rowid}}">{{$category->label}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="search_box">
-                                <input placeholder="Search product..." type="text">
-                                <button type="submit">Search</button>
-                            </div>
-                        </form>
-                    </div>
+
+                    @include("partials.search-box")
 
                     <div class="middel_right_info">
                         {{--<div class="header_wishlist">
@@ -122,22 +108,9 @@
                     </div>
                     <div class="col-lg-9 col-md-6">
                         <div class="middel_right">
-                            <div class="search_container">
-                                <form action="#">
-                                    <div class="hover_category">
-                                        <select class="select_option" name="select" id="categories1">
-                                            <option selected value="1">Tous les catégories</option>
-                                            @foreach($categories as $category)
-                                                <option value="{{$category->rowid}}">{{$category->label}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="search_box">
-                                        <input placeholder="Search product..." type="text">
-                                        <button type="submit">Search</button>
-                                    </div>
-                                </form>
-                            </div>
+
+                            @include("partials.search-box")
+
                             <div class="middel_right_info">
                                 {{--<div class="header_wishlist">
                                     <a href="wishlist.html"><i class="fa fa-heart-o" aria-hidden="true"></i></a>

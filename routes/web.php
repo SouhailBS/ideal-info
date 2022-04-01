@@ -32,6 +32,7 @@ Route::get('/cart/product/{product}', [CartController::class, 'add'])->name('add
 Route::post('/cart/product', [CartController::class, 'update'])->name('update-cart');
 Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
 Route::get('/products/promotions', [ProductController::class, 'promo'])->name("promo");
+Route::get('/search', [ProductController::class, 'search'])->name("search");
 Route::view('/our-services', 'pages.our-services')->name('our-services');
 Route::view('/contact-us', 'pages.contact-us')->name('contact-us');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about-us');

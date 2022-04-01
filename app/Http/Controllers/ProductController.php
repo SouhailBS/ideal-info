@@ -112,6 +112,58 @@ class ProductController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $orderby = '';
+        $category = Category::where("rowid", $request->get("category", 2))->firstOrFail();
+        if ($category->rowid == 2)
+            $products = Product::where('tosell', '>', '0');
+        else
+            $products = $category->products()->where('tosell', '>', '0');
+
+        $min = $products->where('label', 'like', '%' . $request->get("q") . "%")
+            ->orWhere('description', 'like', '%' . $request->get("q") . "%")->min('price_ttc');
+        $max = $products->where('label', 'like', '%' . $request->get("q") . "%")
+            ->orWhere('description', 'like', '%' . $request->get("q") . "%")->min('price_ttc');
+
+        if (request()->has("price")) {
+            $vmin = explode("*", request()->get("price"))[0];
+            $vmax = explode("*", request()->get("price"))[1];
+        } else {
+            $vmin = $min;
+            $vmax = $max;
+        }
+        if (request()->has("orderby") && isset($this->sortDisplayValues[request()->get("orderby")])) {
+            $orderby = request()->get("orderby");
+            $order = explode('.', request()->get("orderby"));
+            $products = $products->whereBetween('price_ttc', [$vmin, $vmax])
+                ->where('label', 'like', '%' . $request->get("q") . "%")
+                ->orWhere('description', 'like', '%' . $request->get("q") . "%")
+                ->orderBy($order[0], $order[1])
+                ->paginate(12)
+                ->withQueryString();
+            $this->sortDisplay .= ": " . $this->sortDisplayValues[request()->get("orderby")];
+        } else
+            $products = $products->whereBetween('price_ttc', [$vmin, $vmax])
+                ->where('label', 'like', '%' . $request->get("q") . "%")
+                ->orWhere('description', 'like', '%' . $request->get("q") . "%")
+                ->paginate(12)
+                ->withQueryString();
+
+        $category->loadMissing("subCategories");
+        return view("pages.products")->with([
+            "title" => "Résultats de recherche ". $request->get("q"),
+            "products" => $products,
+            "sortDisplay" => $this->sortDisplay,
+            "orderby" => $orderby,
+            "min" => $min,
+            "max" => $max,
+            "vmin" => $vmin,
+            "vmax" => $vmax,
+            "mainCategory" => $category
+        ]);
+    }
+
     public function product(Product $product, $slug)
     {
         abort_unless($product->tosell, 404);

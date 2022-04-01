@@ -40,7 +40,7 @@
 
             </form>
         </div>
-        <div class="widget_list">
+        {{--<div class="widget_list">
             <h2>Compare Products</h2>
             <div class="recent_product_container">
                 <article class="recent_product_list">
@@ -131,7 +131,7 @@
                     </figure>
                 </article>
             </div>
-        </div>
+        </div>--}}
     </div>
 </aside>
 <!--sidebar widget end-->

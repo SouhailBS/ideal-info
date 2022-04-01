@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Order;
 use App\Models\OrderLine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -73,6 +74,9 @@ class CheckoutController extends Controller
         $order->ref = '(PROV' . $order->rowid . ')';
         $order->save();
         \Cart::clear();
+
+        Mail::to($request->user())
+            ->queue(new OrderShipped($order));
 
         return redirect()->route('cart')->with('success', 'Votre commande est recu');
     }

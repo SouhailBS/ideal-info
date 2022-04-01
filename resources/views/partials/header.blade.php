@@ -60,11 +60,25 @@
                         <span><a href="mailto:{{config("company.MAIN_INFO_SOCIETE_MAIL")}}"><i
                                     class="fa fa-envelope-o"></i> {{config("company.MAIN_INFO_SOCIETE_MAIL")}}</a></span>
                         <ul>
-                            <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="pinterest"><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a target="_blank" class="facebook"
+                                   href="{{config("company.MAIN_INFO_SOCIETE_FACEBOOK_URL")}}"
+                                   title="Facebook"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a target="_blank" class="twitter"
+                                   href="{{config("company.MAIN_INFO_SOCIETE_TWITTER_URL")}}"
+                                   title="Twitter"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a target="_blank" class="instagram"
+                                   href="{{config("company.MAIN_INFO_SOCIETE_INSTAGRAM_URL")}}"
+                                   title="Instagram"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li><a target="_blank" class="linkedin"
+                                   href="{{config("company.MAIN_INFO_SOCIETE_LINKEDIN_URL")}}"
+                                   title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li><a target="_blank" class="whatsapp"
+                                   href="{{config("company.MAIN_INFO_SOCIETE_WHATSAPP_URL")}}"
+                                   title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
                     </div>
                 </div>

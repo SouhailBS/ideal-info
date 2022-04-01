@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderReceived;
 use App\Models\Client;
 use App\Models\Order;
 use App\Models\OrderLine;
@@ -76,7 +77,7 @@ class CheckoutController extends Controller
         \Cart::clear();
 
         Mail::to($request->user())
-            ->queue(new OrderShipped($order));
+            ->queue(new OrderReceived($order));
 
         return redirect()->route('cart')->with('success', 'Votre commande est recu');
     }

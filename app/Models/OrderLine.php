@@ -23,12 +23,10 @@ class OrderLine extends Model
      */
     protected $primaryKey = 'rowid';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-    ];
     public $timestamps = false;
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'fk_product','rowid');
+    }
 }

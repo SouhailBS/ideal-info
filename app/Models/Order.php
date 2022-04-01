@@ -23,12 +23,6 @@ class Order extends Model
     protected $primaryKey = 'rowid';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [];
-    /**
      * The name of the "created at" column.
      *
      * @var string
@@ -40,4 +34,9 @@ class Order extends Model
      * @var string
      */
     const UPDATED_AT = 'date_valid';
+
+    public function lines()
+    {
+        return $this->hasMany(OrderLine::class, 'fk_commande', 'rowid');
+    }
 }

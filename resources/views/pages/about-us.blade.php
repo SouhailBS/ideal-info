@@ -32,7 +32,7 @@
                         <article class="team_member">
                             <figure>
                                 <div class="team_thumb">
-                                    <img
+                                    <img style="max-height: 180px"
                                         src="{{route("dolibarr", ["file"=>'users/' . $employee->rowid . '/' .$employee->photo])}}"
                                         alt="{{$employee->lastname}} {{$employee->firstname}}">
                                 </div>

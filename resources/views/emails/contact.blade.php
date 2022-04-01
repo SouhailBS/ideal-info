@@ -2,7 +2,7 @@
 
 Nom: {{$message->nom}}
 Email: {{$message->email}}
-Objet: {{$message->objet}}
+Objet: {{$message->subject}}
 Message: {{$message->message}}
 
 @endcomponent

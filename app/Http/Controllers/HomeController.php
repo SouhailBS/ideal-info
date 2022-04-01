@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Employee;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,14 @@ class HomeController extends Controller
         ]);
 
         return back()->with('success', 'Nous avons reçu votre message.');
+    }
+
+    public function about()
+    {
+        $employees = Employee::where("statut", 1)->where('note', 'SITEWEB')->get();
+        return view("pages.about-us")->with([
+            "employees" => $employees
+        ]);
     }
 
 }

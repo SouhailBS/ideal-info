@@ -40,8 +40,9 @@ class CheckoutController extends Controller
         $order->ref = 'WEB-' . $user->fk_soc . '-' . time();
         $order->save();
         $order->total_ht = 0;
+        $order->total_ttc = 0;
+        $order->total_tva = 0;
         foreach (\Cart::getContent() as $item) {
-            $order->total_ht += $item->associatedModel->price;
             $order_line = new OrderLine();
             $order_line->fk_commande = $order->rowid;
             $order_line->fk_product = $item->id;
@@ -62,10 +63,10 @@ class CheckoutController extends Controller
             $order_line->multicurrency_total_ttc = $order_line->total_ttc;
             $order_line->multicurrency_total_tva = $order_line->total_tva;
             $order_line->save();
+            $order->total_ht += $order_line->total_ht;
+            $order->total_ttc += $order_line->total_ttc;
+            $order->total_tva += $order_line->total_tva;
         }
-        $order->total_ttc = \Cart::getTotal();
-        $order->total_tva = $order->total_ttc - $order->total_ht;
-
         $order->multicurrency_total_ht = $order->total_ht;
         $order->multicurrency_total_ttc = $order->total_ttc;
         $order->multicurrency_total_tva = $order->total_tva;

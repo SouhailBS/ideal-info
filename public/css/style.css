@@ -3300,7 +3300,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: bold;
     color: #ffffff;
 }
-
+.price_box span.current_price.promo {
+    color: #de0d0d;
+}
 .label_product span.label_discount {
     color: #ffffff;
     text-transform: uppercase;

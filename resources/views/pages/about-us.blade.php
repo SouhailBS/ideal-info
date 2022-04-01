@@ -27,7 +27,7 @@
     <div class="team_area">
         <div class="container">
             <div class="row">
-                <h2>Notre équipe</h2>
+                <h2 class="mb-4 text-capitalize text-center">Notre équipe</h2>
                 @foreach($employees as $employee)
                     <div class="col-lg-3 col-md-6">
                         <article class="team_member">

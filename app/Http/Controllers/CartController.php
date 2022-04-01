@@ -12,7 +12,7 @@ class CartController extends Controller
     {
         \Cart::add(['id' => $product->rowid,
             'name' => $product->label,
-            'price' => $product->price_min > 0 ? $product->getRawOriginal('price_min_ttc') : $product->getRawOriginal('price_ttc'),
+            'price' => $product->getRawOriginal('price_ttc'),
             'quantity' => $request->get("quantity", 1),
             'attributes' => array(),
             'associatedModel' => $product]);

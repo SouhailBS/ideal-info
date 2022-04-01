@@ -77,6 +77,7 @@ class CheckoutController extends Controller
         \Cart::clear();
 
         Mail::to($request->user())
+            ->bcc(config('mail.reply_to'))
             ->queue(new OrderReceived($order));
 
         //return new OrderReceived($order);

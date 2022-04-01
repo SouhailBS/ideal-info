@@ -6,17 +6,7 @@
     Elle sera traitée dès que possible. Vous recevrez une notification de notre part dès que le(s) article(s) sera(seront) prêt(s) à être livré(s).
 
     Merci d'avoir fait vos achats sur {{ config('app.name') }}.
-    <style>
-        table th:first-of-type {
-            width: 50%;
-        }
-        table th:nth-of-type(2) {
-            width: 20%;
-        }
-        table th:nth-of-type(3) {
-            width: 30%;
-        }
-    </style>
+
     @component('mail::table')
         | Produit       | Quantité         | Prix  |
         | ------------- |:-------------:| --------:|
@@ -27,6 +17,6 @@
 
     Bon Shopping !
 
-    Bonne journée,<br>
+    Bonne journée,
     L'équipe de {{ config('app.name') }}
 @endcomponent

@@ -39,6 +39,6 @@ class OrderReceived extends Mailable
     {
         return $this
             ->subject("Votre commande " . $this->order->rowid . " a été confirmée")
-            ->view('emails.orders.received')->text('emails.orders.received_text');
+            ->markdown('emails.orders.received');
     }
 }

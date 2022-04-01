@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
     /**
      * The table associated with the model.
      *
@@ -38,5 +39,10 @@ class Order extends Model
     public function lines()
     {
         return $this->hasMany(OrderLine::class, 'fk_commande', 'rowid');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'fk_soc', 'rowid');
     }
 }

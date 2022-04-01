@@ -29,7 +29,7 @@ class CartController extends Controller
             else
                 \Cart::update($product->rowid, [
                     'name' => $product->label,
-                    'price' => $product->price_min > 0 ? $product->getRawOriginal('price_min_ttc') : $product->getRawOriginal('price_ttc'),
+                    'price' => $product->getRawOriginal('price_ttc'),
                     'quantity' => [
                         'relative' => false,
                         'value' => $item

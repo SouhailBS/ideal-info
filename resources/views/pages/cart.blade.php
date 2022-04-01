@@ -59,9 +59,9 @@
                                                     @if($item->associatedModel->price_min>0)
                                                         <div class="price_box">
                                                             <span
-                                                                class="d-block current_price">{{$item->associatedModel->price_min_ttc}}</span>
+                                                                class="d-block current_price">{{$item->associatedModel->price_ttc}}</span>
                                                             <span
-                                                                class="d-block old_price">{{$item->associatedModel->price_ttc}}</span>
+                                                                class="d-block old_price">{{$item->associatedModel->old_price}}</span>
                                                         </div>
                                                     @else
                                                         {{$item->associatedModel->price_ttc}}

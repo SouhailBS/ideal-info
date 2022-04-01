@@ -31,7 +31,8 @@ class Product extends Model
     protected $appends = [
         "route",
         "photos",
-        "discount"
+        "discount",
+        "old_price",
     ];
     /**
      * The attributes that should be cast.
@@ -70,14 +71,20 @@ class Product extends Model
     public function getDiscountAttribute()
     {
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
-        $fmt->setPattern('#,##0.00 DT');
+        $fmt->setPattern('#,##0.000 DT');
         return $fmt->formatCurrency($this->getRawOriginal('price_min_ttc') - $this->getRawOriginal('price_ttc'), 'TND');
+    }
+    public function getOldPriceAttribute()
+    {
+        $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
+        $fmt->setPattern('#,##0.000 DT');
+        return $fmt->formatCurrency($this->getRawOriginal('price_min_ttc') + $this->getRawOriginal('price_ttc'), 'TND');
     }
 
     public function getPriceMinTtcAttribute($value)
     {
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
-        $fmt->setPattern('#,##0.00 DT');
+        $fmt->setPattern('#,##0.000 DT');
         return $fmt->formatCurrency($value, 'TND');
     }
 

@@ -50,9 +50,9 @@
                                 </div>
                                 <div class="modal_price mb-10">
                                     @if($product->price_min>0)
-                                        <span class="old_price">{{$product->price_ttc}}</span>
+                                        <span class="old_price">{{$product->old_price}}</span>
                                         <span
-                                            class="current_price">{{$product->price_min_ttc}}</span>
+                                            class="current_price promo">{{$product->price_ttc}}</span>
                                     @else
                                         <span class="current_price">{{$product->price_ttc}}</span>
                                     @endif

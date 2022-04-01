@@ -54,8 +54,8 @@
         <figcaption class="product_content">
             <div class="price_box">
                 @if($product->price_min>0)
-                    <span class="old_price">{{$product->price_ttc}}</span>
-                    <span class="current_price">{{$product->price_min_ttc}}</span>
+                    <span class="old_price">{{$product->old_price}}</span>
+                    <span class="current_price promo">{{$product->price_ttc}}</span>
                 @else
                     <span class="current_price">{{$product->price_ttc}}</span>
                 @endif

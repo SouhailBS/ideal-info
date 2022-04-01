@@ -66,7 +66,7 @@
                                     <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
                                 </ul>
                             </div>
-                            <div class=" product_ratting">
+                            {{--<div class=" product_ratting">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -76,12 +76,12 @@
                                     <li class="review"><a href="#"> (customer review ) </a></li>
                                 </ul>
 
-                            </div>
+                            </div>--}}
                             <div class="price_box">
                                 @if($product->price_min>0)
-                                    <span class="old_price">{{$product->price_ttc}}</span>
+                                    <span class="old_price">{{$product->old_price}}</span>
                                     <span
-                                        class="current_price">{{$product->price_min_ttc}}</span>
+                                        class="current_price promo">{{$product->price_ttc}}</span>
                                 @else
                                     <span class="current_price">{{$product->price_ttc}}</span>
                                 @endif

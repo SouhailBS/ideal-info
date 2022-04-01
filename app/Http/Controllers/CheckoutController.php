@@ -76,10 +76,10 @@ class CheckoutController extends Controller
         $order->save();
         \Cart::clear();
 
-        /*Mail::to($request->user())
-            ->queue(new OrderReceived($order));*/
+        Mail::to($request->user())
+            ->queue(new OrderReceived($order));
 
-        return new OrderReceived($order);
-        //return redirect()->route('cart')->with('success', 'Votre commande est recu');
+        //return new OrderReceived($order);
+        return redirect()->route('cart')->with('success', 'Votre commande est recu');
     }
 }

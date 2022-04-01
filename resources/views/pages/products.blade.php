@@ -45,8 +45,7 @@
 
                                                 <div class="label_product left">
                                                     @if($product->price_min>0)
-                                                        <span class="label_promo">Promo</span>
-                                                        <span class="label_discount">{{$product->discount}}</span>
+                                                        <span class="label_discount">Promo</span>
                                                     @endif
                                                 </div>
                                                 <div class="label_product">
@@ -75,20 +74,21 @@
                                                         <a href="{{route("add-to-cart", ["product"=>$product])}}"
                                                            title="Ajouter au panier">Ajouter au panier</a>
                                                     @else
-                                                        <a class="disabled" aria-disabled="true" title="Produit épuisé">Ajouter au panier</a>
+                                                        <a class="disabled" aria-disabled="true" title="Produit épuisé">Ajouter
+                                                            au panier</a>
                                                     @endif
                                                 </div>
                                             </div>
                                             <div class="product_content grid_content">
                                                 <div class="price_box">
                                                     @if($product->price_min>0)
-                                                        <span class="old_price">{{$product->price_ttc}}</span>
-                                                        <span class="current_price">{{$product->price_min_ttc}}</span>
+                                                        <span class="old_price">{{$product->old_price}}</span>
+                                                        <span class="current_price promo">{{$product->price_ttc}}</span>
                                                     @else
                                                         <span class="current_price">{{$product->price_ttc}}</span>
                                                     @endif
                                                 </div>
-                                                <div class="product_ratings">
+                                                {{--<div class="product_ratings">
                                                     <ul>
                                                         <li><a href="#"><i class="ion-android-star-outline"></i></a>
                                                         </li>
@@ -101,18 +101,18 @@
                                                         <li><a href="#"><i class="ion-android-star-outline"></i></a>
                                                         </li>
                                                     </ul>
-                                                </div>
-                                                <h3 class="product_name grid_name"><a
-                                                        href="{{$product->route}}">{{$product->label}}</a>
+                                                </div>--}}
+                                                <h3 class="product_name grid_name">
+                                                    <a href="{{$product->route}}">{{$product->label}}</a>
                                                 </h3>
                                             </div>
                                             <div class="product_content list_content">
                                                 <div class="left_caption">
                                                     <div class="price_box">
                                                         @if($product->price_min>0)
-                                                            <span class="old_price">{{$product->price_ttc}}</span>
+                                                            <span class="old_price">{{$product->old_price}}</span>
                                                             <span
-                                                                class="current_price">{{$product->price_min_ttc}}</span>
+                                                                class="current_price promo">{{$product->price_ttc}}</span>
                                                         @else
                                                             <span class="current_price">{{$product->price_ttc}}</span>
                                                         @endif
@@ -120,20 +120,20 @@
                                                     <h3 class="product_name"><a
                                                             href="{{$product->route}}">{{$product->label}}</a>
                                                     </h3>
-                                                    <div class="product_ratings">
-                                                        <ul>
-                                                            <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                                            </li>
-                                                            <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                                            </li>
-                                                            <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                                            </li>
-                                                            <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                                            </li>
-                                                            <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                    {{-- <div class="product_ratings">
+                                                         <ul>
+                                                             <li><a href="#"><i class="ion-android-star-outline"></i></a>
+                                                             </li>
+                                                             <li><a href="#"><i class="ion-android-star-outline"></i></a>
+                                                             </li>
+                                                             <li><a href="#"><i class="ion-android-star-outline"></i></a>
+                                                             </li>
+                                                             <li><a href="#"><i class="ion-android-star-outline"></i></a>
+                                                             </li>
+                                                             <li><a href="#"><i class="ion-android-star-outline"></i></a>
+                                                             </li>
+                                                         </ul>
+                                                     </div>--}}
                                                     <div class="product_desc">
                                                         <p>{!! $product->description !!}</p>
                                                     </div>
@@ -144,7 +144,8 @@
                                                             <a href="{{route("add-to-cart", ["product"=>$product])}}"
                                                                title="Ajouter au panier">Ajouter au panier</a>
                                                         @else
-                                                            <a class="disabled" aria-disabled="true" title="Produit épuisé">Ajouter au panier</a>
+                                                            <a class="disabled" aria-disabled="true"
+                                                               title="Produit épuisé">Ajouter au panier</a>
                                                         @endif
                                                     </div>
                                                     <div class="action_links">

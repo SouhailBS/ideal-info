@@ -64,7 +64,7 @@ class Product extends Model
     public function getPriceTtcAttribute($value)
     {
         $fmt = new NumberFormatter('fr-TN', NumberFormatter::CURRENCY);
-        $fmt->setPattern('#,##0.00 DT');
+        $fmt->setPattern('#,##0.000 DT');
         return $fmt->formatCurrency($value, 'TND');
     }
 

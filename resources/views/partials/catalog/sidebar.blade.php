@@ -32,12 +32,13 @@
             </ul>
         </div>
         <div class="widget_list widget_filter">
-            <h2>Filter by price</h2>
-            <form action="#">
-                <div id="slider-range"></div>
-                <button type="submit">Filter</button>
-                <input type="text" name="text" id="amount"/>
-
+            <h2>Filtrer par prix</h2>
+            <form action="{{url()->current()}}">
+                <div id="slider-range" data-max="{{$max}}" data-min="{{$min}}" data-vmax="{{$vmax}}" data-vmin="{{$vmin}}"></div>
+                <button type="submit">Filtrer</button>
+                <input type="text" id="amount" readonly/>
+                <input type="hidden" name="price" id="price" value="{{$vmin.'*'.$vmax}}">
+                <input value="{{$orderby}}" type="hidden" name="orderby">
             </form>
         </div>
         {{--<div class="widget_list">

@@ -57,7 +57,7 @@ class Client extends Model
     {
         return Attribute::make(
             get: fn($value) => Str::startsWith(strtolower($value), 'cin') ? Str::replaceFirst('cin', '', strtolower($value)) : $value,
-            set: fn($value) => is_numeric($value) ? 'CIN' . $value : $value,
+            set: fn($value) => is_numeric($value) ? 'CIN: ' . $value : $value,
         );
     }
 }

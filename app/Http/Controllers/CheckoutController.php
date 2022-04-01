@@ -14,7 +14,14 @@ class CheckoutController extends Controller
     public function checkout(Request $request)
     {
         $request->validate([
-
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'address' => 'required',
+            'town' => 'required',
+            'fk_departement' => 'required',
+            'zip' => 'required|numeric|size:4',
+            'phone' => 'required|numeric',
+            'email' => 'required|email',
         ]);
 
         $user = auth()->user();
@@ -40,6 +47,8 @@ class CheckoutController extends Controller
         $order->multicurrency_code = 'TND';
         $order->multicurrency_tx = 1;
         $order->ref = 'WEB-' . $user->fk_soc . '-' . time();
+        $order->note_private = "Commande du site web";
+        $order->note_public = $request->get('note', '');
         $order->save();
         $order->total_ht = 0;
         $order->total_ttc = 0;

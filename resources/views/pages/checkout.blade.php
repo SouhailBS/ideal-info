@@ -78,7 +78,7 @@
                                         </div>
 
                                         <div class="col-lg-4 mb-20">
-                                            <label for="ville">Région <span>*</span></label>
+                                            <label for="ville">Gouvernorat <span>*</span></label>
                                             <select class="nice-select" id="ville" name="fk_departement">
                                                 <option value="0">&nbsp;</option>
                                                 <option value="363">Ariana</option>
@@ -127,8 +127,8 @@
                                         </div>
 
                                         <div class="col-12 mb-20">
-                                            <label for="identity">Numéro CIN ou matricule fiscal <span>*</span></label>
-                                            <input type="text" id="identity" name="identity" required
+                                            <label for="identity">Numéro CIN ou matricule fiscal</label>
+                                            <input type="text" id="identity" name="identity"
                                                    placeholder="Votre numéro CIN ou matricule fiscal">
 
                                         </div>

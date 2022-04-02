@@ -90,6 +90,6 @@ class CheckoutController extends Controller
             ->queue(new OrderReceived($order));
 
         //return new OrderReceived($order);
-        return redirect()->route('cart')->with('success', 'Votre commande est recu');
+        return redirect()->route('cart')->with('success', 'Nous avons reçu votre commande');
     }
 }

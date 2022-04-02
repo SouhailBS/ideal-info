@@ -9,7 +9,7 @@
                         <div class="slider_content slider_c_four">
                             <h1 class="d-none d-md-block">Promo anniversaire</h1>
                             <h1 class="d-block d-md-none">
-                                <a style="color: inherit;" href="{{route("promo")}}">Promo
+                                <a class="m-0" style="color: inherit;" href="{{route("promo")}}">Promo
                                     anniversaire</a></h1>
                             <h2>Un mois de promotions pour célébrer</h2>
                             <p>notre <span>16éme</span> anniversaire</p>

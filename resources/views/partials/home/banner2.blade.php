@@ -1,5 +1,5 @@
 <!--banner area start-->
-<div class="banner_area banner_fullwidth5  mb-68">
+<div class="banner_area banner_fullwidth5  mb-36">
     <div class="container">
         <div class="row">
             <div class="col-12">

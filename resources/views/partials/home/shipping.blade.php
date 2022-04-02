@@ -1,5 +1,5 @@
 <!--shipping area start-->
-<section class="shipping_area shipping_four mb-70">
+<section class="shipping_area shipping_four mb-30">
     <div class="container">
         <div class="shipping_inner">
             <div class=" row no-gutters">

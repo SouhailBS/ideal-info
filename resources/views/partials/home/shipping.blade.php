@@ -10,7 +10,7 @@
                         </div>
                         <div class="shipping_content">
                             <h2>Livraison gratuite</h2>
-                            <p>Pour toutes commandes de plus de 300 DT</p>
+                            <p>Pour toutes commandes de plus de 200 DT</p>
                         </div>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
                             <img src="assets/img/about/shipping2.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Safe Payment</h2>
-                            <p>100% secure payment</p>
+                            <h2>Paiement sécurisé</h2>
+                            <p>Paiement à la livraison</p>
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,8 @@
                             <img src="assets/img/about/shipping3.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Achetez en toute confiance</h2>
-                            <p>If goods have problems</p>
+                            <h2>Satisfait ou remboursé</h2>
+                            <p>Achetez en toute confiance</p>
                         </div>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                             <img src="assets/img/about/shipping4.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>24/7 Help Center</h2>
-                            <p>Dedicated 24/7 support</p>
+                            <h2>24/7 Centre d'aide</h2>
+                            <p>Assistance dédiée 24h/24 et 7j/7</p>
                         </div>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
                                 <input id="pass" type="password" name="password" required placeholder="Votre mot de passe">
                             </p>
                             <div class="login_submit">
-                                <a href="#">Lost your password?</a>
+                                {{--<a href="#">Lost your password?</a>--}}
                                 <label for="remember">
                                     <input id="remember" name="remember_me" value="1" type="checkbox">
                                     Rester connecté

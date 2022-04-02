@@ -150,5 +150,12 @@ return [
         'firstname' => 'prénom',
         'lastname' => 'nom',
         'civility' => 'titre',
+        "name_alias" => "Société",
+        "address" => "adresse",
+        "zip" => "code postal",
+        "town" => "ville",
+        "fk_departement" => "gouvernorat",
+        "phone" => "téléphone",
+        "siret" => "numéro CIN ou matricule fiscal",
     ],
 ];

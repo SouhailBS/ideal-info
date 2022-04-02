@@ -217,7 +217,7 @@
     <!--Checkout page section end-->
 @endsection
 @push("scripts")
-    @if(auth()->user()->client)
+    @if(auth()->check() && auth()->user()->client)
         <script>
             $(document).ready(function () {
                 $("#ville").val('{{auth()->user()->client->fk_departement}}').niceSelect('update');

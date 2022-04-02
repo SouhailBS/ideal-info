@@ -22,7 +22,7 @@
                 <div class="sidebar_banner5">
                     <div class="single_banner">
                         <div class="banner_thumb">
-                            <a href="shop.html"><img src="/img/affiche-ramadhan.jpg" alt=""></a>
+                            <a href="{{route("about-us")}}"><img src="/img/affiche-ramadhan.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ class CheckoutController extends Controller
             'town' => 'required',
             'fk_departement' => 'required',
             'zip' => 'required|numeric|size:4',
-            'phone' => 'required|numeric',
+            'phone' => 'required',
             'email' => 'required|email',
         ]);
 

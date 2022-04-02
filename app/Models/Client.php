@@ -56,7 +56,7 @@ class Client extends Model
     public function siret(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => Str::startsWith(strtolower($value), 'cin') ? Str::replaceFirst('cin', '', strtolower($value)) : $value,
+            get: fn($value) => Str::startsWith(strtolower($value), 'cin') ? preg_replace('/[^0-9]/', '', strtolower($value)) : $value,
             set: fn($value) => is_numeric($value) ? 'CIN: ' . $value : $value,
         );
     }

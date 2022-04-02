@@ -5,7 +5,7 @@
             <div class="col-lg-9 col-md-8">
                 <div class="slider_area owl-carousel">
                     <div class="single_slider d-flex align-items-center"
-                         data-bgimg="/img/affiche-slide.jpg">
+                         data-bgimg="/img/affiche-slide.jpg" style="background-image: url('/img/affiche-slide.jpg');">
                         <div class="slider_content slider_c_four">
                             <h1 class="d-none d-md-block">Promo anniversaire</h1>
                             <h1 class="d-block d-md-none">

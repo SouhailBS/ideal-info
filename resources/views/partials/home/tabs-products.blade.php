@@ -24,14 +24,14 @@
         <div class="tab-content">
 
             <div class="tab-pane fade" id="Products3" role="tabpanel">
-                <div class="product_carousel product_column5 owl-carousel">
+                <div class="product_slick product_slick_column5">
                     @foreach($newProducts as $product)
                         @include("partials.catalog.product-miniature")
                     @endforeach
                 </div>
             </div>
             <div class="tab-pane fade show active" id="Sale3" role="tabpanel">
-                <div class="product_carousel product_column5 owl-carousel">
+                <div class="product_slick product_slick_column5">
                     @foreach($promo as $product)
                         @include("partials.catalog.product-miniature")
                     @endforeach

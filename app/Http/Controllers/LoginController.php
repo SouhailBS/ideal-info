@@ -13,7 +13,7 @@ class LoginController extends Controller
      * Handle an authentication attempt.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function authenticate(Request $request)
     {
@@ -38,7 +38,7 @@ class LoginController extends Controller
      * Log the user out of the application.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function logout(Request $request)
     {
@@ -75,7 +75,7 @@ class LoginController extends Controller
         return redirect()->route("account");
     }
 
-    private function generateNumericOTP($n): string
+    private function generateNumericOTP(int $n): string
     {
         $generator = "1357902468";
         $result = "";

@@ -1,5 +1,5 @@
 <!--featured product area start-->
-<section class="featured_product_area mb-70">
+<section class="featured_product_area mb-70 pt-5">
     <div class="container">
         <div class="row">
             <div class="col-12">

@@ -1,5 +1,5 @@
 <!--banner area start-->
-<div class="banner_area mt-35">
+<div class="banner_area">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">

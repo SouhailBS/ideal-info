@@ -1,5 +1,5 @@
 <!--product area start-->
-<div class="product_area mb-46">
+<div class="product_area">
     <div class="container">
         <div class="row">
             <div class="col-12">

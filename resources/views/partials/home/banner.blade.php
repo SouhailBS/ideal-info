@@ -12,7 +12,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="single_banner mb-30">
                     <div class="banner_thumb">
-                        <a href="shop.html"><img src="/img/affiche-milieu2.png" alt=""></a>
+                        <a href="http://localhost/products/category/8/impression"><img src="/img/affiche-milieu2.png" alt=""></a>
                     </div>
                 </div>
             </div>

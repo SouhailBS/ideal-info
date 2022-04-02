@@ -39,6 +39,9 @@
                 <input type="text" id="amount" readonly/>
                 <input type="hidden" name="price" id="price" value="{{$vmin.'*'.$vmax}}">
                 <input value="{{$orderby}}" type="hidden" name="orderby">
+                @isset($search)
+                    <input type="hidden" name="q" value="{{$search}}">
+                @endisset
             </form>
         </div>
         {{--<div class="widget_list">

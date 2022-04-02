@@ -63,18 +63,22 @@
                                             <div class="order-notes">
                                                 <label for="address">Adresse <span>*</span></label>
                                                 <textarea id="address" name="address" placeholder="Votre adresse"
-                                                          type="text"></textarea>
+                                                          type="text">@if(auth()->user()->client){{auth()->user()->client->address}}@endif</textarea>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-4 mb-20">
                                             <label for="zip">Code postal <span>*</span></label>
-                                            <input type="number" id="zip" name="zip" required placeholder="Code postal">
+                                            <input @if(auth()->user()->client)value="{{auth()->user()->client->zip}}"
+                                                   @endif type="number" id="zip" name="zip" required
+                                                   placeholder="Code postal">
                                         </div>
 
                                         <div class="col-lg-4 mb-20">
                                             <label for="region">Ville <span>*</span></label>
-                                            <input type="text" id="region" name="town" required placeholder="Région">
+                                            <input @if(auth()->user()->client)value="{{auth()->user()->client->town}}"
+                                                   @endif type="text" id="region" name="town" required
+                                                   placeholder="Région">
                                         </div>
 
                                         <div class="col-lg-4 mb-20">
@@ -110,7 +114,8 @@
 
                                         <div class="col-lg-6 mb-20">
                                             <label for="tel">Téléphone<span>*</span></label>
-                                            <input type="tel" id="tel" name="phone" required
+                                            <input @if(auth()->user()->client)value="{{auth()->user()->client->phone}}"
+                                                   @endif type="tel" id="tel" name="phone" required
                                                    placeholder="Votre numéro de téléphone">
                                         </div>
 
@@ -122,13 +127,16 @@
 
                                         <div class="col-12 mb-20">
                                             <label for="company">Votre Société</label>
-                                            <input type="text" name="name_alias" id="company"
-                                                   placeholder="Votre Société">
+                                            <input
+                                                @if(auth()->user()->client)value="{{auth()->user()->client->name_alias}}"
+                                                @endif type="text" name="name_alias" id="company"
+                                                placeholder="Votre Société">
                                         </div>
 
                                         <div class="col-12 mb-20">
                                             <label for="identity">Numéro CIN ou matricule fiscal</label>
-                                            <input type="text" id="identity" name="identity"
+                                            <input @if(auth()->user()->client)value="{{auth()->user()->client->siret}}"
+                                                   @endif type="text" id="identity" name="identity"
                                                    placeholder="Votre numéro CIN ou matricule fiscal">
 
                                         </div>
@@ -200,4 +208,11 @@
     <!--Checkout page section end-->
 @endsection
 @push("scripts")
+    @if(auth()->user()->client)
+        <script>
+            $(document).ready(function () {
+                $("#ville").val('{{auth()->user()->client->fk_departement}}').niceSelect('update');
+            })
+        </script>
+    @endif
 @endpush

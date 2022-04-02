@@ -2781,8 +2781,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 @media only screen and (max-width: 767px) {
     .slider_content p {
-        font-size: 16px;
-        margin-top: 15px;
+        font-size: 10px;
+        margin-top: 11px;
     }
 }
 
@@ -2973,8 +2973,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 @media only screen and (max-width: 767px) {
     .slider_c_four h1 {
-        font-size: 25px;
-        line-height: 25px;
+        font-size: 15px;
+        line-height: 12px;
     }
 }
 
@@ -3008,8 +3008,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 @media only screen and (max-width: 767px) {
     .slider_c_four h2 {
-        font-size: 25px;
-        line-height: 25px;
+        font-size: 13px;
+        line-height: 18px;
     }
 }
 
@@ -3044,7 +3044,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 @media only screen and (max-width: 767px) {
     .slider_section_five .single_slider {
-        height: 200px;
+        height: 100px;
     }
 }
 

@@ -7,10 +7,13 @@
                     <div class="single_slider d-flex align-items-center"
                          data-bgimg="/img/affiche-slide.jpg">
                         <div class="slider_content slider_c_four">
-                            <h1>Promo anniversaire</h1>
+                            <h1 class="d-none d-md-block">Promo anniversaire</h1>
+                            <h1 class="d-block d-md-none">
+                                <a style="color: inherit;" href="{{route("promo")}}">Promo
+                                    anniversaire</a></h1>
                             <h2>Un mois de promotions pour célébrer</h2>
                             <p>notre <span>16éme</span> anniversaire</p>
-                            <a class="button" href="{{route("promo")}}">Nos promos</a>
+                            <a class="button d-none d-md-inline-block" href="{{route("promo")}}">Nos promos</a>
                         </div>
                     </div>
                 </div>

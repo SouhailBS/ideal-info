@@ -27,9 +27,9 @@
                                         <figure>
                                             <div class="product_thumb">
                                                 @if($product->photos->isEmpty())
-                                                    <a class="primary_img" href="product-details.html"><img
+                                                    <a class="primary_img" href="{{$product->route}}"><img
                                                             src="/assets/img/product/product1.jpg" alt=""></a>
-                                                    <a class="secondary_img" href="product-details.html"><img
+                                                    <a class="secondary_img" href="{{$product->route}}"><img
                                                             src="/assets/img/product/product2.jpg" alt=""></a>
 
                                                 @else

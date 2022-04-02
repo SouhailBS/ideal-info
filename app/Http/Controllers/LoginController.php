@@ -26,7 +26,7 @@ class LoginController extends Controller
         if (Auth::attempt(request()->only(['email', 'password']), request()->get("remember_me", false))) {
             $request->session()->regenerate();
 
-            return redirect('/');
+            return redirect()->intended();
         }
 
         return back()->withErrors([

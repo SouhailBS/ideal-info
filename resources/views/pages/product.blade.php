@@ -1,6 +1,7 @@
 @extends("layouts.app")
 @section("title", $product->label)
 @section("type", 'og:product')
+@section("description", strip_tags($product->description))
 
 @section("content")
     <x-breadcrumbs :levels="[$product->categories->last(), $product]"/>

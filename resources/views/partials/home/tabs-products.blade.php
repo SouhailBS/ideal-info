@@ -6,15 +6,15 @@
                 <div class="product_tab_btn3">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a class="active" data-bs-toggle="tab" href="#Products3" role="tab" aria-controls="Products3"
+                            <a class="active" data-bs-toggle="tab" href="#Sale3" role="tab" aria-controls="Sale3"
                                aria-selected="true">
-                                Nouveaux produits
+                                Promotions
                             </a>
                         </li>
                         <li>
-                            <a data-bs-toggle="tab" href="#Sale3" role="tab" aria-controls="Sale3"
+                            <a data-bs-toggle="tab" href="#Products3" role="tab" aria-controls="Products3"
                                aria-selected="false">
-                                Produits en promotions
+                                Nouveaux produits
                             </a>
                         </li>
                     </ul>

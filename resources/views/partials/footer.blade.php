@@ -99,7 +99,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                     <div class="copyright_area">
-                        <p class="copyright-text">2006 - {{now()->year}} &copy; <a
+                        <p class="copyright-text">2007 - {{now()->year}} &copy; <a
                                 href="{{url('/')}}">{{config('company.MAIN_INFO_SOCIETE_NOM')}}</a>.</p>
                     </div>
                 </div>

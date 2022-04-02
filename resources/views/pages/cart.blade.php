@@ -93,7 +93,7 @@
                                 <div class="coupon_code left">
                                     <h3>Livraison</h3>
                                     <div class="coupon_inner">
-                                        <p>Livraison gratuite pour toutes commandes de plus de 300 DT.</p>
+                                        <p>Livraison gratuite pour toutes commandes de plus de 200 DT.</p>
                                     </div>
                                 </div>
                             </div>

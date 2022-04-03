@@ -135,7 +135,7 @@
                                                          </ul>
                                                      </div>--}}
                                                     <div class="product_desc">
-                                                        <p>{!! $product->description !!}</p>
+                                                        <p>{!! Str::limit(strip_tags($product->description), 200, ' ...') !!}</p>
                                                     </div>
                                                 </div>
                                                 <div class="right_caption">

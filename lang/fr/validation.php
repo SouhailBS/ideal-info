@@ -157,5 +157,6 @@ return [
         "fk_departement" => "gouvernorat",
         "phone" => "téléphone",
         "siret" => "numéro CIN ou matricule fiscal",
+        "g-recaptcha-response" => 'vérification anti-robot',
     ],
 ];

@@ -33,8 +33,24 @@ class HomeController extends Controller
         $request->validate([
             'nom' => 'required',
             'email' => 'required|email',
-            'message' => 'required'
+            'message' => 'required',
+            'g-recaptcha-response' => 'required'
         ]);
+
+        $secret = '6LdaiEUfAAAAADfW1peh3uLaHOu40tTOZNqYxadh';
+
+        $ip = $_SERVER['REMOTE_ADDR'];
+        // post request to server
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secret) . '&response=' . urlencode($request->get('g-recaptcha-response')) . '&remoteip=' . urlencode($ip);
+        $response = file_get_contents($url);
+        $responseKeys = json_decode($response, true);
+        // should return JSON with success as true
+        if (!$responseKeys["success"]) {
+            // spammar
+            return back()->withErrors([
+                'recaptcha'=>'Échec de la vérification anti-robot'
+            ]);
+        }
 
         Mail::to(config('mail.reply_to.address'))
             ->queue(new MessageSent((object)$request->all()));

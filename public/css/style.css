@@ -931,7 +931,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .header_top {
     border-bottom: 1px solid #ebebeb;
-    background: #F8F9F9;
+    background: linear-gradient(45deg, #0163d1 50%, #F8F9F9 50%);
 }
 
 @media only screen and (max-width: 767px) {
@@ -950,6 +950,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     line-height: 43px;
     font-weight: bold;
     font-style: italic;
+    color: #ffffff;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -966,10 +967,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         text-align: center;
         font-size: 12px;
     }
-}
-
-.support_info p a:hover {
-    color: #0063d1;
 }
 
 .top_right {

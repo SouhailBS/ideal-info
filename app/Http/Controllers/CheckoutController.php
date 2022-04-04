@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Mail\OrderReceived;
+use App\Models\Address;
 use App\Models\Client;
 use App\Models\Order;
+use App\Models\OrderAddress;
 use App\Models\OrderLine;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -21,26 +24,53 @@ class CheckoutController extends Controller
             'fk_departement' => 'required',
             'zip' => 'required|digits:4',
             'phone' => 'required',
-            'email' => 'required|email',
+            'shipping_method' => 'required|in:1,2'
         ]);
 
-        $user = auth()->user();
-        if (!$user->fk_soc) {
-            $client = new Client($request->except(['firstname', 'lastname', 'note', 'identity']));
-            //$client->code_client = "CU2203-00352";
-            $client->nom = $request->firstname . " " . $request->lastname;
-            $client->client = 1;
-            $client->fournisseur = 0;
-            $client->fk_pays = 10;
-            $client->status = 1;
-            $client->siret = $request->identity;
-            $client->save();
-            $user->fk_soc = $client->rowid;
-            $user->save();
+        foreach (\Cart::getContent() as $item) {
+            $product = Product::where('rowid', $item->id)->first();
+            if ($product->tosell < $item->quantity)
+                return back()->withErrors([
+                    'product' => 'Stock insuffisant pour le produit "' . $product->label . '"'
+                ]);
+
+            if ($product->stock === 0)
+                return back()->withErrors([
+                    'product' => 'Le produit "' . $product->label . '" n\'est plus disponible!'
+                ]);
         }
+
+        $user = auth()->user();
+        $client = new Client();
+        if ($user->fk_soc) {
+            $client = $user->client;
+        } else {
+            $client->email = $user->email;
+            //$client->code_client = "CU2203-00352";
+        }
+        $client->fill($request->only([
+            "name_alias",
+            "address",
+            "zip",
+            "town",
+            "fk_departement",
+            "phone",
+            "siret",
+        ]));
+        $client->nom = $request->firstname . " " . $request->lastname;
+        $client->client = 1;
+        $client->fournisseur = 0;
+        $client->fk_pays = 10;
+        $client->status = 1;
+        $client->siret = $request->identity;
+        $client->save();
+        $user->fk_soc = $client->rowid;
+        $user->save();
+
         $order = new Order();
         $order->fk_soc = $user->client->rowid;
         $order->date_commande = now()->format('Y-m-d');
+        $order->fk_shipping_method = $request->shipping_method;//1 retrai mag 2: transporteur
         $order->fk_statut = 1;
         $order->model_pdf = 'einstein';
         $order->fk_multicurrency = 0;
@@ -86,7 +116,7 @@ class CheckoutController extends Controller
         \Cart::clear();
 
         Mail::to($request->user())
-            ->bcc(config('mail.reply_to.address'))
+            ->bcc([config('mail.reply_to.address'), 'mbenney@gmail.com '])
             ->queue(new OrderReceived($order));
 
         //return new OrderReceived($order);

@@ -1880,6 +1880,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     left: 0;
     right: auto;
 }
+
 .main_menu nav > ul > li .mega_menu {
     position: absolute;
     padding: 25px 30px 30px 30px;
@@ -3302,9 +3303,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: bold;
     color: #ffffff;
 }
+
 .price_box span.current_price.promo {
     color: #de0d0d;
 }
+
 .label_product span.label_discount {
     color: #ffffff;
     text-transform: uppercase;
@@ -5393,9 +5396,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .footer_social_link ul li a.whatsapp {
     background: #25D366;
 }
+
 .disabled {
     cursor: not-allowed;
 }
+
 .subscribe_form form {
     position: relative;
     width: 350px;
@@ -8310,8 +8315,19 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: #ffffff;
     background: #242424;
     font-weight: 500;
+    height: 45px;
+    text-decoration: none;
+    position: relative;
+    white-space: initial;
+    box-shadow: inherit;
 }
-
+.checkout_form .card-header.card_accor button.fa.collapsed.done::before {
+    color: #5ee452;
+    opacity: 1;
+}
+.checkout_form .card-header.card_accor button.fa::before {
+    opacity: .5;
+}
 .checkout_form input {
     border: 1px solid #ebebeb;
     background: none;
@@ -8878,6 +8894,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .card-header.card_accor button.btn-link.collapsed i.fa-plus {
+    display: block;
+}
+
+.card-header.card_accor button.btn-link i.fa-pencil {
+    display: none;
+}
+
+.card-header.card_accor button.btn-link.collapsed i.fa-pencil {
     display: block;
 }
 
@@ -11608,6 +11632,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .nav-link.active:focus {
     color: #fff;
+}
+
+.checkout_form .card-header.card_accor button.btn-link {
+    font-size: 16px;
+    line-height: 30px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #242424;
+    font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */

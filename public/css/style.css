@@ -969,6 +969,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     }
 }
 
+.support_info p a:hover {
+    color: #ffffff;
+}
+
 .top_right {
     text-align: right;
 }

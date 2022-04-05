@@ -252,13 +252,15 @@
                                             <tr>
                                                 <th>Livraison</th>
                                                 <td>
-                                                    <strong>{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), $shipping, 'TND')}}</strong>
+                                                    <strong
+                                                        id="shipping_fees">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), $shipping, 'TND')}}</strong>
                                                 </td>
                                             </tr>
                                             <tr class="order_total">
                                                 <th>Montant à payé</th>
                                                 <td>
-                                                    <strong>{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal() + $shipping, 'TND')}}</strong>
+                                                    <strong
+                                                        id="total">{{numfmt_format_currency(numfmt_create( 'fr_TN', NumberFormatter::CURRENCY ), Cart::getTotal() + $shipping, 'TND')}}</strong>
                                                 </td>
                                             </tr>
                                             </tfoot>
@@ -289,10 +291,32 @@
             })
         </script>
     @endif
-    <script>
-        $('[name=shipping_method]').change(function () {
-            $("#shipping_method").click().addClass("done");
-        });
-    </script>
-
+    @auth()
+        <script>
+            $('[name=shipping_method]').change(function () {
+                $("#shipping_method").click().addClass("done");
+                if ({{$shipping}} > 0) {
+                    if (this.value === '1') {
+                        $('#shipping_fees').text(Intl.NumberFormat('fr-TN', {
+                            style: 'currency',
+                            currency: 'TND'
+                        }).format(0));
+                        $('#total').text(Intl.NumberFormat('fr-TN', {
+                            style: 'currency',
+                            currency: 'TND'
+                        }).format({{Cart::getTotal()}}));
+                    } else {
+                        $('#shipping_fees').text(Intl.NumberFormat('fr-TN', {
+                            style: 'currency',
+                            currency: 'TND'
+                        }).format({{$shipping}}))
+                        $('#total').text(Intl.NumberFormat('fr-TN', {
+                            style: 'currency',
+                            currency: 'TND'
+                        }).format({{Cart::getTotal() + $shipping}}))
+                    }
+                }
+            });
+        </script>
+    @endauth
 @endpush

@@ -22,11 +22,11 @@
 
                                 @else
                                     <a class="primary_img" href="{{$product->route}}"><img
-                                            src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(0)])}}"
+                                            src="{{$product->thumbPhoto($product->photos->get(0))}}"
                                             alt=""></a>
                                     @if($product->photos->get(1))
                                         <a class="secondary_img" href="{{$product->route}}"><img
-                                                src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(1)])}}"
+                                                src="{{$product->thumbPhoto($product->photos->get(1))}}"
                                                 alt=""></a>
                                     @endif
                                 @endif

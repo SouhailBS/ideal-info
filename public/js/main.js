@@ -799,9 +799,9 @@
             $this.toggleClass('menu-open');
         }
     });
-    $(".search-input").click(function () {
+    $(".search-input").focus(function () {
         if ($('.search-result').children().length)
-            $(".search_container").removeClass("has-results");
+            $(".search_container").addClass("has-results");
     });
     $(".search-input").blur(function () {
         $(".search_container").removeClass("has-results");

@@ -8322,13 +8322,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     white-space: initial;
     box-shadow: inherit;
 }
+
 .checkout_form .card-header.card_accor button.fa.collapsed.done::before {
     color: #5ee452;
     opacity: 1;
 }
+
 .checkout_form .card-header.card_accor button.fa::before {
     opacity: .5;
 }
+
 .checkout_form input {
     border: 1px solid #ebebeb;
     background: none;
@@ -11643,6 +11646,43 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: #ffffff;
     background: #242424;
     font-weight: 500;
+}
+
+.search_container.has-results .search_box button {
+    border-bottom-right-radius: 0;
+}
+
+.search_container.has-results form {
+    border-bottom-left-radius: 0;
+}
+
+.search_container.has-results .cart_item:last-child {
+    border-bottom: none;
+}
+.search_container.has-results .cart_img {
+    width: 45px;
+}
+.search_container.has-results .cart_info {
+    width: calc(100% - 45px);
+    display: flex;
+    align-items: center;
+}
+
+.search_container.has-results .mini_cart {
+    max-height: 500px;
+    padding: 10px 20px 10px;
+    visibility: visible;
+}
+
+.search_container .mini_cart {
+    width: 100%;
+    right: auto;
+    top: auto;
+    border-top: 0;
+}
+
+.search_container {
+    position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -114,8 +114,18 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
+
         $orderby = '';
         $products = Product::where('tosell', '>', '0')->where('fk_product_type', 0);
+        if ($request->has('output') && $request->output === 'json'){
+            $products = $products->where(function ($query) use ($request) {
+                $query->where('label', 'like', '%' . $request->get("q") . "%")
+                    ->orWhere('description', 'like', '%' . $request->get("q") . "%");
+            })->take(5)->get();
+
+            return response()->json($products);
+        }
+
         $min = $products->where(function ($query) use ($request) {
             $query->where('label', 'like', '%' . $request->get("q") . "%")
                 ->orWhere('description', 'like', '%' . $request->get("q") . "%");

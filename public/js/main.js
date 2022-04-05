@@ -616,7 +616,7 @@
             $("#price").val(ui.values[0] + "*" + ui.values[1]);
         }
     });
-    $("#amount").val($("#slider-range").slider("values", 0)  + " DT - " + $("#slider-range").slider("values", 1) + " DT");
+    $("#amount").val($("#slider-range").slider("values", 0) + " DT - " + $("#slider-range").slider("values", 1) + " DT");
 
     /*---niceSelect---*/
     $('.nice-select').niceSelect();
@@ -800,5 +800,31 @@
         }
     });
 
+    $(".search-input").keyup(function () {
+        if (this.value.length < 3) {
+            $(".search_container").removeClass("has-results");
+            return;
+        }
 
+        $.get('/search', {q: this.value, output: 'json'}, function (data) {
+            if (data.length === 0)
+                return;
+            $('.search-result').html("")
+            $(".search_container").addClass("has-results");
+            for (const product of data) {
+                $('.search-result').append(
+                    "<div class=\"cart_item\">\n" +
+                    "            <div class=\"cart_img\">\n" +
+                    "                <a href=\"" + product.route + "\"><img src=\"assets/img/s-product/product.jpg\" alt=\"\"></a>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"cart_info\">\n" +
+                    "                <a href=\"" + product.route + "\">" + product.label + "</a>\n" +
+                    "            </div>\n" +
+                    "        </div>"
+                );
+            }
+        })
+    })
+
+    /**/
 })(jQuery);

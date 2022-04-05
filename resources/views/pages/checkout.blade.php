@@ -2,6 +2,9 @@
 @section("title", "Panier")
 
 @section("content")
+    @php
+        $shipping=0;
+    @endphp
     <!--Checkout page section-->
     <div class="Checkout_section mt-60">
         <div class="container">

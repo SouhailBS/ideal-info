@@ -23,7 +23,7 @@
                             </div>
                             <div class="services_content">
                                 <h3>{{$service->label}}</h3>
-                                <p>{{$service->description}}</p>
+                                <p>{!! $service->description !!}</p>
 
                             </div>
                         </div>

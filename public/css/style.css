@@ -931,7 +931,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .header_top {
     border-bottom: 1px solid #ebebeb;
-    background: linear-gradient(45deg, #0163d1 50%, #F8F9F9 50%);
+    background: linear-gradient(45deg, #0163d1 10%, #F8F9F9 50%);
 }
 
 @media only screen and (max-width: 767px) {

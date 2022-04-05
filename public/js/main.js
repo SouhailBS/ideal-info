@@ -799,7 +799,13 @@
             $this.toggleClass('menu-open');
         }
     });
-
+    $(".search-input").click(function () {
+        if ($('.search-result').children().length)
+            $(".search_container").removeClass("has-results");
+    });
+    $(".search-input").blur(function () {
+        $(".search_container").removeClass("has-results");
+    });
     $(".search-input").keyup(function () {
         if (this.value.length < 3) {
             $(".search_container").removeClass("has-results");

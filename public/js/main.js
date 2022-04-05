@@ -815,7 +815,7 @@
                 $('.search-result').append(
                     "<div class=\"cart_item\">\n" +
                     "            <div class=\"cart_img\">\n" +
-                    "                <a href=\"" + product.route + "\"><img src=\"" + product.thumb_photo + "\" alt=\"\"></a>\n" +
+                    "                <a href=\"" + product.route + "\"><img src=\"" + product.mini_photo + "\" alt=\"\"></a>\n" +
                     "            </div>\n" +
                     "            <div class=\"cart_info\">\n" +
                     "                <a href=\"" + product.route + "\">" + product.label + "</a>\n" +

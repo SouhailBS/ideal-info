@@ -115,7 +115,7 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $orderby = '';
-        $products = Product::where('tosell', '>', '0');
+        $products = Product::where('tosell', '>', '0')->where('fk_product_type', 0);
         $min = $products->where(function ($query) use ($request) {
             $query->where('label', 'like', '%' . $request->get("q") . "%")
                 ->orWhere('description', 'like', '%' . $request->get("q") . "%");
@@ -172,10 +172,16 @@ class ProductController extends Controller
 
     public function product(Product $product, $slug)
     {
-        abort_unless($product->tosell, 404);
+        abort_unless($product->tosell && $product->fk_product_type === 0, 404);
         if ($slug != Str::slug($product->label))
             return redirect($product->route);
 
         return view("pages.product")->with(["product" => $product]);
+    }
+
+    public function services()
+    {
+        $services = Product::where('tosell', 0)->where('fk_product_type', 1)->get();
+        return view('pages.our-services')->with("services", $services);
     }
 }

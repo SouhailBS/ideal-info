@@ -33,7 +33,7 @@ Route::post('/cart/product', [CartController::class, 'update'])->name('update-ca
 Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
 Route::get('/products/promotions', [ProductController::class, 'promo'])->name("promo");
 Route::get('/search', [ProductController::class, 'search'])->name("search");
-Route::view('/our-services', 'pages.our-services')->name('our-services');
+Route::get('/our-services', [ProductController::class, 'services'])->name('our-services');
 Route::view('/contact-us', 'pages.contact-us')->name('contact-us');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about-us');
 Route::post('/contact', [HomeController::class, 'contact'])->name('submit-contact');

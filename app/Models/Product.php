@@ -126,13 +126,13 @@ class Product extends Model
     public function thumbPhoto(string $image)
     {
         $arr = explode('.', $image);
-        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast(end($arr), '_small.' . end($arr), $image)]);
+        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast('.' . end($arr), '_small.' . end($arr), $image)]);
     }
 
     public function miniPhoto(string $image)
     {
         $arr = explode('.', $image);
-        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast(end($arr), '_mini.' . end($arr), $image)]);
+        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast('.' . end($arr), '_mini.' . end($arr), $image)]);
     }
 
 }

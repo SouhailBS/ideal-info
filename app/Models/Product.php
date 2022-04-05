@@ -33,6 +33,7 @@ class Product extends Model
         "photos",
         "discount",
         "old_price",
+        "thumb_small"
     ];
     /**
      * The attributes that should be cast.
@@ -74,6 +75,7 @@ class Product extends Model
         $fmt->setPattern('#,##0.000 DT');
         return $fmt->formatCurrency($this->getRawOriginal('price_min_ttc') - $this->getRawOriginal('price_ttc'), 'TND');
     }
+
     public function getOldPriceAttribute()
     {
         $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
@@ -96,6 +98,13 @@ class Product extends Model
         return collect([]);
     }
 
+    public function getThumbSmallAttribute()
+    {
+        if ($this->getPhotosAttribute()->count() > 0)
+            return $this->miniPhoto($this->getPhotosAttribute()->get(0));
+        return '';
+    }
+
     private function image_route($dir_element)
     {
         if (!is_dir($this->baseDir . $this->ref . '/' . $dir_element)) {
@@ -108,4 +117,22 @@ class Product extends Model
         $scanned_dir = scandir($dir);
         return array_filter($scanned_dir, $this->image_route(...));
     }
+
+    public function photo(string $image)
+    {
+        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/' . $image]);
+    }
+
+    public function thumbPhoto(string $image)
+    {
+        $arr = explode('.', $image);
+        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast(end($arr), '_small.' . end($arr), $image)]);
+    }
+
+    public function miniPhoto(string $image)
+    {
+        $arr = explode('.', $image);
+        return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast(end($arr), '_mini.' . end($arr), $image)]);
+    }
+
 }

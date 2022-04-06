@@ -12,7 +12,7 @@
                         src="{{$product->thumbPhoto($product->photos->get(0))}}"
                         alt=""></a>
                 @if($product->photos->get(1))
-                    <a class="secondary_img" href="{{$product->route}}"><img
+                    <a class="secondary_img" href="{{$product->route}}"><img loading="lazy"
                             src="{{$product->thumbPhoto($product->photos->get(1))}}"
                             alt=""></a>
                 @endif

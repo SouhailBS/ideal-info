@@ -21,8 +21,8 @@
                                 @section("image", route("dolibarr", ["file"=>'produit/' . $product->ref . '/' . $product->photos->get(0)]))
                             <a href="{{$product->route}}">
                                 <img id="zoom1"
-                                     src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(0)])}}"
-                                     data-zoom-image="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$product->photos->get(0)])}}"
+                                     src="{{$product->thumbPhoto($product->photos->get(0))}}"
+                                     data-zoom-image="{{$product->photo($product->photos->get(0))}}"
                                      alt="big-1">
                             </a>
                             @endif
@@ -42,10 +42,10 @@
                                     @foreach($product->photos as $img)
                                         <li>
                                             <a href="#" class="elevatezoom-gallery active" data-update=""
-                                               data-image="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}"
-                                               data-zoom-image="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}">
+                                               data-image="{{$product->thumbPhoto($img)}}"
+                                               data-zoom-image="{{$product->photo($img)}}">
                                                 <img
-                                                    src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}"
+                                                    src="{{$product->miniPhoto($img)}}"
                                                     alt="zo-th-1"/>
                                             </a>
 

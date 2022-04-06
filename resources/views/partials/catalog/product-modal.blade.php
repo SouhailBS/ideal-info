@@ -16,7 +16,7 @@
                                              id="tab_{{$product->rowid}}_{{$loop->iteration}}" role="tabpanel">
                                             <div class="modal_tab_img">
                                                 <a href="{{$product->route}}" class="elevatezoom-gallery active">
-                                                    <img
+                                                    <img loading="lazy"
                                                         src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}"
                                                         alt=""/>
                                                 </a>

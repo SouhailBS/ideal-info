@@ -118,18 +118,18 @@ class Product extends Model
         return array_filter($scanned_dir, $this->image_route(...));
     }
 
-    public function photo(string $image)
+    public function photo(string $image): string
     {
         return route("dolibarr", ["file" => 'produit/' . $this->ref . '/' . $image]);
     }
 
-    public function thumbPhoto(string $image)
+    public function thumbPhoto(string $image): string
     {
         $arr = explode('.', $image);
         return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast('.' . end($arr), '_small.' . end($arr), $image)]);
     }
 
-    public function miniPhoto(string $image)
+    public function miniPhoto(string $image): string
     {
         $arr = explode('.', $image);
         return route("dolibarr", ["file" => 'produit/' . $this->ref . '/thumbs/' . Str::replaceLast('.' . end($arr), '_mini.' . end($arr), $image)]);

@@ -10,6 +10,9 @@
                 @foreach($services as $service)
                     <div class="col-lg-4 col-md-6">
                         <div class="single_services">
+                            <div class="services_content">
+                                <h3>{{$service->label}}</h3>
+                            </div>
                             <div class="services_thumb">
 
                                 @if($service->photos->isEmpty())
@@ -22,9 +25,7 @@
                                 @endif
                             </div>
                             <div class="services_content">
-                                <h3>{{$service->label}}</h3>
                                 <p>{!! $service->description !!}</p>
-
                             </div>
                         </div>
                     </div>

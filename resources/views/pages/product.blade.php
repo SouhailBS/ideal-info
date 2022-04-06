@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="product-details-tab">
-                        <div id="img-1" class="zoomWrapper single-zoom">
+                        <div id="img-1" class="zoomWrapper single-zoom text-center">
                             @if($product->photos->isEmpty())
                                 <a href="#">
                                     <img id="zoom1" src="/assets/img/product/productbig5.jpg"

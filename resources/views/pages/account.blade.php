@@ -23,6 +23,35 @@
                     <div class="col-sm-12 col-md-9 col-lg-9">
                         <!-- Tab panes -->
                         <div class="tab-content dashboard_content">
+                            <div class="tab-pane fade show active" id="account-details">
+                                <h3>Détails du compte</h3>
+                                <div class="login">
+                                    <div class="login_form_container">
+                                        <div class="account_login_form">
+                                            <form method="POST" action="#">
+                                                <div class="input-radio">
+                                                    <span class="custom-radio"><input type="radio" value="1"
+                                                                                      name="id_gender"> M.</span>
+                                                    <span class="custom-radio"><input type="radio" value="2"
+                                                                                      name="id_gender"> Mme.</span>
+                                                </div>
+                                                <br>
+                                                <label for="firstname">Prénom <span>*</span></label>
+                                                <input value="{{auth()->user()->firstname}}" type="text" name="firstname" id="firstname" required placeholder="Votre prénom">
+                                                <label for="lastname">Nom <span>*</span></label>
+                                                <input value="{{auth()->user()->lastname}}" type="text" name="lastname" id="lastname" required placeholder="Votre nom">
+                                                <label for="email">Email <span>*</span></label>
+                                                <input value="{{auth()->user()->email}}" type="email" name="email" id="email" readonly>
+                                                <label for="password">Mot de passe</label>
+                                                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
+                                                <div class="save_button primary_btn default_button">
+                                                    <button type="submit">Enregistrer</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane" id="orders">
                                 <h3>Orders</h3>
                                 <div class="table-responsive">
@@ -69,52 +98,6 @@
                                     1212
                                 </address>
                                 <p>Bangladesh</p>
-                            </div>
-                            <div class="tab-pane fade show" id="account-details">
-                                <h3>Account details </h3>
-                                <div class="login">
-                                    <div class="login_form_container">
-                                        <div class="account_login_form">
-                                            <form action="#">
-                                                <div class="input-radio">
-                                                    <span class="custom-radio"><input type="radio" value="1"
-                                                                                      name="id_gender"> M.</span>
-                                                    <span class="custom-radio"><input type="radio" value="2"
-                                                                                      name="id_gender"> Mme.</span>
-                                                </div>
-                                                <br>
-                                                <label for="firstname">Prénom</label>
-                                                <input value="{{auth()->user()->firstname}}" type="text" name="firstname" id="firstname" required placeholder="Votre prénom">
-                                                <label for="lastname">Nom</label>
-                                                <input value="{{auth()->user()->lastname}}" type="text" name="lastname" id="lastname" required placeholder="Votre nom">
-                                                <label for="email">Email</label>
-                                                <input value="{{auth()->user()->email}}" type="email" name="email" id="email" required placeholder="Votre adresse email">
-                                                <label>Password</label>
-                                                <input type="password" name="user-password">
-                                                <label>Birthdate</label>
-                                                <input type="text" placeholder="MM/DD/YYYY" value="" name="birthday">
-                                                <span class="example">
-                                                    (E.g.: 05/31/1970)
-                                                </span>
-                                                <br>
-                                                <span class="custom_checkbox">
-                                                    <input type="checkbox" value="1" name="optin">
-                                                    <label>Receive offers from our partners</label>
-                                                </span>
-                                                <br>
-                                                <span class="custom_checkbox">
-                                                    <input type="checkbox" value="1" name="newsletter">
-                                                    <label>Sign up for our newsletter<br><em>You may unsubscribe at any
-                                                            moment. For that purpose, please find our contact info in
-                                                            the legal notice.</em></label>
-                                                </span>
-                                                <div class="save_button primary_btn default_button">
-                                                    <button type="submit">Save</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

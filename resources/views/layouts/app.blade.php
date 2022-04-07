@@ -54,7 +54,7 @@
 <script src="{{asset('/js/main.js')}}"></script>
 
 @stack('scripts')
-<script loading="lazy">
+<script async>
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = 'b51a2d3458351b942d4c98d628cd7498f2cab201';
     _smartsupp.cookieDomain = '.ideal-info.net';
@@ -84,8 +84,8 @@
     });
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=UA-15277545-1"></script>
-<script defer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15277545-1"></script>
+<script async>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -97,6 +97,6 @@
     gtag('config', 'UA-15277545-1');
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script defer type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
+<script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
 </body>
 </html>

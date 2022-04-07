@@ -5399,7 +5399,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .disabled {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
 }
 
 .subscribe_form form {

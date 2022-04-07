@@ -23,4 +23,3 @@
     SetOutputFilter DEFLATE
  </FilesMatch>
  AddOutputFilterByType DEFLATE text/html
-Link: </css/plugins.css>; rel=preload; as=style, </css/style.css>; rel=preload; as=style, </js/plugins.js>; rel=preload; as=script

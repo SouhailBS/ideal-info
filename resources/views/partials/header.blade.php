@@ -158,7 +158,7 @@
         <div class="row align-items-center">
             <div class="col-lg-2">
                 <div class="logo">
-                    <a href="{{url('/')}}"><img
+                    <a href="{{url('/')}}"><img loading="lazy"
                             src="{{route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO")])}}"
                             alt=""></a>
                 </div>

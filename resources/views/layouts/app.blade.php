@@ -54,7 +54,7 @@
 <script src="{{asset('/js/main.js')}}"></script>
 
 @stack('scripts')
-<script>
+<script loading="lazy">
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = 'b51a2d3458351b942d4c98d628cd7498f2cab201';
     _smartsupp.cookieDomain = '.ideal-info.net';
@@ -74,7 +74,7 @@
     })(document);
 
     $(document).ready(function () {
-        if(!localStorage.getItem("birthday2022")) {
+        if (!localStorage.getItem("birthday2022")) {
             $(".conf-wrapper").removeClass("d-none");
             setTimeout(function () {
                 $(".conf-wrapper").remove();
@@ -84,15 +84,19 @@
     });
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15277545-1"></script>
-<script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=UA-15277545-1"></script>
+<script defer>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'UA-15277545-1');
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
+<script defer type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
 </body>
 </html>

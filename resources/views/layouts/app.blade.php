@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{asset('/css/plugins.css')}}">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/confetti.css')}}">
+   {{-- <link rel="stylesheet" href="{{asset('/css/confetti.css')}}">--}}
 
     @stack("styles")
 

@@ -1,5 +1,6 @@
 @extends("layouts.app")
 @section("title", __("Accueil"))
+@section("description", config("company.MAIN_INFO_SOCIETE_NOTE"))
 
 @section("content")
     @include("partials.home.slider")

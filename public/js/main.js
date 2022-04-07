@@ -86,7 +86,7 @@
 
     /*---product slick column5 activation---*/
     $('.product_slick_column5').slick({
-        centerMode: true,
+        centerMode: false,
         centerPadding: '0',
         slidesToShow: 5,
         rows: 2,

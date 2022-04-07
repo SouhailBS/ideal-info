@@ -35,7 +35,7 @@
                 <div
                     class="@if($promo->count()>=10)product_slick product_slick_column5 @else product_carousel product_column5 owl-carousel @endif">
                     @foreach($promo as $product)
-                        @include("partials.catalog.product-miniature")
+                        @include("partials.catalog.product-miniature", ['lazy'=>$loop->iteration>10])
                     @endforeach
                 </div>
             </div>

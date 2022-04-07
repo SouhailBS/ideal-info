@@ -10,6 +10,8 @@ class CartController extends Controller
 {
     public function add(Request $request, Product $product)
     {
+        if ($product->stock === 0)
+            return back()->withErrors(['stock' => 'Produit épuisé.']);
         \Cart::add(['id' => $product->rowid,
             'name' => $product->label,
             'price' => $product->getRawOriginal('price_ttc'),

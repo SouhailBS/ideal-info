@@ -111,7 +111,7 @@
                                 @else
                                     <input disabled id="qte" min="1" max="{{$product->stock}}" value="1" name="quantity"
                                            type="number">
-                                    <button class="button disabled" aria-disabled="true" title="Produit épuisé">Ajouter
+                                    <button disabled class="button disabled" aria-disabled="true" title="Produit épuisé">Ajouter
                                         au panier
                                     </button>
                                 @endif

@@ -168,6 +168,8 @@ return [
          * Package Service Providers...
          */
         Darryldecode\Cart\CartServiceProvider::class,
+        //mrcrmn\Http2Push\Http2PushServiceProvider::class,
+        //Souhail\LaravelHttp2Push\LaravelHttp2PushServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -14,7 +14,7 @@
 
         </div>
     @else
-        @foreach(Cart::getContent() as $item)
+        @foreach(Cart::getContent()->take(3) as $item)
             <div class="cart_item">
                 <div class="cart_img">
                     <a href="{{$item->associatedModel->route}}"><img loading="lazy"

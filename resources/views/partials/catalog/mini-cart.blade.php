@@ -1,5 +1,5 @@
 <!--mini cart-->
-<div class="mini_cart">
+<div class="mini_cart" style="overflow-y: auto;">
     @if(Cart::isEmpty())
         <div class="mini_cart_table">
             <div class="cart_total">

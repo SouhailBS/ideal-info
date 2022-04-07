@@ -83,8 +83,14 @@
                                     </div>--}}
                                     <div class="modal_add_to_cart">
                                         <form method="GET" action="{{route("add-to-cart", ["product"=>$product])}}">
-                                            <input id="qte" min="1" max="100" value="1" name="quantity" type="number">
-                                            <button class="button" type="submit">Ajouter au panier</button>
+                                            @if($product->stock>0)
+                                                <input id="qte" min="1" max="100" value="1" name="quantity" type="number">
+                                                <button class="button" type="submit">Ajouter au panier</button>
+                                            @else
+                                                <input readonly id="qte" min="1" max="100" value="1" name="quantity" type="number">
+                                                <button aria-disabled="true" disabled class="button" type="submit">Ajouter au panier</button>
+                                            @endif
+
                                         </form>
                                     </div>
                                 </div>

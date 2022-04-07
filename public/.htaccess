@@ -19,6 +19,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
-<FilesMatch "\.(html?|txt|css|js|php|pl)$">
+<FilesMatch "\.(txt|css|js|php|pl)$">
     SetOutputFilter DEFLATE
  </FilesMatch>
+ AddOutputFilterByType DEFLATE text/html

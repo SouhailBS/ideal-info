@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4bda0f89c737fa90872af539447daea",
+    "content-hash": "c0503d2ce6f1e012d36ce7c92b738bc5",
     "packages": [
         {
             "name": "brick/math",
@@ -2786,70 +2786,6 @@
                 }
             ],
             "time": "2022-03-27T21:42:02+00:00"
-        },
-        {
-            "name": "souhail/laravel-http2-push2",
-            "version": "1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SouhailBS/Laravel-HTTP2-Push.git",
-                "reference": "8238dda25a493c9b4cf402aac4d68bbb41185cbd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SouhailBS/Laravel-HTTP2-Push/zipball/8238dda25a493c9b4cf402aac4d68bbb41185cbd",
-                "reference": "8238dda25a493c9b4cf402aac4d68bbb41185cbd",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^8.0|^9.0",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^6.17|^7.0",
-                "phpunit/phpunit": "^9.3",
-                "squizlabs/php_codesniffer": "3.*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "TomKeyte\\LaravelHttp2Push\\Http2PushServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "TomKeyte\\LaravelHttp2Push\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Keyte",
-                    "email": "hello@tomkeyte.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A cache aware provider for HTTP2 Push within a Laravel application",
-            "homepage": "https://github.com/souhail/laravel-http2-push",
-            "keywords": [
-                "http2",
-                "laravel",
-                "laravel-http2-push",
-                "push",
-                "seo"
-            ],
-            "support": {
-                "source": "https://github.com/SouhailBS/Laravel-HTTP2-Push/tree/1.2"
-            },
-            "time": "2022-04-07T17:36:36+00:00"
         },
         {
             "name": "symfony/console",

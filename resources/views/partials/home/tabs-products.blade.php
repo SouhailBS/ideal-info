@@ -24,9 +24,10 @@
         <div class="tab-content">
 
             <div class="tab-pane fade" id="Products3" role="tabpanel">
-                <div class="@if($newProducts->count()>=10)product_slick product_slick_column5 @else product_carousel product_column5 owl-carousel @endif">
+                <div
+                    class="@if($newProducts->count()>=10)product_slick product_slick_column5 @else product_carousel product_column5 owl-carousel @endif">
                     @foreach($newProducts as $product)
-                        @include("partials.catalog.product-miniature")
+                        @include("partials.catalog.product-miniature", ['lazy'=>true])
                     @endforeach
                 </div>
             </div>

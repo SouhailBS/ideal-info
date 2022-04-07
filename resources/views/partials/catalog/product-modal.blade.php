@@ -33,7 +33,7 @@
                                                 <a class="nav-link  @if($loop->first)active @endif" data-bs-toggle="tab"
                                                    href="#tab_{{$product->rowid}}_{{$loop->iteration}}" role="tab"
                                                    aria-controls="tab_{{$product->rowid}}_{{$loop->iteration}}"
-                                                   aria-selected="false"><img
+                                                   aria-selected="false"><img loading="lazy"
                                                         src="{{route("dolibarr", ["file"=>'produit/' . $product->ref . '/' .$img])}}"
                                                         alt=""/></a>
                                             </li>

@@ -17,7 +17,7 @@
         @foreach(Cart::getContent() as $item)
             <div class="cart_item">
                 <div class="cart_img">
-                    <a href="{{$item->associatedModel->route}}"><img
+                    <a href="{{$item->associatedModel->route}}"><img loading="lazy"
                             src="{{route("dolibarr", ["file"=>'produit/' . $item->associatedModel->ref . '/' .$item->associatedModel->photos->get(0)])}}"
                             alt=""></a>
                 </div>

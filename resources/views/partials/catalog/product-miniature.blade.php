@@ -8,7 +8,7 @@
                         src="/assets/img/product/product2.jpg" alt=""></a>
 
             @else
-                <a class="primary_img" href="{{$product->route}}"><img
+                <a class="primary_img" href="{{$product->route}}"><img @isset($lazy) loading="lazy" @endisset
                         src="{{$product->thumbPhoto($product->photos->get(0))}}"
                         alt=""></a>
                 @if($product->photos->get(1))

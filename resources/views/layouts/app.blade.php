@@ -53,8 +53,16 @@
 <!-- Plugins JS -->
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
-<script src="{{asset('/js/main.js')}}"></script>
-
+<script defer src="{{asset('/js/main.js')}}"></script>
+<script defer>$(document).ready(function () {
+        if (!localStorage.getItem("birthday2022")) {
+            $(".conf-wrapper").removeClass("d-none");
+            setTimeout(function () {
+                $(".conf-wrapper").remove();
+                localStorage.setItem("birthday2022", 'true');
+            }, 5000);
+        }
+    });</script>
 @stack('scripts')
 <script async>
     var _smartsupp = _smartsupp || {};
@@ -74,16 +82,6 @@
         c.src = '//www.smartsuppchat.com/loader.js?';
         s.parentNode.insertBefore(c, s);
     })(document);
-
-    $(document).ready(function () {
-        if (!localStorage.getItem("birthday2022")) {
-            $(".conf-wrapper").removeClass("d-none");
-            setTimeout(function () {
-                $(".conf-wrapper").remove();
-                localStorage.setItem("birthday2022", 'true');
-            }, 5000);
-        }
-    });
 </script>
 
 </body>

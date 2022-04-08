@@ -24,8 +24,8 @@
           content="@yield("image", route("dolibarr",['mycompany/logos/' . config("company.MAIN_INFO_SOCIETE_LOGO_SQUARRED")]))"/>
     <!-- Stylesheets -->
     <!-- Plugins CSS -->
-    {{--<link rel="stylesheet" href="{{asset('/css/plugins.css')}}">--}}
-    <style>{{file_get_contents(public_path('/css/plugins.css'))}}</style>
+    <link rel="stylesheet" href="{{asset('/css/plugins.css')}}">
+    {{--<style>{{file_get_contents(public_path('/css/plugins.css'))}}</style>--}}
     <!-- Main Style CSS -->
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{asset('/css/style.css')}}">
     <noscript><link rel="stylesheet" href="{{asset('/css/style.css')}}"></noscript>

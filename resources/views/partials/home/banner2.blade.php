@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="single_banner">
                     <div class="banner_thumb">
-                        <a href="{{route("promo")}}"><img loading="lazy" src="/img/affiche-bas.jpg" alt=""></a>
+                        <a href="{{route("promo")}}"><img loading="lazy" src="/img/affiche-bas.webp" alt=""></a>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+{{--
 <!-- modal area start-->
 <div class="modal fade" id="modal_box_{{$product->rowid}}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -61,7 +62,8 @@
                                     <p>{!! $product->description !!}</p>
                                 </div>
                                 <div class="variants_selects">
-                                    {{--<div class="variants_size">
+                                    --}}
+{{--<div class="variants_size">
                                         <h2>size</h2>
                                         <select class="select_option">
                                             <option selected value="1">s</option>
@@ -80,7 +82,8 @@
                                             <option value="1">pink</option>
                                             <option value="1">orange</option>
                                         </select>
-                                    </div>--}}
+                                    </div>--}}{{--
+
                                     <div class="modal_add_to_cart">
                                         <form method="GET" action="{{route("add-to-cart", ["product"=>$product])}}">
                                             @if($product->stock>0)
@@ -108,3 +111,4 @@
     </div>
 </div>
 <!-- modal area end-->
+--}}

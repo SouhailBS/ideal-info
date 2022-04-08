@@ -55,20 +55,20 @@
                                                         <span class="label_out_of_stock">Épuisé</span>
                                                     @endif
                                                 </div>
-                                                <div class="action_links">
+                                                {{--<div class="action_links">
                                                     <ul>
-                                                        {{--<li class="wishlist"><a href="wishlist.html"
+                                                        --}}{{--<li class="wishlist"><a href="wishlist.html"
                                                                                 title="Add to Wishlist"><i
                                                                     class="fa fa-heart-o" aria-hidden="true"></i></a>
                                                         </li>
                                                         <li class="compare"><a href="#" title="compare"><span
-                                                                    class="ion-levels"></span></a></li>--}}
+                                                                    class="ion-levels"></span></a></li>--}}{{--
                                                         <li class="quick_button"><a href="#" data-bs-toggle="modal"
                                                                                     data-bs-target="#modal_box_{{$product->rowid}}"
                                                                                     title="Aperçu"> <span
                                                                     class="ion-ios-search-strong"></span></a></li>
                                                     </ul>
-                                                </div>
+                                                </div>--}}
                                                 <div class="add_to_cart">
                                                     @if($product->stock>0)
                                                         <a href="{{route("add-to-cart", ["product"=>$product])}}"
@@ -148,21 +148,21 @@
                                                                title="Produit épuisé">Ajouter au panier</a>
                                                         @endif
                                                     </div>
-                                                    <div class="action_links">
+                                                    {{--<div class="action_links">
                                                         <ul>
-                                                            {{--<li class="wishlist"><a href="wishlist.html"
+                                                            --}}{{--<li class="wishlist"><a href="wishlist.html"
                                                                                     title="Add to Wishlist"><i
                                                                         class="fa fa-heart-o"
                                                                         aria-hidden="true"></i> Add to Wishlist</a></li>
                                                             <li class="compare"><a href="#" title="compare"><span
-                                                                        class="ion-levels"></span> Compare</a></li>--}}
+                                                                        class="ion-levels"></span> Compare</a></li>--}}{{--
                                                             <li class="quick_button"><a href="#" data-bs-toggle="modal"
                                                                                         data-bs-target="#modal_box_{{$product->rowid}}"
                                                                                         title="Aperçu"> <span
                                                                         class="ion-ios-search-strong"></span> Aperçu</a>
                                                             </li>
                                                         </ul>
-                                                    </div>
+                                                    </div>--}}
                                                 </div>
                                             </div>
                                         </figure>

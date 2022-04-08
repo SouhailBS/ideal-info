@@ -1,5 +1,5 @@
 @extends("layouts.app")
-@section("title", __("Accueil"))
+@section("title", __("Vente en ligne Pc portable, Smartphone, Matériel Informatique Tunisie"))
 @section("description", config("company.MAIN_INFO_SOCIETE_NOTE"))
 
 @section("content")

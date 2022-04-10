@@ -804,7 +804,9 @@
             $(".search_container").addClass("has-results");
     });
     $(".search-input").blur(function () {
-        $(".search_container").removeClass("has-results");
+        setTimeout(function () {
+            $(".search_container").removeClass("has-results");
+        }, 500)
     });
     $(".search-input").keyup(function () {
         if (this.value.length < 3) {
@@ -818,8 +820,7 @@
             $('.search-result').html("")
             $(".search_container").addClass("has-results");
             for (const product of data) {
-                $('.search-result').append(
-                    "<div class=\"cart_item\">\n" +
+                let element = $.parseHTML("<div data-href=\"" + product.route + "\" class=\"cart_item\">\n" +
                     "            <div class=\"cart_img\">\n" +
                     "                <a href=\"" + product.route + "\"><img src=\"" + product.thumb_small + "\" alt=\"\"></a>\n" +
                     "            </div>\n" +
@@ -827,10 +828,14 @@
                     "                <a href=\"" + product.route + "\">" + product.label + "</a>\n" +
                     "            </div>\n" +
                     "        </div>"
-                );
+                )
+                $(element).bind('click', function () {
+                    location.href = $(this).data("href")
+                });
+                $('.search-result').append(element);
             }
         })
-    })
+    });
 
     /**/
 })(jQuery);

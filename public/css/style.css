@@ -11674,6 +11674,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     visibility: visible;
 }
 
+.search_container .mini_cart .cart_item:hover {
+    cursor: pointer;
+}
 .search_container .mini_cart {
     width: 100%;
     right: auto;

@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Sitemap\Contracts\Sitemapable;
 
-class Category extends Model
+class Category extends Model implements Sitemapable
 {
     use HasFactory;
 
@@ -79,5 +80,10 @@ class Category extends Model
     {
         $scanned_dir = scandir($dir);
         return array_filter($scanned_dir, $this->image_route(...));
+    }
+
+    public function toSitemapTag(): string|array
+    {
+        return route('category-product-listing', ['category' => $this, 'slug' => Str::slug($this->label)]);
     }
 }

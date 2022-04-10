@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use NumberFormatter;
+use Spatie\Sitemap\Contracts\Sitemapable;
 
 /**
  * @property mixed $route
  * @property mixed $label
  */
-class Product extends Model
+class Product extends Model implements Sitemapable
 {
     use HasFactory;
 
@@ -139,4 +140,8 @@ class Product extends Model
         return $this->photo($image);
     }
 
+    public function toSitemapTag(): string|array
+    {
+        return route('single-product', ['product' => $this, 'slug' => Str::slug($this->label)]);
+    }
 }

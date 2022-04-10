@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\SitemapIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +49,30 @@ Route::get('/documents/{file}', function ($file) {
 
     return response(file_get_contents($path), 200, ['Content-type' => mime_content_type($path)]);
 })->where('file', '.*')->name("dolibarr");
+
+Route::get('/cron/generate-sitemap', function () {
+    Sitemap::create()
+        ->add(route('account'))
+        ->add(route('about-us'))
+        ->add(route('contact-us'))
+        ->add(route('our-services'))
+        ->add(route('promo'))
+        ->add(route('checkout'))
+        ->add(route('cart'))
+        ->add(route('register-form'))
+        ->add(route('login-form'))
+        ->add(route('home'))
+        ->writeToFile(base_path() . '/public/pages_sitemap.xml');
+
+    Sitemap::create()
+        ->add(\App\Models\Product::where('fk_product_type', 0)->get())->writeToFile(base_path() . '/public/products_sitemap.xml');
+
+    Sitemap::create()
+        ->add(\App\Models\Category::all())->writeToFile(base_path() . '/public/categories_sitemap.xml');
+
+    SitemapIndex::create()
+        ->add('/categories_sitemap.xml')
+        ->add('/products_sitemap.xml')
+        ->add('/pages_sitemap.xml')
+        ->writeToFile(base_path() . '/public/sitemap.xml');
+});

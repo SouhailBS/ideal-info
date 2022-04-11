@@ -26,9 +26,12 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('/css/plugins.css')}}">
     {{--<style>{{file_get_contents(public_path('/css/plugins.css'))}}</style>--}}
-    <!-- Main Style CSS -->
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{asset('/css/style.css')}}">
-    <noscript><link rel="stylesheet" href="{{asset('/css/style.css')}}"></noscript>
+<!-- Main Style CSS -->
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+          href="{{asset('/css/style.css')}}?version=1">
+    <noscript>
+        <link rel="stylesheet" href="{{asset('/css/style.css')}}">
+    </noscript>
     <link rel="stylesheet" href="{{asset('/css/confetti.css')}}">
 
     @stack("styles")
@@ -50,10 +53,13 @@
         <div class="confetti-{{$i}}"></div>
     @endfor
 </div>
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+    <div id="notification" style="z-index: 9999;" class="toast-container position-fixed top-0 end-0 p-3"></div>
+</div>
 <!-- Plugins JS -->
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
-<script defer src="{{asset('/js/main.js')}}"></script>
+<script defer src="{{asset('/js/main.js')}}?version=1"></script>
 <script defer>$(document).ready(function () {
         if (!localStorage.getItem("birthday2022")) {
             $(".conf-wrapper").removeClass("d-none");
@@ -62,6 +68,7 @@
                 localStorage.setItem("birthday2022", 'true');
             }, 5000);
         }
+        //element =
     });</script>
 @stack('scripts')
 <script async>

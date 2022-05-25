@@ -32,7 +32,7 @@
     <noscript>
         <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     </noscript>
-    <link rel="stylesheet" href="{{asset('/css/confetti.css')}}">
+    {{--<link rel="stylesheet" href="{{asset('/css/confetti.css')}}">--}}
 
     @stack("styles")
 
@@ -48,11 +48,11 @@
 @include("partials.footer")
 
 @stack('modals')
-<div class="conf-wrapper d-none">
+{{--<div class="conf-wrapper d-none">
     @for($i=149;$i>=0;$i--)
         <div class="confetti-{{$i}}"></div>
     @endfor
-</div>
+</div>--}}
 <div aria-live="polite" aria-atomic="true" class="position-relative">
     <div id="notification" style="z-index: 9999;" class="toast-container position-fixed top-0 end-0 p-3"></div>
 </div>
@@ -60,7 +60,7 @@
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
 <script defer src="{{asset('/js/main.js')}}?version=1"></script>
-<script defer>$(document).ready(function () {
+{{--<script defer>$(document).ready(function () {
         if (!localStorage.getItem("birthday2022")) {
             $(".conf-wrapper").removeClass("d-none");
             setTimeout(function () {
@@ -69,7 +69,7 @@
             }, 5000);
         }
         //element =
-    });</script>
+    });</script>--}}
 @stack('scripts')
 <script async>
     var _smartsupp = _smartsupp || {};

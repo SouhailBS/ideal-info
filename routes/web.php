@@ -33,6 +33,7 @@ Route::view('/checkout', 'pages.checkout')->name('checkout');
 Route::get('/cart/product/{product}', [CartController::class, 'add'])->name('add-to-cart');
 Route::post('/cart/product', [CartController::class, 'update'])->name('update-cart');
 Route::get('/cart/delete/{product}', [CartController::class, 'delete'])->name('delete-from-cart');
+Route::delete('/cart/delete/{product}', [CartController::class, 'delete'])->name('ajax-delete-from-cart');
 Route::get('/products/promotions', [ProductController::class, 'promo'])->name("promo");
 Route::get('/search', [ProductController::class, 'search'])->name("search");
 Route::get('/our-services', [ProductController::class, 'services'])->name('our-services');

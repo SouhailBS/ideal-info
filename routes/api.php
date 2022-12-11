@@ -18,4 +18,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/cart/product/{product}', [CartController::class, 'add'])->name('ajax-add-to-cart');
 Route::put('/cart/product', [CartController::class, 'update'])->name('ajax-update-cart');
-Route::delete('/cart/delete/{product}', [CartController::class, 'delete'])->name('ajax-delete-from-cart');

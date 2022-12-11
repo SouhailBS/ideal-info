@@ -18,6 +18,11 @@ class CartController extends Controller
             'quantity' => $request->get("quantity", 1),
             'attributes' => array(),
             'associatedModel' => $product]);
+        if ($request->expectsJson())
+            return response([
+                'product' => $product,
+                'quantity' => $request->get("quantity", 1)
+            ]);
         return back();
     }
 
@@ -40,14 +45,31 @@ class CartController extends Controller
                     'associatedModel' => $product
                 ]);
         }
+        if ($request->expectsJson()) {
+            if (count($error) > 0)
+                return response($error, 400);
+            return response(['success', 'Votre panier est à jour']);
+        }
         if (count($error) > 0)
             return back()->withErrors($error);
         return back()->with('success', 'Votre panier est à jour');
     }
 
-    public function delete($product)
+    public function delete(Request $request, $product)
     {
         \Cart::remove($product);
+        if ($request->expectsJson()) {
+            $fmt = new NumberFormatter('fr_TN', NumberFormatter::CURRENCY);
+            $fmt->setPattern('#,##0.000 DT');
+
+            return response([
+                'success' => 'Votre panier est à jour',
+                'cart' => [
+                    'items' => \Cart::getContent()->toArray(),
+                    'total' => $fmt->formatCurrency(\Cart::getTotal(), 'TND'),
+                ]
+            ]);
+        }
         return back();
     }
 }

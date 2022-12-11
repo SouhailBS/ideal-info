@@ -91,7 +91,7 @@
                                                 <button class="button" type="submit">Ajouter au panier</button>
                                             @else
                                                 <input readonly id="qte" min="1" max="100" value="1" name="quantity" type="number">
-                                                <button aria-disabled="true" disabled class="button disabled" type="submit" title="Produit épuisé">Ajouter au panier</button>
+                                                <button aria-disabled="true" disabled class="button disabled" type="submit" title="Produit Sur commande">Ajouter au panier</button>
                                             @endif
 
                                         </form>

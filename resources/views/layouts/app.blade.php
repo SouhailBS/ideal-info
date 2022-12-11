@@ -32,7 +32,7 @@
     <noscript>
         <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     </noscript>
-    {{--<link rel="stylesheet" href="{{asset('/css/confetti.css')}}">--}}
+    <!--link rel="stylesheet" href="{{asset('/css/confetti.css')}}"-->
 
     @stack("styles")
 
@@ -48,11 +48,11 @@
 @include("partials.footer")
 
 @stack('modals')
-{{--<div class="conf-wrapper d-none">
+<div class="conf-wrapper d-none">
     @for($i=149;$i>=0;$i--)
         <div class="confetti-{{$i}}"></div>
     @endfor
-</div>--}}
+</div>
 <div aria-live="polite" aria-atomic="true" class="position-relative">
     <div id="notification" style="z-index: 9999;" class="toast-container position-fixed top-0 end-0 p-3"></div>
 </div>
@@ -60,7 +60,7 @@
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
 <script defer src="{{asset('/js/main.js')}}?version=1"></script>
-{{--<script defer>$(document).ready(function () {
+<!--script defer>$(document).ready(function () {
         if (!localStorage.getItem("birthday2022")) {
             $(".conf-wrapper").removeClass("d-none");
             setTimeout(function () {
@@ -69,27 +69,38 @@
             }, 5000);
         }
         //element =
-    });</script>--}}
+    });</script-->
 @stack('scripts')
-<script async>
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = 'b51a2d3458351b942d4c98d628cd7498f2cab201';
-    _smartsupp.cookieDomain = '.ideal-info.net';
-    _smartsupp.sitePlatform = 'Boutique en ligne: Ideal Informatique';
-    window.smartsupp || (function (d) {
-        var s, c, o = smartsupp = function () {
-            o._.push(arguments)
-        };
-        o._ = [];
-        s = d.getElementsByTagName('script')[0];
-        c = d.createElement('script');
-        c.type = 'text/javascript';
-        c.charset = 'utf-8';
-        c.async = true;
-        c.src = '//www.smartsuppchat.com/loader.js?';
-        s.parentNode.insertBefore(c, s);
-    })(document);
-</script>
+<!-- Messenger Plugin de discussion Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin de discussion code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "258371030847188");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v14.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 </body>
 </html>

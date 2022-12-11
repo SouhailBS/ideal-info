@@ -5,15 +5,24 @@
             <div class="col-lg-9 col-md-8">
                 <div class="slider_area owl-carousel">
                     <div class="single_slider d-flex align-items-center"
-                         data-bgimg="/img/affiche-slide.webp" style="background-image: url('/img/affiche-slide.webp');">
+                         data-bgimg="/img/affiche-slide1.webp" style="background-image: url('/img/affiche-slide1.webp');">
                         <div class="slider_content slider_c_four">
-                            <h1 class="d-none d-md-block">Promo anniversaire</h1>
-                            <h1 class="d-block d-md-none">
-                                <a class="m-0" style="color: inherit;" href="{{route("promo")}}">Promo
-                                    anniversaire</a></h1>
-                            <h2>Un mois de promotions pour célébrer</h2>
-                            <p>notre <span>16éme</span> anniversaire</p>
-                            <a class="button d-none d-md-inline-block" href="{{route("promo")}}">Nos promos</a>
+                            <h1 class="d-none d-md-block">Montez votre PC Gamer avec des experts</h1>
+                            <h1 class="d-blockd-md-none d-none">
+                                <a class="m-0" style="color: inherit;" href="https://ideal-info.net/products/category/95/composants-gamer">PC Gamer</a></h1>
+                            <h2></h2>
+                            <a class="button d-none d-md-inline-block" href="https://ideal-info.net/products/category/95/composants-gamer">Notre Collection Gamer</a>
+                        </div>
+                    </div>
+					
+					<div class="single_slider d-flex align-items-center"
+                         data-bgimg="/img/affiche-slide2.webp" style="background-image: url('/img/affiche-slide2.webp');">
+                        <div class="slider_content slider_c_four">
+                            <h1 class="d-none d-md-block">Demandez votre abonnement ADSL</h1>
+                            <h1 class="d-blockd-md-none d-none">
+                                <a class="m-0" style="color: inherit;" href="https://ideal-info.net/our-services">PC Gamer</a></h1>
+                            <h2>et payez vos factures à notre bureau</h2>
+                            <a class="button d-none d-md-inline-block" href="https://ideal-info.net/our-services">Nos Services</a>
                         </div>
                     </div>
                 </div>
@@ -22,7 +31,7 @@
                 <div class="sidebar_banner5">
                     <div class="single_banner">
                         <div class="banner_thumb">
-                            <a href="{{route("about-us")}}"><img src="/img/affiche-ramadhan.webp" alt=""></a>
+                            <a href="{{route("about-us")}}"><img src="/img/affiche-top-side.webp" alt=""></a>
                         </div>
                     </div>
                 </div>

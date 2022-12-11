@@ -39,7 +39,7 @@
                                     @if($product->stock>0)
                                         <span class="label_sale">Dispo</span>
                                     @else
-                                        <span class="label_out_of_stock">Épuisé</span>
+                                        <span class="label_out_of_stock">Sur commande</span>
                                     @endif
                                 </div>
                             </div>

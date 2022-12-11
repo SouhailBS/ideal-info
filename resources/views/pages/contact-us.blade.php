@@ -55,7 +55,7 @@
                     @endforeach
                     <div class="contact_message form">
                         <h3>Discutez avec nous</h3>
-                        <form method="POST" action="{{route("submit-contact")}}">
+                        <form id="contact-form" method="POST" action="{{route("submit-contact")}}">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6 mb-20">
@@ -76,11 +76,7 @@
                                     <textarea required id="msg" placeholder="Message *" name="message"
                                               class="form-control2">{{old('message')}}</textarea>
                                 </div>
-
-                                <div class="d-grid gap-2 col-md-6">
-                                    <div class="mb-sm-2 g-recaptcha" data-sitekey="6LdaiEUfAAAAACnQRC-7zQaAA3pKCSDNU20M_Xzu"></div>
-                                </div>
-
+								<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response"/>
                                 <div class="d-grid gap-2 col-md-6 ps-lg-4 ps-md-4 ps-xl-4">
                                     <button type="submit"> Envoyer</button>
                                 </div>
@@ -96,5 +92,18 @@
     <!--contact area end-->
 @endsection
 @push("scripts")
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le9yXAgAAAAAKZFvqZtaArM0wFcSYunaGfcv8Hq"></script>
+	<script>
+		$(document).ready(function(){
+		  $('#contact-form').on('submit', function (e) {
+			e.preventDefault();
+			grecaptcha.ready(function() {
+			  grecaptcha.execute('6Le9yXAgAAAAAKZFvqZtaArM0wFcSYunaGfcv8Hq', {action: 'submit'}).then(function(token) {
+				  $("#g-recaptcha-response").val(token);
+				  $('#contact-form').off().submit();
+				 }); 
+			  });
+			});
+      	});
+  </script>
 @endpush

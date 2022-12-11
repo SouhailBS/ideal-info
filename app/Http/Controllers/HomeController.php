@@ -32,12 +32,12 @@ class HomeController extends Controller
     {
         $request->validate([
             'nom' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|not_in:eric.jones.z.mail@gmail.com',
             'message' => 'required',
             'g-recaptcha-response' => 'required'
         ]);
 
-        $secret = '6LdaiEUfAAAAADfW1peh3uLaHOu40tTOZNqYxadh';
+        $secret = '6Le9yXAgAAAAAE6yJ545FB53qSISTzX7BJGzbLvl';
 
         $ip = $_SERVER['REMOTE_ADDR'];
         // post request to server

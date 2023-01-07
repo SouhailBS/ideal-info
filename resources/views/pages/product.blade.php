@@ -111,7 +111,8 @@
                                 @else
                                     <input disabled id="qte" min="1" max="{{$product->stock}}" value="1" name="quantity"
                                            type="number">
-                                    <button disabled class="button disabled" aria-disabled="true" title="Produit épuisé">Ajouter
+                                    <button disabled class="button disabled" aria-disabled="true"
+                                            title="Produit épuisé">Ajouter
                                         au panier
                                     </button>
                                 @endif
@@ -303,6 +304,39 @@
 @endsection
 
 @push("scripts")
+    <script type="application/ld+json">
+ {
+  "@context": "https://schema.org/",
+  "@type": "Product",
+    "name": "{{$product->label}}",
+    "image": [
+    @foreach($product->photos as $img)
+            "{{$product->photo($img)}}",
+@endforeach
+        ],
+        "description": "{{strip_tags($product->description)}}",
+        "sku": "{{$product->ref}}",
+        "mpn": "{{$product->ref}}",
+        {{--"brand": {
+         "@type": "Brand",
+         "name": "Ana"
+       },--}}
+       "offers": {
+        "@type": "Offer",
+        "url": "{{url()->current()}}",
+        "priceCurrency": "DT",
+        "price": "{{$product->price_ttc}}",
+        "itemCondition": "https://schema.org/NewCondition,
+         "availability": @if($product->stock>0) "https://schema.org/InStock" @else "https://schema.org/BackOrder" @endif,
+        "seller": {
+          "@type": "Organization",
+           "name": "IDEAL INFORMATIQUE"
+        }
+       }
+     }
+
+    </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
+    <script async type="text/javascript"
+            src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62437b6036661322"></script>
 @endpush

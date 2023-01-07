@@ -16,9 +16,9 @@
 
                 @foreach($sideCategories->subCategories as $subCategory)
                     @if($subCategory->subCategories->isEmpty())
-                        <li><a href="{{$subCategory->route}}">{{$subCategory->label}}</a></li>
+                        <li><a @if($loop->first) class="pt-1" @endif href="{{$subCategory->route}}">{{$subCategory->label}}</a></li>
                     @else
-                        <li class="widget_sub_categories"><a class="active"
+                        <li class="widget_sub_categories"><a class="@if($loop->first)pt-1 @endif active"
                                                              href="javascript:void(0)">{{$subCategory->label}}</a>
                             <ul class="widget_dropdown_categories" style="display: none">
                                 @foreach($subCategory->subCategories as $subSubCategory)
@@ -32,17 +32,8 @@
             </ul>
         </div>
         <div class="widget_list widget_filter">
-            <h2>Filtrer par prix</h2>
-            <form action="{{url()->current()}}">
-                <div id="slider-range" data-max="{{$max}}" data-min="{{$min}}" data-vmax="{{$vmax}}" data-vmin="{{$vmin}}"></div>
-                <button type="submit">Filtrer</button>
-                <input type="text" id="amount" readonly/>
-                <input type="hidden" name="price" id="price" value="{{$vmin.'*'.$vmax}}">
-                <input value="{{$orderby}}" type="hidden" name="orderby">
-                @isset($search)
-                    <input type="hidden" name="q" value="{{$search}}">
-                @endisset
-            </form>
+            <h2>Filtrer</h2>
+            @include('partials.catalog.filter')
         </div>
         {{--<div class="widget_list">
             <h2>Compare Products</h2>

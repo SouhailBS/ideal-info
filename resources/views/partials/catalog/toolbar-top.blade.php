@@ -12,12 +12,8 @@
     </div>
 
     <div class="niceselect_option">
-        <form action="{{url()->current()}}">
-            <input type="hidden" name="price" value="{{$vmin.'*'.$vmax}}">
-            @isset($search)
-                <input type="hidden" name="q" value="{{$search}}">
-            @endisset
-            <select class="nice-select" name="orderby" id="short" onchange="this.form.submit()">
+        <form>
+            <select class="nice-select" name="orderby" id="sort" onchange="reload()">
                 <option data-display="{{$sortDisplay}}" value="none">Ne pas trier</option>
                 <option value="price_ttc.asc">Prix croissant</option>
                 <option value="price_ttc.desc">Prix décroissant</option>

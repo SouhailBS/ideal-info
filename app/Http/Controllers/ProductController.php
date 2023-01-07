@@ -69,12 +69,53 @@ class ProductController extends Controller
             return redirect($category->route);
 
         $orderby = '';
+        $queryBuilder = $category->products()
+            ->where('tosell', '>', '0');
 
-        $min = $category->products()
-            ->where('tosell', '>', '0')->min('price_ttc');
-        $max = $category->products()
-            ->where('tosell', '>', '0')->max('price_ttc');
+        $queryBuilderAll = clone $queryBuilder;
+        $filters = Category::where('visible', '0')->where('fk_parent', '183')->get();
+        $filters->loadMissing('subCategories');
+        $filters2 = clone $filters;
+        $filters2->each(function ($item, $key) {
+            $item->subCategoriesIds = $item->subCategories->pluck('rowid');
+        });
+        $filters2 = $filters2->pluck('subCategoriesIds')->collapse()->unique();
+        $categoriesList = $queryBuilderAll->get();
+        $commande = $categoriesList->where('stock', '=', '0')->count();
+        $stock = $categoriesList->count() - $commande;
+        $categoriesList->loadMissing('categories');
+        $categoriesList->each(function ($item, $key) {
+            $item->categories = $item->categories->pluck('rowid');
+        });
+        $categoriesList = $categoriesList->pluck('categories')->collapse()->unique();
+        $filterIds = $filters2->intersect($categoriesList);
+        $filtersList = collect([]);
+        $filters->each(function ($item, $key) use ($filterIds, $filtersList) {
+            if ($item->subCategoriesIds->intersect($filterIds)->count()) {
+                $filtersList->push($item);
+            }
+        });
 
+        $filterBy = [];
+        foreach ($filtersList as $item) {
+            if (request()->has("filter_" . $item->rowid)) {
+                $input = request()->get("filter_" . $item->rowid);
+                $filterBy = array_merge($filterBy, array_values(is_array($input) ? $input : [$input]));
+            }
+        }
+
+        $productsQuery = Product::where('tosell', '>', '0');
+
+        if (count($filterBy) > 0) {
+            $productsQuery->join('categorie_product', function ($join) {
+                $join->on('categorie_product.fk_product', '=', 'product.rowid');
+            })->whereIn('categorie_product.fk_categorie', $filterBy);
+        } else {
+            $productsQuery = $queryBuilder;
+        }
+
+        $min = $productsQuery->min('price_ttc');
+        $max = $productsQuery->max('price_ttc');
         if (request()->has("price")) {
             $vmin = explode("*", request()->get("price"))[0];
             $vmax = explode("*", request()->get("price"))[1];
@@ -82,25 +123,25 @@ class ProductController extends Controller
             $vmin = $min;
             $vmax = $max;
         }
+        $productsQuery->whereBetween('price_ttc', [$vmin, $vmax]);
+
+        if (request()->has("stock")) {
+            $productsQuery->where('stock', request()->get("stock") == 0 ? '=' : '>', '0');
+        }
+
         if (request()->has("orderby") && isset($this->sortDisplayValues[request()->get("orderby")])) {
             $orderby = request()->get("orderby");
             $order = explode('.', request()->get("orderby"));
-            $products = $category->products()
-                ->where('tosell', '>', '0')
-                ->whereBetween('price_ttc', [$vmin, $vmax])
-                ->orderBy($order[0], $order[1])
-                ->paginate(12)
-                ->withQueryString();
+            $productsQuery->orderBy($order[0], $order[1]);
             $this->sortDisplay .= ": " . $this->sortDisplayValues[request()->get("orderby")];
-        } else
-            $products = $category->products()
-                ->where('tosell', '>', '0')
-                ->whereBetween('price_ttc', [$vmin, $vmax])
-                ->paginate(12)
-                ->withQueryString();
+        }
+
+        $products = $productsQuery
+            ->paginate(6)
+            ->withQueryString();
 
         $category->loadMissing("subCategories");
-        return view("pages.products")->with([
+        return view(request()->has("ajax") ? "partials.catalog.products" : "pages.products")->with([
             "sortDisplay" => $this->sortDisplay,
             "orderby" => $orderby,
             "category" => $category,
@@ -108,7 +149,10 @@ class ProductController extends Controller
             "max" => $max,
             "vmin" => $vmin,
             "vmax" => $vmax,
-            "products" => $products
+            "products" => $products,
+            "commande" => $commande,
+            "stock" => $stock,
+            "filter" => $filtersList
         ]);
     }
 
@@ -117,13 +161,45 @@ class ProductController extends Controller
 
         $orderby = '';
         $products = Product::where('tosell', '>', '0')->where('fk_product_type', 0);
-        if ($request->has('output') && $request->output === 'json'){
+        if ($request->has('output') && $request->output === 'json') {
             $products = $products->where(function ($query) use ($request) {
                 $query->where('label', 'like', '%' . $request->get("q") . "%")
                     ->orWhere('description', 'like', '%' . $request->get("q") . "%");
             })->take(5)->get();
 
             return response()->json($products);
+        }
+
+        $queryBuilderAll = clone $products;
+        $filters = Category::where('visible', '0')->where('fk_parent', '183')->get();
+        $filters->loadMissing('subCategories');
+        $filters2 = clone $filters;
+        $filters2->each(function ($item, $key) {
+            $item->subCategoriesIds = $item->subCategories->pluck('rowid');
+        });
+        $filters2 = $filters2->pluck('subCategoriesIds')->collapse()->unique();
+        $categoriesList = $queryBuilderAll->get();
+        $commande = $categoriesList->where('stock', '=', '0')->count();
+        $stock = $categoriesList->count() - $commande;
+        $categoriesList->loadMissing('categories');
+        $categoriesList->each(function ($item, $key) {
+            $item->categories = $item->categories->pluck('rowid');
+        });
+        $categoriesList = $categoriesList->pluck('categories')->collapse()->unique();
+        $filterIds = $filters2->intersect($categoriesList);
+        $filtersList = collect([]);
+        $filters->each(function ($item, $key) use ($filterIds, $filtersList) {
+            if ($item->subCategoriesIds->intersect($filterIds)->count()) {
+                $filtersList->push($item);
+            }
+        });
+
+        $filterBy = [];
+        foreach ($filtersList as $item) {
+            if (request()->has("filter_" . $item->rowid)) {
+                $input = request()->get("filter_" . $item->rowid);
+                $filterBy = array_merge($filterBy, array_values(is_array($input) ? $input : [$input]));
+            }
         }
 
         $min = $products->where(function ($query) use ($request) {
@@ -142,31 +218,38 @@ class ProductController extends Controller
             $vmin = $min;
             $vmax = $max;
         }
-        $products = $products->whereBetween('price_ttc', [$vmin, $vmax]);
+        $products->whereBetween('price_ttc', [$vmin, $vmax]);
+        if (request()->has("stock")) {
+            $products->where('stock', request()->get("stock") == 0 ? '=' : '>', '0');
+        }
+
+        if (count($filterBy) > 0) {
+            $products->join('categorie_product', function ($join) {
+                $join->on('categorie_product.fk_product', '=', 'product.rowid');
+            })->whereIn('categorie_product.fk_categorie', $filterBy);
+        }
+
         if (request()->has("orderby") && isset($this->sortDisplayValues[request()->get("orderby")])) {
             $orderby = request()->get("orderby");
             $order = explode('.', request()->get("orderby"));
-            $products = $products
+            $products
                 ->where(function ($query) use ($request) {
                     $query->where('label', 'like', '%' . $request->get("q") . "%")
                         ->orWhere('description', 'like', '%' . $request->get("q") . "%");
                 })
-                ->orderBy($order[0], $order[1])
-                ->paginate(12)
-                ->withQueryString();
+                ->orderBy($order[0], $order[1]);
             $this->sortDisplay .= ": " . $this->sortDisplayValues[request()->get("orderby")];
         } else
-            $products = $products
+            $products
                 ->where(function ($query) use ($request) {
                     $query->where('label', 'like', '%' . $request->get("q") . "%")
                         ->orWhere('description', 'like', '%' . $request->get("q") . "%");
-                })
-                ->paginate(12)
-                ->withQueryString();
+                });
 
+        $products = $products->paginate(12)->withQueryString();
         $category = Category::where('rowid', 2)->first();
         $category->loadMissing("subCategories");
-        return view("pages.products")->with([
+        return view(request()->has("ajax") ? "partials.catalog.products" : "pages.products")->with([
             "title" => "Résultats de recherche " . $request->get("q"),
             "products" => $products,
             "sortDisplay" => $this->sortDisplay,
@@ -176,7 +259,10 @@ class ProductController extends Controller
             "vmin" => $vmin,
             "vmax" => $vmax,
             "search" => $request->q,
-            "mainCategory" => $category
+            "mainCategory" => $category,
+            "commande" => $commande,
+            "stock" => $stock,
+            "filter" => $filtersList
         ]);
     }
 

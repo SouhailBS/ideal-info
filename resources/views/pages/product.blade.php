@@ -311,7 +311,7 @@
     "name": "{{$product->label}}",
     "image": [
     @foreach($product->photos as $img)
-            "{{$product->photo($img)}}",
+            "{{$product->photo($img)}}" @if(!$loop->last),@endif
 @endforeach
         ],
         "description": "{{strip_tags($product->description)}}",

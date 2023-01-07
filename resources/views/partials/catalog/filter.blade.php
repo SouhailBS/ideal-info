@@ -114,6 +114,7 @@
                 $(".widget_filter input[type=checkbox], .widget_filter input[type=radio]").each(function () {
                     $(this).prop("checked", false);
                 });
+                reload();
             });
         });
     </script>

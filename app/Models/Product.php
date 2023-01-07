@@ -34,6 +34,7 @@ class Product extends Model implements Sitemapable
         "photos",
         "discount",
         "old_price",
+        "row_price_ttc",
         "thumb_small"
     ];
     /**
@@ -68,6 +69,11 @@ class Product extends Model implements Sitemapable
         $fmt = new NumberFormatter('fr-TN', NumberFormatter::CURRENCY);
         $fmt->setPattern('#,##0.000 DT');
         return $fmt->formatCurrency($value, 'TND');
+    }
+
+    public function getRowPriceTtcAttribute()
+    {
+        return number_format($this->getRawOriginal("price_ttc"));
     }
 
     public function getDiscountAttribute()

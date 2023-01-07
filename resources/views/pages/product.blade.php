@@ -324,9 +324,9 @@
        "offers": {
         "@type": "Offer",
         "url": "{{url()->current()}}",
-        "priceCurrency": "DT",
-        "price": "{{$product->price_ttc}}",
-        "itemCondition": "https://schema.org/NewCondition,
+        "priceCurrency": "TND",
+        "price": {{$product->row_price_ttc}},
+        "itemCondition": "https://schema.org/NewCondition",
          "availability": @if($product->stock>0) "https://schema.org/InStock" @else "https://schema.org/BackOrder" @endif,
         "seller": {
           "@type": "Organization",

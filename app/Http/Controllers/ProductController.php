@@ -141,7 +141,7 @@ class ProductController extends Controller
             ->withQueryString();
 
         $category->loadMissing("subCategories");
-        return view(request()->has("ajax") ? "partials.catalog.products" : "pages.products")->with([
+        return view(request()->hasHeader("Content-Type") ? "partials.catalog.products" : "pages.products")->with([
             "sortDisplay" => $this->sortDisplay,
             "orderby" => $orderby,
             "category" => $category,
@@ -249,7 +249,7 @@ class ProductController extends Controller
         $products = $products->paginate(12)->withQueryString();
         $category = Category::where('rowid', 2)->first();
         $category->loadMissing("subCategories");
-        return view(request()->has("ajax") ? "partials.catalog.products" : "pages.products")->with([
+        return view(request()->hasHeader("Content-Type") ? "partials.catalog.products" : "pages.products")->with([
             "title" => "Résultats de recherche " . $request->get("q"),
             "products" => $products,
             "sortDisplay" => $this->sortDisplay,

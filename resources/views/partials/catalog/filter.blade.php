@@ -74,7 +74,6 @@
                 }
             }
             window.history.pushState({}, null, "{{url()->current()}}/?" + $.param(data));
-            data['ajax'] = 1;
             $(".widget_filter input, #price").attr("disabled", true);
             $('#products-main-container').load("{{url()->current()}}/?" + $.param(data), function () {
                 $(".widget_filter input, #sort, #price").attr("disabled", false);
@@ -95,6 +94,12 @@
                 if (entry[0].startsWith("filter_"))
                     $("#filter_" + entry[1]).prop("checked", true);
             }
+            $.ajaxSetup({
+                    'headers': {
+                        'Content-Type': 'application/json',
+                    }
+                }
+            );
             $(".widget_filter input, #sort, #price").change(reload)
             $("#slider-range").on("slidechange", function (event, ui) {
                 if (ui.values[0] != {{$vmin}} || ui.values[1] != {{$vmax}})

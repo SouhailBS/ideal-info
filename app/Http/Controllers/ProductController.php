@@ -106,16 +106,18 @@ class ProductController extends Controller
 
         $productsQuery = Product::where('tosell', '>', '0');
 
+        $min = $productsQuery->min('price_ttc');
+        $max = $productsQuery->max('price_ttc');
         if (count($filterBy) > 0) {
             $productsQuery->join('categorie_product', function ($join) {
                 $join->on('categorie_product.fk_product', '=', 'product.rowid');
-            })->whereIn('categorie_product.fk_categorie', $filterBy);
+            })->whereHas('categories', function ($query) use ($filterBy) {
+                $query->whereIn('categorie_product.fk_categorie', $filterBy);
+            }, '=', count($filterBy));
         } else {
             $productsQuery = $queryBuilder;
         }
 
-        $min = $productsQuery->min('price_ttc');
-        $max = $productsQuery->max('price_ttc');
         if (request()->has("price")) {
             $vmin = explode("*", request()->get("price"))[0];
             $vmax = explode("*", request()->get("price"))[1];

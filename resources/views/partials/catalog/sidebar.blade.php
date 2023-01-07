@@ -1,6 +1,6 @@
 <!--sidebar widget start-->
 <aside class="sidebar_widget">
-    <div class="widget_inner">
+    <div class="widget_inner pb-3">
         <div class="widget_list widget_categories">
             @php
                 if (isset($category)){

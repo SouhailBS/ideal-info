@@ -5969,14 +5969,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding-top: 0;
 }*/
 
-.widget_list > ul > li > a {
+.widget_list > ul > li > a:not(.btn) {
     font-size: 14px;
     display: block;
     line-height: 25px;
     padding: 10px 0;
 }
 
-.widget_list > ul > li > a:hover {
+.widget_list > ul > li > a:not(.btn):hover {
     color: #0063d1;
 }
 

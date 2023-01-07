@@ -312,7 +312,7 @@
     "image": [
     @foreach($product->photos as $img)
             "{{$product->photo($img)}}" @if(!$loop->last),@endif
-@endforeach
+        @endforeach
         ],
         "description": "{{strip_tags($product->description)}}",
         "sku": "{{$product->ref}}",
@@ -321,19 +321,20 @@
          "@type": "Brand",
          "name": "Ana"
        },--}}
-       "offers": {
-        "@type": "Offer",
-        "url": "{{url()->current()}}",
+        "offers": {
+         "@type": "Offer",
+         "url": "{{url()->current()}}",
         "priceCurrency": "TND",
         "price": {{$product->row_price_ttc}},
         "itemCondition": "https://schema.org/NewCondition",
-         "availability": @if($product->stock>0) "https://schema.org/InStock" @else "https://schema.org/BackOrder" @endif,
+        "availability": @if($product->stock>0) "https://schema.org/InStock" @else "https://schema.org/BackOrder" @endif,
         "seller": {
           "@type": "Organization",
            "name": "IDEAL INFORMATIQUE"
         }
        }
      }
+
 
     </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->

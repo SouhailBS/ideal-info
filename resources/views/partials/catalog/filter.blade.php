@@ -5,16 +5,18 @@
                 <li class="widget_sub_categories"><a href="javascript:void(0)" class="">{{$item->label}}</a>
                     <ul class="widget_dropdown_categories">
                         @foreach($item->subCategories as $subSubCategory)
-                            <li class="border-bottom-0">
-                                <a class="p-0">
-                                    <input type="checkbox" name="filter_{{$item->rowid}}"
-                                           id="filter_{{$subSubCategory->rowid}}"
-                                           value="{{$subSubCategory->rowid}}">
-                                    <label class="p-2"
-                                           for="filter_{{$subSubCategory->rowid}}">{{$subSubCategory->label}} </label>
-                                    <span class="pull-right p-2" style="color:#CCCCCC;">({{$subSubCategory->products->count()}})</span>
-                                </a>
-                            </li>
+                            @if($subSubCategory->products->isNotEmpty())
+                                <li class="border-bottom-0">
+                                    <a class="p-0">
+                                        <input type="checkbox" name="filter_{{$item->rowid}}"
+                                               id="filter_{{$subSubCategory->rowid}}"
+                                               value="{{$subSubCategory->rowid}}">
+                                        <label class="p-2"
+                                               for="filter_{{$subSubCategory->rowid}}">{{$subSubCategory->label}} </label>
+                                        <span class="pull-right p-2" style="color:#CCCCCC;">({{$subSubCategory->products->count()}})</span>
+                                    </a>
+                                </li>
+                            @endif
                         @endforeach
                     </ul>
                 </li>
@@ -59,6 +61,7 @@
             </li>
         </ul>
     </li>
+    <li><a id="clear_filter" class="w-100 btn btn-danger btn-sm mt-3 mb-0">Vider le filtre</a></li>
 </ul>
 @push("scripts")
     <script>
@@ -104,6 +107,13 @@
             $("#slider-range").on("slidechange", function (event, ui) {
                 if (ui.values[0] != {{$vmin}} || ui.values[1] != {{$vmax}})
                     reload();
+            });
+            $("#clear_filter").click(function (event) {
+                event.preventDefault();
+                $("#slider-range").slider("values", 1, {{$max}}).slider("values", 0, {{$min}});
+                $(".widget_filter input[type=checkbox], .widget_filter input[type=radio]").each(function () {
+                    $(this).prop("checked", false);
+                });
             });
         });
     </script>

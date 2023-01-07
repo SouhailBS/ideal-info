@@ -137,7 +137,7 @@ class ProductController extends Controller
         }
 
         $products = $productsQuery
-            ->paginate(6)
+            ->paginate(12)
             ->withQueryString();
 
         $category->loadMissing("subCategories");

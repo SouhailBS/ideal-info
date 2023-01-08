@@ -100,22 +100,18 @@ class ProductController extends Controller
         foreach ($filtersList as $item) {
             if (request()->has("filter_" . $item->rowid)) {
                 $input = request()->get("filter_" . $item->rowid);
-                $filterBy = array_merge($filterBy, array_values(is_array($input) ? $input : [$input]));
+                $filterBy[$item->rowid] = array_values(is_array($input) ? $input : [$input]);
             }
         }
 
-        $productsQuery = Product::where('tosell', '>', '0');
-
-        $min = $productsQuery->min('price_ttc');
-        $max = $productsQuery->max('price_ttc');
+        $min = $queryBuilder->min('price_ttc');
+        $max = $queryBuilder->max('price_ttc');
         if (count($filterBy) > 0) {
-            $productsQuery->join('categorie_product', function ($join) {
-                $join->on('categorie_product.fk_product', '=', 'product.rowid');
-            })->whereHas('categories', function ($query) use ($filterBy) {
-                $query->whereIn('categorie_product.fk_categorie', $filterBy);
-            }, '=', count($filterBy));
-        } else {
-            $productsQuery = $queryBuilder;
+            foreach ($filterBy as $value) {
+                $queryBuilder->whereHas('categories', function($q) use ($value){
+                    $q->whereIn('categorie_product.fk_categorie', $value);
+                });
+            }
         }
 
         if (request()->has("price")) {
@@ -125,25 +121,26 @@ class ProductController extends Controller
             $vmin = $min;
             $vmax = $max;
         }
-        $productsQuery->whereBetween('price_ttc', [$vmin, $vmax]);
+        $queryBuilder->whereBetween('price_ttc', [$vmin, $vmax]);
 
         if (request()->has("stock")) {
-            $productsQuery->where('stock', request()->get("stock") == 0 ? '=' : '>', '0');
+            $queryBuilder->where('stock', request()->get("stock") == 0 ? '=' : '>', '0');
         }
 
         if (request()->has("orderby") && isset($this->sortDisplayValues[request()->get("orderby")])) {
             $orderby = request()->get("orderby");
             $order = explode('.', request()->get("orderby"));
-            $productsQuery->orderBy($order[0], $order[1]);
+            $queryBuilder->orderBy($order[0], $order[1]);
             $this->sortDisplay .= ": " . $this->sortDisplayValues[request()->get("orderby")];
         }
 
-        $products = $productsQuery
+        $products = $queryBuilder
             ->paginate(12)
             ->withQueryString();
 
         $category->loadMissing("subCategories");
-        return view(request()->hasHeader("Content-Type") ? "partials.catalog.products" : "pages.products")->with([
+        $isAjax = strtolower(request()->getContentType()) == 'json';
+        return view( $isAjax ? "partials.catalog.products" : "pages.products")->with([
             "sortDisplay" => $this->sortDisplay,
             "orderby" => $orderby,
             "category" => $category,
@@ -162,17 +159,17 @@ class ProductController extends Controller
     {
 
         $orderby = '';
-        $products = Product::where('tosell', '>', '0')->where('fk_product_type', 0);
+        $queryBuilder = Product::where('tosell', '>', '0')->where('fk_product_type', 0);
         if ($request->has('output') && $request->output === 'json') {
-            $products = $products->where(function ($query) use ($request) {
+            $queryBuilder = $queryBuilder->where(function ($query) use ($request) {
                 $query->where('label', 'like', '%' . $request->get("q") . "%")
                     ->orWhere('description', 'like', '%' . $request->get("q") . "%");
             })->take(5)->get();
 
-            return response()->json($products);
+            return response()->json($queryBuilder);
         }
 
-        $queryBuilderAll = clone $products;
+        $queryBuilderAll = clone $queryBuilder;
         $filters = Category::where('visible', '0')->where('fk_parent', '183')->get();
         $filters->loadMissing('subCategories');
         $filters2 = clone $filters;
@@ -200,15 +197,15 @@ class ProductController extends Controller
         foreach ($filtersList as $item) {
             if (request()->has("filter_" . $item->rowid)) {
                 $input = request()->get("filter_" . $item->rowid);
-                $filterBy = array_merge($filterBy, array_values(is_array($input) ? $input : [$input]));
+                $filterBy[$item->rowid] = array_values(is_array($input) ? $input : [$input]);
             }
         }
 
-        $min = $products->where(function ($query) use ($request) {
+        $min = $queryBuilder->where(function ($query) use ($request) {
             $query->where('label', 'like', '%' . $request->get("q") . "%")
                 ->orWhere('description', 'like', '%' . $request->get("q") . "%");
         })->min('price_ttc');
-        $max = $products->where(function ($query) use ($request) {
+        $max = $queryBuilder->where(function ($query) use ($request) {
             $query->where('label', 'like', '%' . $request->get("q") . "%")
                 ->orWhere('description', 'like', '%' . $request->get("q") . "%");
         })->max('price_ttc');
@@ -220,21 +217,23 @@ class ProductController extends Controller
             $vmin = $min;
             $vmax = $max;
         }
-        $products->whereBetween('price_ttc', [$vmin, $vmax]);
+        $queryBuilder->whereBetween('price_ttc', [$vmin, $vmax]);
         if (request()->has("stock")) {
-            $products->where('stock', request()->get("stock") == 0 ? '=' : '>', '0');
+            $queryBuilder->where('stock', request()->get("stock") == 0 ? '=' : '>', '0');
         }
 
         if (count($filterBy) > 0) {
-            $products->join('categorie_product', function ($join) {
-                $join->on('categorie_product.fk_product', '=', 'product.rowid');
-            })->whereIn('categorie_product.fk_categorie', $filterBy);
+            foreach ($filterBy as $value) {
+                $queryBuilder->whereHas('categories', function($q) use ($value){
+                    $q->whereIn('categorie_product.fk_categorie', $value);
+                });
+            }
         }
 
         if (request()->has("orderby") && isset($this->sortDisplayValues[request()->get("orderby")])) {
             $orderby = request()->get("orderby");
             $order = explode('.', request()->get("orderby"));
-            $products
+            $queryBuilder
                 ->where(function ($query) use ($request) {
                     $query->where('label', 'like', '%' . $request->get("q") . "%")
                         ->orWhere('description', 'like', '%' . $request->get("q") . "%");
@@ -242,18 +241,19 @@ class ProductController extends Controller
                 ->orderBy($order[0], $order[1]);
             $this->sortDisplay .= ": " . $this->sortDisplayValues[request()->get("orderby")];
         } else
-            $products
+            $queryBuilder
                 ->where(function ($query) use ($request) {
                     $query->where('label', 'like', '%' . $request->get("q") . "%")
                         ->orWhere('description', 'like', '%' . $request->get("q") . "%");
                 });
 
-        $products = $products->paginate(12)->withQueryString();
+        $queryBuilder = $queryBuilder->paginate(12)->withQueryString();
         $category = Category::where('rowid', 2)->first();
         $category->loadMissing("subCategories");
-        return view(request()->hasHeader("Content-Type") ? "partials.catalog.products" : "pages.products")->with([
+        $isAjax = strtolower(request()->getContentType()) == 'json';
+        return view( $isAjax ? "partials.catalog.products" : "pages.products")->with([
             "title" => "Résultats de recherche " . $request->get("q"),
-            "products" => $products,
+            "products" => $queryBuilder,
             "sortDisplay" => $this->sortDisplay,
             "orderby" => $orderby,
             "min" => $min,

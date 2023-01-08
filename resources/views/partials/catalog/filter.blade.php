@@ -5,7 +5,7 @@
                 <li class="widget_sub_categories"><a href="javascript:void(0)" class="">{{$item->label}}</a>
                     <ul class="widget_dropdown_categories">
                         @foreach($item->subCategories as $subSubCategory)
-                            @if($subSubCategory->products->isNotEmpty())
+                            @if($subSubCategory->productsByFilter(isset($category)?$category->rowid:$mainCategory->rowid)->get()->isNotEmpty())
                                 <li class="border-bottom-0">
                                     <a class="p-0">
                                         <input type="checkbox" name="filter_{{$item->rowid}}"
@@ -13,7 +13,7 @@
                                                value="{{$subSubCategory->rowid}}">
                                         <label class="p-2"
                                                for="filter_{{$subSubCategory->rowid}}">{{$subSubCategory->label}} </label>
-                                        <span class="pull-right p-2" style="color:#CCCCCC;">({{$subSubCategory->products->count()}})</span>
+                                        <span class="pull-right p-2" style="color:#CCCCCC;">({{$subSubCategory->productsByFilter(isset($category)?$category->rowid:$mainCategory->rowid)->count()}})</span>
                                     </a>
                                 </li>
                             @endif
@@ -86,6 +86,10 @@
         }
 
         $(document).ready(function () {
+            $(".widget_dropdown_categories").each(function () {
+                if($(this).children('li').length === 0)
+                    $(this).parent('.widget_sub_categories').remove()
+            })
             const urlParams = new URLSearchParams(window.location.search);
             entries = urlParams.entries();
             if (urlParams.has("orderby"))
@@ -93,7 +97,6 @@
             if (urlParams.has("stock"))
                 $('#stock_' + urlParams.get("stock")).prop("checked", true);
             for (const entry of entries) {
-                console.log(`${entry[0]}: ${entry[1]}`);
                 if (entry[0].startsWith("filter_"))
                     $("#filter_" + entry[1]).prop("checked", true);
             }

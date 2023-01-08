@@ -52,6 +52,11 @@ class Category extends Model implements Sitemapable
         return $this->belongsTo(Category::class, 'fk_parent');
     }
 
+    public function productsByFilter($id) {
+        return $this->products()->whereHas('categories', function($q) use ($id){
+            $q->where('categorie_product.fk_categorie', $id);
+        });
+    }
     public function products()
     {
         return $this->belongsToMany(Product::class, 'categorie_product', 'fk_categorie', 'fk_product');

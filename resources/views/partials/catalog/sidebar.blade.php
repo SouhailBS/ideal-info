@@ -1,6 +1,12 @@
 <!--sidebar widget start-->
 <aside class="sidebar_widget">
-    <div class="widget_inner pb-3">
+    <div class="widget_inner pt-3 pb-3">
+        <div class="widget_list widget_filter">
+            <h2>Filtrer</h2>
+            @include('partials.catalog.filter')
+        </div>
+    </div>
+    <div class="widget_inner pb-0 pt-3 mt-4">
         <div class="widget_list widget_categories">
             @php
                 if (isset($category)){
@@ -16,7 +22,8 @@
 
                 @foreach($sideCategories->subCategories as $subCategory)
                     @if($subCategory->subCategories->isEmpty())
-                        <li><a @if($loop->first) class="pt-1" @endif href="{{$subCategory->route}}">{{$subCategory->label}}</a></li>
+                        <li><a @if($loop->first) class="pt-1"
+                               @endif href="{{$subCategory->route}}">{{$subCategory->label}}</a></li>
                     @else
                         <li class="widget_sub_categories"><a class="@if($loop->first)pt-1 @endif active"
                                                              href="javascript:void(0)">{{$subCategory->label}}</a>
@@ -30,10 +37,6 @@
                 @endforeach
 
             </ul>
-        </div>
-        <div class="widget_list widget_filter">
-            <h2>Filtrer</h2>
-            @include('partials.catalog.filter')
         </div>
         {{--<div class="widget_list">
             <h2>Compare Products</h2>

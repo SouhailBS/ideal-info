@@ -3282,7 +3282,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: bold;
 }
 
-.single_product:hover .label_product {
+.single_product:hover .label_product:not(.availability) {
     opacity: 0;
 }
 
@@ -5975,7 +5975,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     line-height: 25px;
     padding: 10px 0;
 }
-
+.availability {
+    position: relative;
+    padding: 10px;
+}
+.widget_list.widget_categories > ul > li:last-child {
+    border-bottom: none;
+}
 .widget_list > ul > li > a:not(.btn):hover {
     color: #0063d1;
 }

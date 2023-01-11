@@ -124,6 +124,23 @@
                                 </div>
                             </div>
                             <div class="right_caption">
+                                <div class="label_product availability">
+                                    @if($product->stock>0)
+                                        <span class="label_sale">Dispo</span>
+                                    @else
+                                        <span class="label_discount">Sur Commande</span>
+                                    @endif
+                                </div>
+                                @php
+                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
+                                @endphp
+                                @if($brand->isNotEmpty())
+                                <div class="logo">
+                                    <img
+                                        src="{{$brand->first()->image}}"
+                                        alt="">
+                                </div>
+                                @endif
                                 <div class="add_to_cart">
                                     @if($product->stock>0)
                                         <a href="{{route("add-to-cart", ["product"=>$product])}}"

@@ -81,8 +81,8 @@ class ProductController extends Controller
         });
         $filters2 = $filters2->pluck('subCategoriesIds')->collapse()->unique();
         $categoriesList = $queryBuilderAll->get();
-        $commande = $categoriesList->where('stock', '=', '0')->count();
-        $stock = $categoriesList->count() - $commande;
+        $stock = $categoriesList->where('stock', '>', '0')->count();
+        $commande = $categoriesList->count() - $stock;
         $categoriesList->loadMissing('categories');
         $categoriesList->each(function ($item, $key) {
             $item->categories = $item->categories->pluck('rowid');
@@ -108,7 +108,7 @@ class ProductController extends Controller
         $max = $queryBuilder->max('price_ttc');
         if (count($filterBy) > 0) {
             foreach ($filterBy as $value) {
-                $queryBuilder->whereHas('categories', function($q) use ($value){
+                $queryBuilder->whereHas('categories', function ($q) use ($value) {
                     $q->whereIn('categorie_product.fk_categorie', $value);
                 });
             }
@@ -124,7 +124,14 @@ class ProductController extends Controller
         $queryBuilder->whereBetween('price_ttc', [$vmin, $vmax]);
 
         if (request()->has("stock")) {
-            $queryBuilder->where('stock', request()->get("stock") == 0 ? '=' : '>', '0');
+            if (request()->get("stock") == 0) {
+                $queryBuilder->where(function ($query) {
+                    $query->where('stock', '=', '0')
+                        ->orWhereNull('stock');
+                }
+                );
+            } else
+                $queryBuilder->where('stock', '>', '0');
         }
 
         if (request()->has("orderby") && isset($this->sortDisplayValues[request()->get("orderby")])) {
@@ -140,7 +147,7 @@ class ProductController extends Controller
 
         $category->loadMissing("subCategories");
         $isAjax = strtolower(request()->getContentType()) == 'json';
-        return view( $isAjax ? "partials.catalog.products" : "pages.products")->with([
+        return view($isAjax ? "partials.catalog.products" : "pages.products")->with([
             "sortDisplay" => $this->sortDisplay,
             "orderby" => $orderby,
             "category" => $category,
@@ -178,8 +185,8 @@ class ProductController extends Controller
         });
         $filters2 = $filters2->pluck('subCategoriesIds')->collapse()->unique();
         $categoriesList = $queryBuilderAll->get();
-        $commande = $categoriesList->where('stock', '=', '0')->count();
-        $stock = $categoriesList->count() - $commande;
+        $stock = $categoriesList->where('stock', '>', '0')->count();
+        $commande = $categoriesList->count() - $stock;
         $categoriesList->loadMissing('categories');
         $categoriesList->each(function ($item, $key) {
             $item->categories = $item->categories->pluck('rowid');
@@ -224,7 +231,7 @@ class ProductController extends Controller
 
         if (count($filterBy) > 0) {
             foreach ($filterBy as $value) {
-                $queryBuilder->whereHas('categories', function($q) use ($value){
+                $queryBuilder->whereHas('categories', function ($q) use ($value) {
                     $q->whereIn('categorie_product.fk_categorie', $value);
                 });
             }
@@ -251,7 +258,7 @@ class ProductController extends Controller
         $category = Category::where('rowid', 2)->first();
         $category->loadMissing("subCategories");
         $isAjax = strtolower(request()->getContentType()) == 'json';
-        return view( $isAjax ? "partials.catalog.products" : "pages.products")->with([
+        return view($isAjax ? "partials.catalog.products" : "pages.products")->with([
             "title" => "Résultats de recherche " . $request->get("q"),
             "products" => $queryBuilder,
             "sortDisplay" => $this->sortDisplay,

@@ -3281,8 +3281,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: block;
     font-weight: bold;
 }
-
-.product_content.list_content .right_caption .logo img {
+.product_content .logo img {
+    display: none;
+}
+.product_content.list_content .right_caption, .product_content.grid_content .logo img {
     max-width: 65%;
     display: block;
     margin: 10px auto;

@@ -73,20 +73,16 @@
                                     <span class="current_price">{{$product->price_ttc}}</span>
                                 @endif
                             </div>
-                            {{--<div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                    </li>
-                                    <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                    </li>
-                                    <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                    </li>
-                                    <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                    </li>
-                                    <li><a href="#"><i class="ion-android-star-outline"></i></a>
-                                    </li>
-                                </ul>
-                            </div>--}}
+                            @php
+                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
+                            @endphp
+                            @if($brand->isNotEmpty())
+                                <div class="logo">
+                                    <img
+                                        src="{{$brand->first()->image}}"
+                                        alt="">
+                                </div>
+                            @endif
                             <h3 class="product_name grid_name">
                                 <a href="{{$product->route}}">{{$product->label}}</a>
                             </h3>
@@ -131,15 +127,12 @@
                                         <span class="label_discount">Sur Commande</span>
                                     @endif
                                 </div>
-                                @php
-                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
-                                @endphp
                                 @if($brand->isNotEmpty())
-                                <div class="logo">
-                                    <img
-                                        src="{{$brand->first()->image}}"
-                                        alt="">
-                                </div>
+                                    <div class="logo">
+                                        <img
+                                            src="{{$brand->first()->image}}"
+                                            alt="">
+                                    </div>
                                 @endif
                                 <div class="add_to_cart">
                                     @if($product->stock>0)

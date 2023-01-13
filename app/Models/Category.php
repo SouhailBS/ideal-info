@@ -64,7 +64,7 @@ class Category extends Model implements Sitemapable
 
     public function getImageAttribute(): string
     {
-        $dir = $this->baseDir . $this->rowid . ($this->rowid % 10) . '/' . strval($this->rowid % 10)[0] . '/' . $this->rowid . '/photos';
+        $dir = $this->baseDir . ($this->rowid % 10) . '/' . strval($this->rowid % 10)[0] . '/' . $this->rowid . '/photos';
         if (is_dir($dir)) {
             $images = array_values($this->scanFiles($dir));
             if (count($images) > 0)

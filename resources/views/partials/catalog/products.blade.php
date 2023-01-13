@@ -122,7 +122,7 @@
                             <div class="right_caption">
                                 <div class="label_product availability">
                                     @if($product->stock>0)
-                                        <span class="label_sale">Dispo</span>
+                                        <span class="label_sale">Disponible</span>
                                     @else
                                         <span class="label_discount">Sur Commande</span>
                                     @endif

@@ -34,8 +34,6 @@
                                     @if($product->price_min>0)
                                         <span class="label_discount">Promo</span>
                                     @endif
-                                </div>
-                                <div class="label_product">
                                     @if($product->stock>0)
                                         <span class="label_sale">Dispo</span>
                                     @else

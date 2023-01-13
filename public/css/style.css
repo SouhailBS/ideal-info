@@ -3275,18 +3275,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .label_product span.label_sale {
     text-transform: uppercase;
-    color: #62ab00;
+    background: #62ab00;
+    color: #ffffff;
     font-size: 12px;
     text-align: center;
     display: block;
     font-weight: bold;
 }
+
 .product_content .logo img {
     display: none;
 }
-.label_product.availability span.label_sale {
-    font-size: 18px;
-}
+
 .product_content .right_caption .logo img, .product_content .logo img {
     max-width: 65%;
     display: block;

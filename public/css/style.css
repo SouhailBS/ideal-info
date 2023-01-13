@@ -3284,6 +3284,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .product_content .logo img {
     display: none;
 }
+.label_product.availability span.label_sale {
+    font-size: 18px;
+}
 .product_content.list_content .right_caption .logo img, .product_content.grid_content .logo img {
     max-width: 65%;
     display: block;

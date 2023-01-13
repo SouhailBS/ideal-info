@@ -3282,6 +3282,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: bold;
 }
 
+.product_content.list_content .right_caption .logo img {
+    max-width: 65%;
+    display: block;
+    margin: 10px auto;
+}
+
 .single_product:hover .label_product:not(.availability) {
     opacity: 0;
 }

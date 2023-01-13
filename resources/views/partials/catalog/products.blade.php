@@ -66,6 +66,16 @@
                         </div>
                         <div class="product_content grid_content">
                             <div class="price_box">
+                                @php
+                                    $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
+                                @endphp
+                                @if($brand->isNotEmpty())
+                                    <div class="logo">
+                                        <img
+                                            src="{{$brand->first()->image}}"
+                                            alt="">
+                                    </div>
+                                @endif
                                 @if($product->price_min>0)
                                     <span class="old_price">{{$product->old_price}}</span>
                                     <span class="current_price promo">{{$product->price_ttc}}</span>
@@ -73,16 +83,6 @@
                                     <span class="current_price">{{$product->price_ttc}}</span>
                                 @endif
                             </div>
-                            @php
-                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
-                            @endphp
-                            @if($brand->isNotEmpty())
-                                <div class="logo">
-                                    <img
-                                        src="{{$brand->first()->image}}"
-                                        alt="">
-                                </div>
-                            @endif
                             <h3 class="product_name grid_name">
                                 <a href="{{$product->route}}">{{$product->label}}</a>
                             </h3>

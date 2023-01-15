@@ -62,7 +62,7 @@
 
                             <h1>{{$product->label}}</h1>
                             @php
-                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_FILTERS_ID', 183));
+                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
                             @endphp
                             @if($brand->isNotEmpty())
                                 <div class="logo mb-15">
@@ -134,7 +134,7 @@
                             </div>--}}
                             <div class="product_meta">
                                 <span>Categories:
-                                    @foreach($product->categories->where('fk_parent', '!=', env('DOLIBARR_BRANDS_ID', 188)) as $cat)
+                                    @foreach($product->categories->where('fk_parent', '!=', env('DOLIBARR_FILTERS_ID', 183)) as $cat)
                                         <a href="{{$cat->route}}">{{$cat->label}}</a>
                                     @endforeach
                                 </span>

@@ -61,6 +61,16 @@
                         <form method="GET" action="{{route("add-to-cart", ["product"=>$product])}}">
 
                             <h1>{{$product->label}}</h1>
+                            @php
+                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
+                            @endphp
+                            @if($brand->isNotEmpty())
+                                <div class="logo mb-15">
+                                    <img style="height: 50px"
+                                        src="{{$brand->first()->image}}"
+                                        alt="">
+                                </div>
+                            @endif
                             <div class="product_nav">
                                 <ul>
                                     <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
@@ -86,16 +96,6 @@
                                 @else
                                     <span class="current_price">{{$product->price_ttc}}</span>
                                 @endif
-                                    @php
-                                        $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
-                                    @endphp
-                                    @if($brand->isNotEmpty())
-                                        <div class="logo">
-                                            <img
-                                                src="{{$brand->first()->image}}"
-                                                alt="">
-                                        </div>
-                                    @endif
                             </div>
                             <div class="product_desc">
                                 <p>{!! $product->description !!}</p>
@@ -134,7 +134,7 @@
                             </div>--}}
                             <div class="product_meta">
                                 <span>Categories:
-                                    @foreach($product->categories as $cat)
+                                    @foreach($product->categories->where('fk_parent', '!=', env('DOLIBARR_BRANDS_ID', 188)) as $cat)
                                         <a href="{{$cat->route}}">{{$cat->label}}</a>
                                     @endforeach
                                 </span>

@@ -62,7 +62,7 @@
 
                             <h1>{{$product->label}}</h1>
                             @php
-                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
+                                $brand = $product->categories->where('fk_parent', env('DOLIBARR_FILTERS_ID', 183));
                             @endphp
                             @if($brand->isNotEmpty())
                                 <div class="logo mb-15">

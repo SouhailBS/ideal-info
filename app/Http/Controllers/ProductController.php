@@ -73,7 +73,7 @@ class ProductController extends Controller
             ->where('tosell', '>', '0');
 
         $queryBuilderAll = clone $queryBuilder;
-        $filters = Category::where('visible', '0')->where('fk_parent', '183')->get();
+        $filters = Category::where('visible', '0')->where('fk_parent', env('DOLIBARR_FILTERS_ID', 183))->get();
         $filters->loadMissing('subCategories');
         $filters2 = clone $filters;
         $filters2->each(function ($item, $key) {
@@ -177,7 +177,7 @@ class ProductController extends Controller
         }
 
         $queryBuilderAll = clone $queryBuilder;
-        $filters = Category::where('visible', '0')->where('fk_parent', '183')->get();
+        $filters = Category::where('visible', '0')->where('fk_parent', env('DOLIBARR_FILTERS_ID', 183))->get();
         $filters->loadMissing('subCategories');
         $filters2 = clone $filters;
         $filters2->each(function ($item, $key) {

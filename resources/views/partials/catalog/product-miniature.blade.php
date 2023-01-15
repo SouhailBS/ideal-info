@@ -9,12 +9,12 @@
 
             @else
                 <a class="primary_img" href="{{$product->route}}"><img @if(isset($lazy) && $lazy) loading="lazy" @endif
-                        src="{{$product->thumbPhoto($product->photos->get(0))}}"
-                        alt=""></a>
+                    src="{{$product->thumbPhoto($product->photos->get(0))}}"
+                                                                       alt=""></a>
                 @if($product->photos->get(1))
                     <a class="secondary_img" href="{{$product->route}}"><img loading="lazy"
-                            src="{{$product->thumbPhoto($product->photos->get(1))}}"
-                            alt=""></a>
+                                                                             src="{{$product->thumbPhoto($product->photos->get(1))}}"
+                                                                             alt=""></a>
                 @endif
             @endif
             <div class="label_product left">
@@ -51,7 +51,8 @@
             </div>
         </div>
         <figcaption class="product_content">
-            <div class="price_box">@php
+            <div class="price_box">
+                @php
                     $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
                 @endphp
                 @if($brand->isNotEmpty())

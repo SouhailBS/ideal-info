@@ -86,7 +86,16 @@
                                 @else
                                     <span class="current_price">{{$product->price_ttc}}</span>
                                 @endif
-
+                                    @php
+                                        $brand = $product->categories->where('fk_parent', env('DOLIBARR_BRANDS_ID', 188));
+                                    @endphp
+                                    @if($brand->isNotEmpty())
+                                        <div class="logo">
+                                            <img
+                                                src="{{$brand->first()->image}}"
+                                                alt="">
+                                        </div>
+                                    @endif
                             </div>
                             <div class="product_desc">
                                 <p>{!! $product->description !!}</p>

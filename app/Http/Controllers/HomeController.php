@@ -19,11 +19,15 @@ class HomeController extends Controller
         $bestSeller = Category::where("rowid", 5)->first()->products()->where('tosell', '>', '0')->take(12)->get();
         $newProducts = Product::where('tosell', '>', '0')->where('fk_product_type',0)->where('datec', '>', now()->subDays(30)->endOfDay())->inRandomOrder()->take(20)->get();
         $promo = Product::where('tosell', '>', '0')->where('price_min', '>', 0)->where('stock', '>', 0)->inRandomOrder()->take(20)->get();
+        $reconditionnes = Product::where('tosell', '0')->where('stock', '>', 0)->whereHas('categories', function ($q) {
+            $q->where('categorie_product.fk_categorie', env('DOLIBARR_RECONDITIONNES_ID', 265));
+        })->get();
         return view("home")->with([
             "products" => $products,
             "bestSeller" => $bestSeller,
             "newProducts" => $newProducts,
             "promo" => $promo,
+            "reconditionnes" => $reconditionnes,
             "categories" => $categories
         ]);
     }

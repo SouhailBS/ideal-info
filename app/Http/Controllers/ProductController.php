@@ -277,6 +277,7 @@ class ProductController extends Controller
 
     public function product(Product $product, $slug)
     {
+        $product->loadMissing("categories");
         abort_unless(($product->tosell && $product->fk_product_type === 0) || $product->categories->where('rowid', env('DOLIBARR_RECONDITIONNES_ID', 265)->isNotEmpty()), 404);
         if ($slug != Str::slug($product->label))
             return redirect($product->route);

@@ -59,7 +59,7 @@
 <!-- Plugins JS -->
 <script src="{{asset('/js/plugins.js')}}"></script>
 <!-- Main JS -->
-<script defer src="{{asset('/js/main.js')}}?version=1"></script>
+<script defer src="{{asset('/js/main.js')}}?version=1.1"></script>
 <!--script defer>$(document).ready(function () {
         if (!localStorage.getItem("birthday2022")) {
             $(".conf-wrapper").removeClass("d-none");

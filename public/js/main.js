@@ -269,8 +269,8 @@
     $('.category_column5').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')
     }).owlCarousel({
-        autoplay: true,
-        loop: true,
+        loop: false,
+        rewind: true,
         nav: false,
         autoplay: false,
         autoplayTimeout: 8000,

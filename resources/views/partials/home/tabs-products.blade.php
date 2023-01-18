@@ -34,7 +34,7 @@
             <div class="tab-pane fade" id="Reconditionnes" role="tabpanel">
                 <div
                     class="@if($reconditionnes->count()>=10)product_slick product_slick_column5 @else product_carousel product_column5 owl-carousel @endif">
-                    @foreach($newProducts as $product)
+                    @foreach($reconditionnes as $product)
                         @include("partials.catalog.product-miniature", ['lazy'=>true])
                     @endforeach
                 </div>

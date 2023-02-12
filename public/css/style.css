@@ -3282,7 +3282,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: block;
     font-weight: bold;
 }
-
+.product_content .product_name a:not(.full-title) {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 .product_content .logo img {
     display: none;
 }

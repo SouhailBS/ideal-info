@@ -50,7 +50,7 @@
                                         <span class="current_price">{{$product->price_ttc}}</span>
                                     @endif
                                 </div>
-                                <h3 class="product_name"><a href="{{$product->route}}">{{$product->label}}</a></h3>
+                                <h3 class="product_name"><a class="full-title" href="{{$product->route}}">{{$product->label}}</a></h3>
                                 <div class="add_to_cart">
                                     @if($product->stock>0)
                                         <a href="{{route("add-to-cart", ["product"=>$product])}}"

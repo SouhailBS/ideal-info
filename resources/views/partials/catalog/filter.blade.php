@@ -3,7 +3,7 @@
         @if($filter->isNotEmpty())
             @foreach($filter as $item)
                 <li class="widget_sub_categories"><a href="javascript:void(0)" class="">{{$item->label}}</a>
-                    <ul class="widget_dropdown_categories">
+                    <ul class="widget_dropdown_categories scrollbar">
                         @foreach($item->subCategories as $subSubCategory)
                             @if($subSubCategory->productsByFilter(isset($category)?$category->rowid:$mainCategory->rowid)->get()->isNotEmpty())
                                 <li class="border-bottom-0">

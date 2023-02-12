@@ -3290,6 +3290,31 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+
+.widget_list.widget_filter .widget_sub_categories .widget_dropdown_categories {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+    width: 7px;
+    background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+    background-color: #3844b1;
+    border: 1px solid #3844b1;
+}
+
 .product_content .logo img {
     display: none;
 }

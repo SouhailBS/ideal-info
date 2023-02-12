@@ -70,7 +70,7 @@ class Category extends Model implements Sitemapable
             if (count($images) > 0)
                 return route("dolibarr", ["file" => 'categorie/' . ($this->rowid % 10) . '/' . strval($this->rowid % 100)[0] . '/' . $this->rowid . '/photos/' . $images[0]]);
         }
-        return "assets/img/s-product/category1.jpg";
+        return "/img/empty.png";
     }
 
     private function image_route($dir_element)

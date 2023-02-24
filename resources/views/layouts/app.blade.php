@@ -28,7 +28,7 @@
     {{--<style>{{file_get_contents(public_path('/css/plugins.css'))}}</style>--}}
 <!-- Main Style CSS -->
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
-          href="{{asset('/css/style.css')}}?version=1.2.3">
+          href="{{asset('/css/style.css')}}?version=1.2.4">
     <noscript>
         <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     </noscript>
